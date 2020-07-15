@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
-		CE39E84824BA95C400060239 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84724BA95C400060239 /* ViewController.swift */; };
 		CE39E84B24BA95C400060239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84924BA95C400060239 /* Main.storyboard */; };
 		CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */; };
 		CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84F24BA95CC00060239 /* Assets.xcassets */; };
 		CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */; };
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
 		CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */; };
+		CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */; };
+		CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938724BF5AF200A47DAA /* RootViewController.swift */; };
+		CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */; };
+		CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */; };
+		CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +34,6 @@
 /* Begin PBXFileReference section */
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E84324BA95C400060239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE39E84724BA95C400060239 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CE39E84A24BA95C400060239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE39E84D24BA95C400060239 /* Clothing_Tags.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clothing_Tags.xcdatamodel; sourceTree = "<group>"; };
 		CE39E84F24BA95CC00060239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +43,11 @@
 		CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_TagsTests.swift; sourceTree = "<group>"; };
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
+		CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		CEAE938724BF5AF200A47DAA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +90,9 @@
 		CE39E84224BA95C400060239 /* Clothing Tags */ = {
 			isa = PBXGroup;
 			children = (
+				CEAE938224BF34B600A47DAA /* storyboards */,
+				CEAE938124BF25C300A47DAA /* viewControllers */,
 				CE39E84324BA95C400060239 /* AppDelegate.swift */,
-				CE39E84724BA95C400060239 /* ViewController.swift */,
-				CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */,
-				CE39E84924BA95C400060239 /* Main.storyboard */,
 				CE39E84F24BA95CC00060239 /* Assets.xcassets */,
 				CE39E85424BA95CC00060239 /* Info.plist */,
 				CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */,
@@ -108,6 +115,27 @@
 				CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		CEAE938124BF25C300A47DAA /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
+				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
+				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		CEAE938224BF34B600A47DAA /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */,
+				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
+				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
+				CE39E84924BA95C400060239 /* Main.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +222,9 @@
 				CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */,
 				CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */,
 				CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */,
+				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
 				CE39E84B24BA95C400060239 /* Main.storyboard in Resources */,
+				CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,9 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
-				CE39E84824BA95C400060239 /* ViewController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
+				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
+				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

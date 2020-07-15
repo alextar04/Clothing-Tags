@@ -11,12 +11,25 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        /* Пишем код */
+        
+        /* Запуск приложения с корневого RootViewController */
+        window?.rootViewController = RootViewController()
         return true
     }
 
+    
+    /* Обеспечим доступ к RootViewController */
+    /* 1. Доступ к экземпляру делегата */
+    /* 2. Непосредственный доступ */
+    static var appDelegateLink : AppDelegate{
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    var rootViewController : RootViewController{
+        return window?.rootViewController as! RootViewController
+    }
 
     // MARK: - Core Data stack
 
