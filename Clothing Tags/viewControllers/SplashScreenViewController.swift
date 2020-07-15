@@ -14,18 +14,14 @@ class SplashScreenViewController: UIViewController {
     @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        startingSetup()
+        startingSetupSettings()
         // Загрузка базовой информации из БД для главной страницы
     }
-
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-          return .lightContent
-    }
     
-    private func startingSetup(){
+    private func startingSetupSettings(){
         loadingWheel.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
-            print("Синхронизация!")
+            // Будем что-то загружать из БД (скорее всего)
             self.loadingWheel.stopAnimating()
             AppDelegate.appDelegateLink.rootViewController.switchToMainScreen()
         }

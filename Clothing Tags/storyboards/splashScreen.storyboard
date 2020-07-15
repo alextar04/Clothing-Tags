@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,6 +30,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ZcX-ig-jyf" secondAttribute="trailing" id="4h0-CE-q9O"/>
                             <constraint firstItem="MAs-eJ-rfD" firstAttribute="centerX" secondItem="4Ke-UK-T5t" secondAttribute="centerX" id="63A-yi-CFN"/>
@@ -43,7 +43,6 @@
                             <constraint firstItem="3cj-4y-gQt" firstAttribute="leading" secondItem="4Ke-UK-T5t" secondAttribute="leading" constant="9" id="hbc-ry-d20"/>
                             <constraint firstItem="ZcX-ig-jyf" firstAttribute="top" secondItem="4Ke-UK-T5t" secondAttribute="top" id="xsy-bd-FVe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="4Gt-vj-fpg"/>
                     </view>
                     <connections>
                         <outlet property="loadingWheel" destination="MAs-eJ-rfD" id="XN5-mD-ys6"/>

@@ -8,18 +8,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="XKv-kg-RcT">
             <objects>
-                <viewController id="Pm4-Dm-w1J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainScreenID" id="Pm4-Dm-w1J" customClass="MainScreenViewController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFv-ou-IGn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vCx-4m-h7r">
-                                <rect key="frame" x="67" y="79" width="240" height="535"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Главное меню" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnb-XF-EMD">
+                                <rect key="frame" x="22" y="161" width="330" height="313"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ER0-3R-0CB"/>
@@ -30,7 +33,4 @@
             <point key="canvasLocation" x="-199.19999999999999" y="70.614692653673174"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
-    </resources>
 </document>

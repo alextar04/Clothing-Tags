@@ -29,8 +29,6 @@ class RootViewController: UIViewController {
         
         /* Загрузка первого контроллера (является текущим) */
         newChildViewController(newController: self.currentViewController)
-        updateRootViewController(newController: self.currentViewController)
-        
     }
     
     // Запуск дочернего контроллера
@@ -49,9 +47,13 @@ class RootViewController: UIViewController {
         currentViewController = newController
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // Переход в главное меню
     func switchToMainScreen(){
-        let mainScreenController = MainScreenViewController()
+        let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
         let newRootController = UINavigationController(rootViewController: mainScreenController)
         /* Анимация - вставить!!! */
         newChildViewController(newController: newRootController)

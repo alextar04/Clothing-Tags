@@ -15,4 +15,5 @@ class MainScreenViewController: UIViewController {
         // Загрузка главного меню
         
     }
+    
 }
