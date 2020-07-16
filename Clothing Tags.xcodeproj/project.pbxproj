@@ -73,7 +73,7 @@
 			children = (
 				CE90070424BCD233004D9BC6 /* Images */,
 				CE39E84224BA95C400060239 /* Clothing Tags */,
-				CE39E85C24BA95CD00060239 /* Clothing TagsTests */,
+				CE39E85C24BA95CD00060239 /* Clothing Tags Tests */,
 				CE39E84124BA95C400060239 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,13 +100,13 @@
 			path = "Clothing Tags";
 			sourceTree = "<group>";
 		};
-		CE39E85C24BA95CD00060239 /* Clothing TagsTests */ = {
+		CE39E85C24BA95CD00060239 /* Clothing Tags Tests */ = {
 			isa = PBXGroup;
 			children = (
 				CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */,
 				CE39E85F24BA95CD00060239 /* Info.plist */,
 			);
-			path = "Clothing TagsTests";
+			path = "Clothing Tags Tests";
 			sourceTree = "<group>";
 		};
 		CE90070424BCD233004D9BC6 /* Images */ = {

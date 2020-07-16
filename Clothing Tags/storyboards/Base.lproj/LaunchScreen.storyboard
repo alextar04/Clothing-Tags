@@ -17,11 +17,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loadingMenu.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="zaT-0u-7Zb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zte-WS-khb">
-                                <rect key="frame" x="9" y="645" width="49" height="21"/>
+                                <rect key="frame" x="16" y="637" width="48.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,14 +29,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="zaT-0u-7Zb" secondAttribute="trailing" id="0cq-xL-x8f"/>
-                            <constraint firstAttribute="bottom" secondItem="zaT-0u-7Zb" secondAttribute="bottom" id="1Rk-Fi-UF0"/>
-                            <constraint firstAttribute="trailing" secondItem="zte-WS-khb" secondAttribute="trailing" constant="317" id="JXX-9q-tCd"/>
-                            <constraint firstAttribute="bottom" secondItem="zte-WS-khb" secondAttribute="bottom" constant="1" id="LjC-iE-lc2"/>
-                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="uDO-8c-Vrp"/>
-                            <constraint firstItem="zte-WS-khb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="645" id="vIR-YL-6eV"/>
-                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="y8g-KZ-Jio"/>
-                            <constraint firstItem="zte-WS-khb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="9" id="zQf-gh-wCT"/>
+                            <constraint firstItem="zte-WS-khb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="16" id="0id-TU-tbn"/>
+                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="4LC-0r-b7b"/>
+                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9bf-gp-2Si"/>
+                            <constraint firstAttribute="bottom" secondItem="zte-WS-khb" secondAttribute="bottom" constant="9" id="G8S-Km-6zL"/>
+                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="SkH-bk-u4v"/>
+                            <constraint firstItem="zaT-0u-7Zb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="mGk-Qp-Aee"/>
                         </constraints>
                     </view>
                 </viewController>

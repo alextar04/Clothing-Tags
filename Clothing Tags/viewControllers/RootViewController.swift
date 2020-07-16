@@ -28,14 +28,14 @@ class RootViewController: UIViewController {
         super.viewDidLoad()
         
         /* Загрузка первого контроллера (является текущим) */
-        newChildViewController(newController: self.currentViewController)
+        newChildViewController(newController: self.currentViewController, animationClosure: nil)
     }
     
     // Запуск дочернего контроллера
-    func newChildViewController(newController : UIViewController){
+    func newChildViewController(newController : UIViewController, animationClosure : (()->Void)?){
         addChild(newController)
         newController.view.frame = view.bounds
-        view.addSubview(newController.view)
+        animationClosure != nil ? animationClosure!() : view.addSubview(newController.view)
         newController.didMove(toParent: self)
     }
     
@@ -55,8 +55,11 @@ class RootViewController: UIViewController {
     func switchToMainScreen(){
         let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
         let newRootController = UINavigationController(rootViewController: mainScreenController)
-        /* Анимация - вставить!!! */
-        newChildViewController(newController: newRootController)
+
+        newChildViewController(newController: newRootController, animationClosure: { UIView.transition(with: self.view, duration: 0.5, options: .transitionFlipFromLeft, animations: {self.view.addSubview(newRootController.view)},
+            completion: nil)}
+        )
+        
         updateRootViewController(newController: newRootController)
     }
 
