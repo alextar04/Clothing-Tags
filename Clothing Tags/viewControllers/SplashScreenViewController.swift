@@ -12,6 +12,10 @@ class SplashScreenViewController: UIViewController {
 
     
     @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         startingSetupSettings()

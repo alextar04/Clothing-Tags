@@ -9,11 +9,12 @@
 import UIKit
 
 class MainScreenViewController: UIViewController {
+    override var prefersStatusBarHidden: Bool {
+         return false
+     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Загрузка главного меню
-        
     }
-    
 }

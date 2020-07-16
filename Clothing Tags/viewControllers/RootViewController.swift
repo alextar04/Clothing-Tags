@@ -12,6 +12,9 @@ class RootViewController: UIViewController {
     
     // Текущий установленный viewController
     private var currentViewController : UIViewController
+    override var childForStatusBarHidden: UIViewController? {
+        return children.last
+    }
     
     init(){
         // Первый контроллер - Загрузка приложения с индикатором
@@ -31,9 +34,10 @@ class RootViewController: UIViewController {
         newChildViewController(newController: self.currentViewController, animationClosure: nil)
     }
     
-    // Запуск дочернего контроллера
+    // Установка контроллера
     func newChildViewController(newController : UIViewController, animationClosure : (()->Void)?){
         addChild(newController)
+        setNeedsStatusBarAppearanceUpdate()
         newController.view.frame = view.bounds
         animationClosure != nil ? animationClosure!() : view.addSubview(newController.view)
         newController.didMove(toParent: self)
@@ -45,10 +49,6 @@ class RootViewController: UIViewController {
         currentViewController.view.removeFromSuperview()
         currentViewController.removeFromParent()
         currentViewController = newController
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     // Переход в главное меню
