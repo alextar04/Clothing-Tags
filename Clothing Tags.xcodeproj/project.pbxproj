@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0061BE24C32E89000F66CD /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061B924C32E89000F66CD /* add.png */; };
+		CE0061BF24C32E89000F66CD /* listClothes.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061BA24C32E89000F66CD /* listClothes.png */; };
+		CE0061C024C32E89000F66CD /* tags.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061BB24C32E89000F66CD /* tags.png */; };
+		CE0061C124C32E89000F66CD /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061BC24C32E89000F66CD /* menu.png */; };
+		CE0061C224C32E89000F66CD /* allert.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061BD24C32E89000F66CD /* allert.png */; };
+		CE0061C424C32F64000F66CD /* iconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C324C32F64000F66CD /* iconInApp.png */; };
+		CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0061C524C33D49000F66CD /* MenuViewController.swift */; };
+		CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C724C33D72000F66CD /* MenuScreen.storyboard */; };
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
 		CE39E84B24BA95C400060239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84924BA95C400060239 /* Main.storyboard */; };
 		CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */; };
@@ -36,6 +44,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0061B924C32E89000F66CD /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		CE0061BA24C32E89000F66CD /* listClothes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listClothes.png; sourceTree = "<group>"; };
+		CE0061BB24C32E89000F66CD /* tags.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tags.png; sourceTree = "<group>"; };
+		CE0061BC24C32E89000F66CD /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		CE0061BD24C32E89000F66CD /* allert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = allert.png; sourceTree = "<group>"; };
+		CE0061C324C32F64000F66CD /* iconInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconInApp.png; sourceTree = "<group>"; };
+		CE0061C524C33D49000F66CD /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		CE0061C724C33D72000F66CD /* MenuScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E84324BA95C400060239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE39E84A24BA95C400060239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +146,12 @@
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE0061C324C32F64000F66CD /* iconInApp.png */,
+				CE0061B924C32E89000F66CD /* add.png */,
+				CE0061BD24C32E89000F66CD /* allert.png */,
+				CE0061BA24C32E89000F66CD /* listClothes.png */,
+				CE0061BC24C32E89000F66CD /* menu.png */,
+				CE0061BB24C32E89000F66CD /* tags.png */,
 				CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */,
 			);
 			path = Images;
@@ -154,6 +176,7 @@
 			children = (
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
 				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
+				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
 				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 			);
 			path = ViewControllers;
@@ -165,6 +188,7 @@
 				CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */,
 				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
 				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
+				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -267,10 +291,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */,
+				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
+				CE0061C224C32E89000F66CD /* allert.png in Resources */,
+				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
 				CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */,
 				CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */,
+				CE0061BE24C32E89000F66CD /* add.png in Resources */,
 				CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */,
+				CE0061BF24C32E89000F66CD /* listClothes.png in Resources */,
+				CE0061C024C32E89000F66CD /* tags.png in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
+				CE0061C124C32E89000F66CD /* menu.png in Resources */,
 				CE39E84B24BA95C400060239 /* Main.storyboard in Resources */,
 				CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */,
 			);
@@ -292,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
+				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,

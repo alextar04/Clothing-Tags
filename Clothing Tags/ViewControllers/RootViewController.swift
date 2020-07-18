@@ -62,5 +62,12 @@ class RootViewController: UIViewController {
         
         updateRootViewController(newController: newRootController)
     }
+    
+    func loadingLeftMenu(){
+        let menuViewController = UIStoryboard(name: "MenuScreen", bundle: nil).instantiateViewController(withIdentifier: "MenuScreenID") as? MenuViewController
+        addChild(menuViewController!)
+        view.insertSubview(menuViewController!.view, at: 0)
+        print("Добавили menuController")
+        }
 
 }
