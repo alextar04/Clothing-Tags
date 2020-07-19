@@ -12,7 +12,6 @@ import RxSwift
 class MainScreenViewController: UIViewController {
     
     var menuViewController : MenuViewController!
-    var needShowMenu : Bool = false
     override var prefersStatusBarHidden: Bool {
          return false
      }
@@ -41,46 +40,20 @@ class MainScreenViewController: UIViewController {
         let menuButton = UIButton(type: .custom)
         menuButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
         menuButton.setImage(UIImage(named: "menu.png"), for: .normal)
+        // touchUpInside
         menuButton.addTarget(self, action: #selector(loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)
         let menuBarItem = UIBarButtonItem(customView: menuButton)
-        self.navigationItem.leftBarButtonItem = menuBarItem
+        navigationItem.leftBarButtonItem = menuBarItem
         
         //navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     
     func loadMainMenu(){
-        
     }
     
     // MARK: Обработка действий с левым боковым меню
-    
     @objc func loadMenuFromMainScreen(){
-        AppDelegate.appDelegateLink.rootViewController.loadingLeftMenu()
-        needShowMenu = !needShowMenu
-        switcherMenuViewController(needShowMenu: needShowMenu)
+        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen()
     }
-    
-    func switcherMenuViewController(needShowMenu: Bool){
-        if needShowMenu{
-            UIView.animate(withDuration: 0.5,
-                           delay: 0,
-                           usingSpringWithDamping: 0.8,
-                           initialSpringVelocity: 0,
-                           options: .curveEaseInOut,
-                           animations: { self.view.frame.origin.x =
-                            self.view.frame.width - 140 },
-                           completion: nil)
-        }
-        else{
-            UIView.animate(withDuration: 0.5,
-            delay: 0,
-            usingSpringWithDamping: 0.8,
-            initialSpringVelocity: 0,
-            options: .curveEaseInOut,
-            animations: { self.view.frame.origin.x = 0},
-            completion: nil)
-        }
-    }
-    
 }

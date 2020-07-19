@@ -175,8 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
-				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
+				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
 				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 			);
 			path = ViewControllers;
