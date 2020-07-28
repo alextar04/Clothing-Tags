@@ -10,8 +10,6 @@ import UIKit
 import RxSwift
 
 class MainScreenViewController: UIViewController {
-    
-    var menuViewController : MenuViewController!
     override var prefersStatusBarHidden: Bool {
          return false
      }
@@ -36,14 +34,14 @@ class MainScreenViewController: UIViewController {
         labelCenterName.sizeToFit()
         navigationItem.titleView = labelCenterName
         
-        // Иконка левого меню (а также со свайпом)
+        // Иконка левого меню
         let menuButton = UIButton(type: .custom)
         menuButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
         menuButton.setImage(UIImage(named: "menu.png"), for: .normal)
-        // touchUpInside
+        
+        // Открытие меню по нажатию кнопки
         menuButton.addTarget(self, action: #selector(loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)
-        let menuBarItem = UIBarButtonItem(customView: menuButton)
-        navigationItem.leftBarButtonItem = menuBarItem
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
         
         //navigationController?.navigationBar.shadowImage = UIImage()
     }
@@ -54,6 +52,28 @@ class MainScreenViewController: UIViewController {
     
     // MARK: Обработка действий с левым боковым меню
     @objc func loadMenuFromMainScreen(){
-        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen()
+        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "barButton", distanceSwiped: 240, endStatus: nil)
     }
+    
+    @IBAction func swipeDetected(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .began || sender.state == .changed{
+            let transition = sender.translation(in: view).x
+            
+            // Открытие меню
+            if transition > 0{
+                print(transition)
+                AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: false)
+            // Закрытие меню
+            }else{
+                print("Отрицательный свайп-переход: \(transition)")
+                AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: false)
+            }
+        }
+        
+        if sender.state == .ended{
+            var transition = sender.translation(in: view).x
+            AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: true)
+        }
+    }
+    
 }

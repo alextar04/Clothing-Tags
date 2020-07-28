@@ -66,15 +66,58 @@ class RootViewController: UIViewController {
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!
     var needShowMenu : Bool = false
-    func loadingMenuScreen(){
+    var fullyOpenMenu : Bool = false
+    func loadingMenuScreen(sourceLoading : String, distanceSwiped : Int, endStatus: Bool?){
+        var offsetRootView = distanceSwiped
         if menuViewController == nil{
             menuViewController = UIStoryboard(name: "MenuScreen", bundle: nil).instantiateViewController(withIdentifier: "MenuScreenID") as? MenuViewController
             view.insertSubview(menuViewController!.view, at: 0)
             addChild(menuViewController!)
-            print("Добавили menuController")
+            print("Добавлен menuController")
         }
-        needShowMenu = !needShowMenu
-        switcherMenuViewController(needShowMenu: needShowMenu)
+        
+        switch sourceLoading {
+            // Для обработки открытия меню по нажатию на кнопку
+        case "barButton":
+            needShowMenu = !needShowMenu
+            // Для обработки открытия меню при свайпе
+        case "swipe":
+            needShowMenu = true
+            //let windowPosition = Int(self.currentViewController.view.frame.origin.x)
+            print("Окно открыто полностью: \(fullyOpenMenu)")
+            if endStatus!{
+                if offsetRootView > 10{
+                    offsetRootView = 240
+                    fullyOpenMenu = true
+                    break
+                }
+                if offsetRootView <= 10{
+                    if !fullyOpenMenu{
+                        offsetRootView = 0
+                        needShowMenu = false
+                        break
+                    }
+                }
+            }
+            if offsetRootView > 240{
+                offsetRootView = 240
+                break
+            }
+            /*if offsetRootView <= 0{
+                print("Начало экрана: \(self.currentViewController.view.frame.origin.x)")
+                offsetRootView = 240 + offsetRootView
+                needShowMenu = true
+                
+                if offsetRootView <= 0{
+                    print("Убрали экран!!")
+                    needShowMenu = false
+                }
+            }*/
+        default:
+            fatalError()
+        }
+        
+        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: offsetRootView)
         
         // MARK: Тень на окно при открытии меню
         self.currentViewController.view.layer.shadowColor = UIColor.gray.cgColor
@@ -82,17 +125,20 @@ class RootViewController: UIViewController {
         self.currentViewController.view.layer.shadowOffset = CGSize.zero
         self.currentViewController.view.layer.shadowRadius = 6
         
+        
     }
     
-    func switcherMenuViewController(needShowMenu: Bool){
+    func switcherMenuViewController(needShowMenu: Bool, distanceSwiped : Int){
         if needShowMenu{
             UIView.animate(withDuration: 0.5,
                            delay: 0,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 0,
                            options: .curveEaseInOut,
-                           animations: { self.currentViewController.view.frame.origin.x =
-                            self.view.frame.width - 140 },
+                           animations: {
+                            self.currentViewController.view.frame.origin.x =
+                            CGFloat(distanceSwiped)
+            },
                            completion: nil)
         }
         else{
