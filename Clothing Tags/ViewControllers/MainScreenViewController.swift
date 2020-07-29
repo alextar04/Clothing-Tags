@@ -56,24 +56,15 @@ class MainScreenViewController: UIViewController {
     }
     
     @IBAction func swipeDetected(_ sender: UIPanGestureRecognizer) {
+        let transition = sender.translation(in: view).x
+        var endStatus : Bool? = nil
         if sender.state == .began || sender.state == .changed{
-            let transition = sender.translation(in: view).x
-            
-            // Открытие меню
-            if transition > 0{
-                print(transition)
-                AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: false)
-            // Закрытие меню
-            }else{
-                print("Отрицательный свайп-переход: \(transition)")
-                AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: false)
-            }
+            endStatus = false
         }
-        
         if sender.state == .ended{
-            var transition = sender.translation(in: view).x
-            AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: true)
+            endStatus = true
         }
+        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: endStatus)
     }
     
 }

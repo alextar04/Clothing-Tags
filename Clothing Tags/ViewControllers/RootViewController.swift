@@ -66,7 +66,6 @@ class RootViewController: UIViewController {
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!
     var needShowMenu : Bool = false
-    var fullyOpenMenu : Bool = false
     func loadingMenuScreen(sourceLoading : String, distanceSwiped : Int, endStatus: Bool?){
         var offsetRootView = distanceSwiped
         if menuViewController == nil{
@@ -83,38 +82,49 @@ class RootViewController: UIViewController {
             // Для обработки открытия меню при свайпе
         case "swipe":
             needShowMenu = true
-            //let windowPosition = Int(self.currentViewController.view.frame.origin.x)
-            print("Окно открыто полностью: \(fullyOpenMenu)")
-            if endStatus!{
-                if offsetRootView > 10{
-                    offsetRootView = 240
-                    fullyOpenMenu = true
+            let windowPosition = Int(self.currentViewController.view.frame.origin.x)
+            // Нажатие не окончено
+            if !endStatus!{
+                if offsetRootView >= 0{
+                    // Максимум: 240
+                    if offsetRootView > 240 || windowPosition == 240{
+                        offsetRootView = 240
+                    }
                     break
                 }
-                if offsetRootView <= 10{
-                    if !fullyOpenMenu{
+                if offsetRootView < 0{
+                    // Минимум: 0
+                    offsetRootView = 240 + offsetRootView
+                    if offsetRootView < 0 || windowPosition == 0{
                         offsetRootView = 0
-                        needShowMenu = false
-                        break
                     }
+                    break
                 }
             }
-            if offsetRootView > 240{
-                offsetRootView = 240
-                break
-            }
-            /*if offsetRootView <= 0{
-                print("Начало экрана: \(self.currentViewController.view.frame.origin.x)")
-                offsetRootView = 240 + offsetRootView
-                needShowMenu = true
-                
+            // Нажатие окончено
+            if endStatus!{
+                if offsetRootView > 0{
+                    if windowPosition < 240{
+                        offsetRootView = offsetRootView > 10 ? 240 : 0
+                    }else{
+                        offsetRootView = 240
+                    }
+                    break
+                }
                 if offsetRootView <= 0{
-                    print("Убрали экран!!")
-                    needShowMenu = false
+                    if windowPosition > 0{
+                        offsetRootView = offsetRootView < -10 ? 0 : 240
+                    }else{
+                        offsetRootView = 0
+                    }
+                    break
                 }
-            }*/
+            }
         default:
             fatalError()
+        }
+        if sourceLoading == "swipe"{
+            needShowMenu = offsetRootView == 0 ? false : true
         }
         
         switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: offsetRootView)
@@ -130,7 +140,7 @@ class RootViewController: UIViewController {
     
     func switcherMenuViewController(needShowMenu: Bool, distanceSwiped : Int){
         if needShowMenu{
-            UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.2,
                            delay: 0,
                            usingSpringWithDamping: 0.8,
                            initialSpringVelocity: 0,
@@ -142,7 +152,7 @@ class RootViewController: UIViewController {
                            completion: nil)
         }
         else{
-            UIView.animate(withDuration: 0.5,
+            UIView.animate(withDuration: 0.2,
             delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0,
