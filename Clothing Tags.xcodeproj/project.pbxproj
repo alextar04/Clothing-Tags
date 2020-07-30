@@ -21,8 +21,10 @@
 		CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84F24BA95CC00060239 /* Assets.xcassets */; };
 		CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */; };
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
+		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
 		CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F11024C2074E00A2ABBE /* RxCocoa */; };
+		CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */; };
 		CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */; };
 		CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */; };
 		CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938724BF5AF200A47DAA /* RootViewController.swift */; };
@@ -62,6 +64,8 @@
 		CE39E85924BA95CD00060239 /* Clothing TagsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clothing TagsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_TagsTests.swift; sourceTree = "<group>"; };
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
 		CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938724BF5AF200A47DAA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 			path = "Clothing Tags Tests";
 			sourceTree = "<group>";
 		};
+		CE43E5F524D2F3000001D4DB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */,
+				CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +187,7 @@
 		CEAE938124BF25C300A47DAA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE43E5F524D2F3000001D4DB /* Cells */,
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
 				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
@@ -323,9 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
+				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
+				CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
 			);

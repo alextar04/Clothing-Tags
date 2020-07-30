@@ -8,11 +8,15 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class MainScreenViewController: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
+    let disposeBag = DisposeBag()
+    
     override var prefersStatusBarHidden: Bool {
-         return false
-     }
+        return false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +50,34 @@ class MainScreenViewController: UIViewController {
         //navigationController?.navigationBar.shadowImage = UIImage()
     }
     
+    // CORE DATA
+    class A{
+        var name: String = ""
+        init(_ s: String) {
+            name = s
+        }
+    }
     
+    // MARK: Привязка таблицы к данным, описание взаимодействия с пользователем
     func loadMainMenu(){
+        
+        // CORE DATA
+        let recievedData : [A] = [A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
+        let viewModelData = Observable.just(recievedData)
+        
+        viewModelData.bind(to: collectionView.rx.items){
+            collection, row, item in
+            let cell = collection.dequeueReusableCell(withReuseIdentifier: "mainScreenCell", for: IndexPath.init(row: row, section: 0)) as! MainScreenCell
+            
+            cell.imageView?.image = UIImage(named: item.name)
+            cell.label.text = item.name
+            return cell
+        }.disposed(by: disposeBag)
+        
+        collectionView.rx.modelSelected(A.self).subscribe(
+            onNext: {
+                print("You selected: \($0.name)")
+            }).disposed(by: disposeBag)
     }
     
     // MARK: Обработка действий с левым боковым меню
