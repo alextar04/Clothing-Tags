@@ -21,6 +21,7 @@
 		CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84F24BA95CC00060239 /* Assets.xcassets */; };
 		CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */; };
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
+		CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */; };
 		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
 		CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F11024C2074E00A2ABBE /* RxCocoa */; };
@@ -33,6 +34,9 @@
 		CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */; };
 		CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
 		CEC4183524C22FE400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
+		CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3626924D4341800848279 /* CategoryScreen.storyboard */; };
+		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
+		CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,7 @@
 		CE39E85924BA95CD00060239 /* Clothing TagsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clothing TagsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_TagsTests.swift; sourceTree = "<group>"; };
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
 		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
@@ -73,6 +78,9 @@
 		CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		CEC4183324C226D400ECA02E /* bosaNova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bosaNova.ttf; sourceTree = "<group>"; };
+		CEE3626924D4341800848279 /* CategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryScreen.storyboard; sourceTree = "<group>"; };
+		CEE3626B24D4358000848279 /* CategoryScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenCell.swift; sourceTree = "<group>"; };
+		CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCategoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +160,8 @@
 			children = (
 				CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */,
 				CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */,
+				CEE3626B24D4358000848279 /* CategoryScreenCell.swift */,
+				CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -191,6 +201,7 @@
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
 				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
+				CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */,
 				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 			);
 			path = ViewControllers;
@@ -203,6 +214,7 @@
 				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
 				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
 				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
+				CEE3626924D4341800848279 /* CategoryScreen.storyboard */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -312,6 +324,7 @@
 				CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */,
 				CE0061BE24C32E89000F66CD /* add.png in Resources */,
 				CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */,
+				CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */,
 				CE0061BF24C32E89000F66CD /* listClothes.png in Resources */,
 				CE0061C024C32E89000F66CD /* tags.png in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
@@ -339,9 +352,12 @@
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
+				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
+				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */,
+				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
 			);

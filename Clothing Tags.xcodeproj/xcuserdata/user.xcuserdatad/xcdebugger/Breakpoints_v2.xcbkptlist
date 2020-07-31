@@ -196,5 +196,133 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "178E351D-D64B-453E-B710-22F5246AB3BA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/MainScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "loadMainMenu()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1C68B673-F2BB-439E-81C5-6CDEE47BFBF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "loadCategoryScreen()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1C68B673-F2BB-439E-81C5-6CDEE47BFBF8 - ccf7456d01587172"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_Tags.CategoryScreenViewController.loadCategoryScreen() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/CategoryScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "3232">
+               </Location>
+               <Location
+                  uuid = "1C68B673-F2BB-439E-81C5-6CDEE47BFBF8 - 2900ea8860bb9a47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UITableView, Swift.Int, Clothing_Tags.CategoryScreenViewController.ClothesData) -&gt; __C.UITableViewCell in Clothing_Tags.CategoryScreenViewController.loadCategoryScreen() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/CategoryScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "45A386D4-23DB-43F3-B2B1-13481E6B6E46"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "loadCategoryScreen()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "45A386D4-23DB-43F3-B2B1-13481E6B6E46 - ccf7456d01587172"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_Tags.CategoryScreenViewController.loadCategoryScreen() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/CategoryScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "3232">
+               </Location>
+               <Location
+                  uuid = "45A386D4-23DB-43F3-B2B1-13481E6B6E46 - 2900ea8860bb9a47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UITableView, Swift.Int, Clothing_Tags.CategoryScreenViewController.ClothesData) -&gt; __C.UITableViewCell in Clothing_Tags.CategoryScreenViewController.loadCategoryScreen() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/CategoryScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BFF6AD5-925B-4402-BD78-7AC56B3ED470"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "loadCategoryScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

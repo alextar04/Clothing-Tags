@@ -32,7 +32,7 @@ class MainScreenViewController: UIViewController {
         
         // Надпись по центру панели
         let labelCenterName = UILabel()
-        labelCenterName.text = "Бирки одежды"
+        labelCenterName.text = "Мой гардероб"
         labelCenterName.backgroundColor = .clear
         labelCenterName.font = UIFont(name: "a_BosaNova", size: 18)
         labelCenterName.sizeToFit()
@@ -62,7 +62,7 @@ class MainScreenViewController: UIViewController {
     func loadMainMenu(){
         
         // CORE DATA
-        let recievedData : [A] = [A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
+        let recievedData : [A] = [A("loadingMenu.jpg"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
         let viewModelData = Observable.just(recievedData)
         
         viewModelData.bind(to: collectionView.rx.items){
@@ -75,8 +75,13 @@ class MainScreenViewController: UIViewController {
         }.disposed(by: disposeBag)
         
         collectionView.rx.modelSelected(A.self).subscribe(
-            onNext: {
-                print("You selected: \($0.name)")
+            onNext: {selectedItem in
+                let categoryScreenViewController = UIStoryboard(name: "CategoryScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoryScreenID") as? CategoryScreenViewController
+                
+                if let categoryScreen = categoryScreenViewController{
+                    self.navigationController?.pushViewController(categoryScreen, animated: true)
+                }
+                
             }).disposed(by: disposeBag)
     }
     
