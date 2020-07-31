@@ -222,8 +222,8 @@
             filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "loadCategoryScreen()"
             landmarkType = "7">
             <Locations>
@@ -270,8 +270,8 @@
             filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "loadCategoryScreen()"
             landmarkType = "7">
             <Locations>
@@ -318,8 +318,8 @@
             filePath = "Clothing Tags/ViewControllers/CategoryScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "loadCategoryScreen()"
             landmarkType = "7">
          </BreakpointContent>

@@ -60,22 +60,18 @@ class CategoryScreenViewController: UIViewController {
     func loadCategoryScreen(){
         // CORE DATA
         let recievedData : [ClothesData] = [
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-                                  UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!]),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!,
-            UIImage(named: "tags.png")!])
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "tags.png")!, UIImage(named: "allert.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "tags.png")!, UIImage(named: "allert.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "tags.png")!, UIImage(named: "allert.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]),
+            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!, tagPictures: [UIImage(named: "add.png")!,UIImage(named: "tags.png")!, UIImage(named: "allert.png")!]),
         ]
         
         let viewModelData = Observable.just(recievedData)
@@ -92,15 +88,15 @@ class CategoryScreenViewController: UIViewController {
             cellClothes.photoClothes.layer.borderColor = UIColor.black.cgColor
             cellClothes.photoClothes.layer.borderWidth = 1
             
-            // Cвязать данные с collectionView ячейки для тегов
-            viewModelData.bind(to: cellClothes.tagsCollection.rx.items){
+            // Cвязать теги одежды и коллекцию тегов ячейки
+            let tagsData = Observable.just(item.tagPicturesClothes)
+            tagsData.bind(to: cellClothes.tagsCollection.rx.items){
                 collection, row, item in
                 let cellTag = collection.dequeueReusableCell(withReuseIdentifier: "tagCategoryCell", for: IndexPath(row: row, section: 0)) as! TagCategoryCell
                 
-                cellTag.tagImage.image = item.tagPicturesClothes[1]
-                //cellTag.tagImage.contentMode = .scaleToFill
+                cellTag.tagImage.image = item
                 return cellTag
-            }
+            }.disposed(by: self.disposeBag)
             
             return cellClothes
         }.disposed(by: disposeBag)
