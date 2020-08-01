@@ -23,6 +23,8 @@
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
 		CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */; };
 		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
+		CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */; };
+		CE80300F24D5BA8C00F16D22 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80300E24D5BA8C00F16D22 /* delete.png */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
 		CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F11024C2074E00A2ABBE /* RxCocoa */; };
 		CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */; };
@@ -70,6 +72,8 @@
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
 		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesScreen.storyboard; sourceTree = "<group>"; };
+		CE80300E24D5BA8C00F16D22 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
 		CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE80300E24D5BA8C00F16D22 /* delete.png */,
 				CE0061C324C32F64000F66CD /* iconInApp.png */,
 				CE0061B924C32E89000F66CD /* add.png */,
 				CE0061BD24C32E89000F66CD /* allert.png */,
@@ -215,6 +220,7 @@
 				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
 				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
 				CEE3626924D4341800848279 /* CategoryScreen.storyboard */,
+				CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -317,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */,
+				CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */,
 				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
@@ -327,6 +334,7 @@
 				CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */,
 				CE0061BF24C32E89000F66CD /* listClothes.png in Resources */,
 				CE0061C024C32E89000F66CD /* tags.png in Resources */,
+				CE80300F24D5BA8C00F16D22 /* delete.png in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
 				CE0061C124C32E89000F66CD /* menu.png in Resources */,
 				CE39E84B24BA95C400060239 /* Main.storyboard in Resources */,
