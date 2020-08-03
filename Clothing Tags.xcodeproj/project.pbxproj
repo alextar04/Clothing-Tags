@@ -15,14 +15,19 @@
 		CE0061C424C32F64000F66CD /* iconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C324C32F64000F66CD /* iconInApp.png */; };
 		CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0061C524C33D49000F66CD /* MenuViewController.swift */; };
 		CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C724C33D72000F66CD /* MenuScreen.storyboard */; };
+		CE10A0AE24D8A42D00F36D2F /* vkLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE10A0AC24D8A42D00F36D2F /* vkLogo.png */; };
+		CE10A0AF24D8A42D00F36D2F /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */; };
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
 		CE39E84B24BA95C400060239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84924BA95C400060239 /* Main.storyboard */; };
 		CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */; };
 		CE39E85024BA95CC00060239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84F24BA95CC00060239 /* Assets.xcassets */; };
 		CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */; };
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
+		CE3D7AFF24D83E360054FBB7 /* facebookLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */; };
 		CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */; };
 		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
+		CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */; };
+		CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */; };
 		CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */; };
 		CE80300F24D5BA8C00F16D22 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80300E24D5BA8C00F16D22 /* delete.png */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
@@ -60,6 +65,8 @@
 		CE0061C324C32F64000F66CD /* iconInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconInApp.png; sourceTree = "<group>"; };
 		CE0061C524C33D49000F66CD /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CE0061C724C33D72000F66CD /* MenuScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
+		CE10A0AC24D8A42D00F36D2F /* vkLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vkLogo.png; sourceTree = "<group>"; };
+		CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yandexLogo.png; sourceTree = "<group>"; };
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E84324BA95C400060239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE39E84A24BA95C400060239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,8 +77,11 @@
 		CE39E85924BA95CD00060239 /* Clothing TagsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clothing TagsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothing_TagsTests.swift; sourceTree = "<group>"; };
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogo.png; sourceTree = "<group>"; };
 		CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
 		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewController.swift; sourceTree = "<group>"; };
+		CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDescriptionCell.swift; sourceTree = "<group>"; };
 		CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesScreen.storyboard; sourceTree = "<group>"; };
 		CE80300E24D5BA8C00F16D22 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
@@ -166,13 +176,37 @@
 				CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */,
 				CEE3626B24D4358000848279 /* CategoryScreenCell.swift */,
 				CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */,
+				CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE67AA2C24D866CC00502A79 /* Clothes Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
+				CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */,
+				CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */,
+			);
+			path = "Clothes Controllers";
+			sourceTree = "<group>";
+		};
+		CE67AA2D24D8673400502A79 /* Clothes Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
+				CEE3626924D4341800848279 /* CategoryScreen.storyboard */,
+				CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */,
+			);
+			path = "Clothes Storyboards";
 			sourceTree = "<group>";
 		};
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CE10A0AC24D8A42D00F36D2F /* vkLogo.png */,
+				CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */,
+				CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */,
 				CE80300E24D5BA8C00F16D22 /* delete.png */,
 				CE0061C324C32F64000F66CD /* iconInApp.png */,
 				CE0061B924C32E89000F66CD /* add.png */,
@@ -203,11 +237,10 @@
 			isa = PBXGroup;
 			children = (
 				CE43E5F524D2F3000001D4DB /* Cells */,
+				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
-				CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */,
-				CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */,
-				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
+				CE67AA2C24D866CC00502A79 /* Clothes Controllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -217,10 +250,8 @@
 			children = (
 				CE39E85124BA95CC00060239 /* LaunchScreen.storyboard */,
 				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
-				CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */,
 				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
-				CEE3626924D4341800848279 /* CategoryScreen.storyboard */,
-				CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */,
+				CE67AA2D24D8673400502A79 /* Clothes Storyboards */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -336,9 +367,12 @@
 				CE0061C024C32E89000F66CD /* tags.png in Resources */,
 				CE80300F24D5BA8C00F16D22 /* delete.png in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
+				CE10A0AE24D8A42D00F36D2F /* vkLogo.png in Resources */,
+				CE3D7AFF24D83E360054FBB7 /* facebookLogo.png in Resources */,
 				CE0061C124C32E89000F66CD /* menu.png in Resources */,
 				CE39E84B24BA95C400060239 /* Main.storyboard in Resources */,
 				CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */,
+				CE10A0AF24D8A42D00F36D2F /* yandexLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +402,8 @@
 				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
+				CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */,
+				CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

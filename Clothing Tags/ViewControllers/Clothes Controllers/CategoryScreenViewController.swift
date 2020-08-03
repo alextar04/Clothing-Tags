@@ -20,7 +20,7 @@ class CategoryScreenViewController: UIViewController {
         // CORE DATA
         loadDataCategory()
         navigationBarTuning()
-        loadCategoryScreen()
+        loadCategoryTable()
     }
     
     func loadDataCategory(){
@@ -55,7 +55,7 @@ class CategoryScreenViewController: UIViewController {
         }
     }
     
-    func loadCategoryScreen(){
+    func loadCategoryTable(){
         // CORE DATA
         let recievedData : [ClothesData] = [
             ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
@@ -95,8 +95,12 @@ class CategoryScreenViewController: UIViewController {
         }.disposed(by: disposeBag)
         
         tableClothes.rx.modelSelected(ClothesData.self).subscribe(
-        onNext: {
-            print("You selected: \($0.nameClothes)")
+        onNext: {selectedItem in
+            let clothesScreenViewController = UIStoryboard(name: "ClothesScreen", bundle: nil).instantiateViewController(withIdentifier: "ClothesScreenID") as? ClothesScreenViewController
+            
+            if let clothesScreen = clothesScreenViewController{
+                self.navigationController?.pushViewController(clothesScreen, animated: true)
+            }
         }).disposed(by: disposeBag)
     }
 
