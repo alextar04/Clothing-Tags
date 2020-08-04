@@ -34,6 +34,12 @@
 		CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F11024C2074E00A2ABBE /* RxCocoa */; };
 		CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */; };
 		CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */; };
+		CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */; };
+		CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */; };
+		CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */; };
+		CEA2BC6F24D9A6DA002C5FD5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6E24D9A6DA002C5FD5 /* camera.png */; };
+		CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */; };
+		CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */; };
 		CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */; };
 		CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAE938724BF5AF200A47DAA /* RootViewController.swift */; };
 		CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */; };
@@ -86,6 +92,12 @@
 		CE80300E24D5BA8C00F16D22 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
+		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
+		CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCathegoryScreen.storyboard; sourceTree = "<group>"; };
+		CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagListChooseScreen.storyboard; sourceTree = "<group>"; };
+		CEA2BC6E24D9A6DA002C5FD5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
+		CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsImage.swift; sourceTree = "<group>"; };
 		CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938724BF5AF200A47DAA /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -147,6 +159,7 @@
 		CE39E84224BA95C400060239 /* Clothing Tags */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2BC7024D9C7A8002C5FD5 /* Utils */,
 				CEC4183024C2263500ECA02E /* Fonts */,
 				CEA9138924C1E4DD00CCA7E7 /* Model */,
 				CEA9138824C1E4BA00CCA7E7 /* ViewModels */,
@@ -204,6 +217,7 @@
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEA2BC6E24D9A6DA002C5FD5 /* camera.png */,
 				CE10A0AC24D8A42D00F36D2F /* vkLogo.png */,
 				CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */,
 				CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */,
@@ -217,6 +231,32 @@
 				CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		CEA2BC6224D99A54002C5FD5 /* Add Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */,
+				CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */,
+				CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */,
+			);
+			path = "Add Storyboard";
+			sourceTree = "<group>";
+		};
+		CEA2BC6B24D99B79002C5FD5 /* Add Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Add Controllers";
+			sourceTree = "<group>";
+		};
+		CEA2BC7024D9C7A8002C5FD5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */,
+				CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		CEA9138824C1E4BA00CCA7E7 /* ViewModels */ = {
@@ -241,6 +281,7 @@
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
 				CE67AA2C24D866CC00502A79 /* Clothes Controllers */,
+				CEA2BC6B24D99B79002C5FD5 /* Add Controllers */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -252,6 +293,7 @@
 				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
 				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
 				CE67AA2D24D8673400502A79 /* Clothes Storyboards */,
+				CEA2BC6224D99A54002C5FD5 /* Add Storyboard */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -358,6 +400,7 @@
 				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
+				CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */,
 				CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */,
 				CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */,
 				CE0061BE24C32E89000F66CD /* add.png in Resources */,
@@ -366,12 +409,15 @@
 				CE0061BF24C32E89000F66CD /* listClothes.png in Resources */,
 				CE0061C024C32E89000F66CD /* tags.png in Resources */,
 				CE80300F24D5BA8C00F16D22 /* delete.png in Resources */,
+				CEA2BC6F24D9A6DA002C5FD5 /* camera.png in Resources */,
+				CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
 				CE10A0AE24D8A42D00F36D2F /* vkLogo.png in Resources */,
 				CE3D7AFF24D83E360054FBB7 /* facebookLogo.png in Resources */,
 				CE0061C124C32E89000F66CD /* menu.png in Resources */,
 				CE39E84B24BA95C400060239 /* Main.storyboard in Resources */,
 				CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */,
+				CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */,
 				CE10A0AF24D8A42D00F36D2F /* yandexLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,7 +437,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */,
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
+				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,

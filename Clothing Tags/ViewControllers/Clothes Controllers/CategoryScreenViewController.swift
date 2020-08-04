@@ -19,31 +19,15 @@ class CategoryScreenViewController: UIViewController {
         
         // CORE DATA
         loadDataCategory()
-        navigationBarTuning()
+        BaseSettings.navigationBarTuning(navigationController: self.navigationController,
+                                         navigationItem: navigationItem,
+                                         nameTop: "Носки")
         loadCategoryTable()
     }
     
     func loadDataCategory(){
         
     }
-    
-    func navigationBarTuning(){
-        // Надпись по центру панели
-        let labelCenterName = UILabel()
-        labelCenterName.text = "Носки"
-        labelCenterName.backgroundColor = .clear
-        labelCenterName.font = UIFont(name: "a_BosaNova", size: 18)
-        labelCenterName.sizeToFit()
-        navigationItem.titleView = labelCenterName
-        
-        // Обновление цвета кнопки назад
-        self.navigationController?.navigationBar.tintColor = .black
-        if let viewControllers = self.navigationController?.viewControllers {
-            let previousVC: UIViewController? = viewControllers.count >= 2 ? viewControllers[viewControllers.count - 2] : nil
-            previousVC?.title = ""
-        }
-    }
-    
     
     // CORE DATA
     class ClothesData{
@@ -74,14 +58,9 @@ class CategoryScreenViewController: UIViewController {
             
             cellClothes.nameClothes.text = item.nameClothes
             cellClothes.tagsCollection.dataSource = nil
+            cellClothes.photoClothes.roundingImageCell(newPicture: item.pictureClothes)
             
-            // Округление изображения одежды в ячейке
-            cellClothes.photoClothes.image = item.pictureClothes
-            cellClothes.photoClothes.layer.cornerRadius = cellClothes.photoClothes.frame.height/2
-            cellClothes.photoClothes.layer.borderColor = UIColor.black.cgColor
-            cellClothes.photoClothes.layer.borderWidth = 1
-            
-            // Cвязать теги одежды и коллекцию тегов ячейки
+            // Cвязывание теги одежды и коллекцию тегов ячейки
             let tagsData = Observable.just(recivedDataTags[row])
             tagsData.bind(to: cellClothes.tagsCollection.rx.items){
                 collection, place, image in

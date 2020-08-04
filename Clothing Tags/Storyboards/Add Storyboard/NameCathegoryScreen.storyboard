@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="bosaNova.ttf">
+            <string>ABosaNova</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="SBQ-V7-CYy">
+            <objects>
+                <viewController id="icV-Ur-UGY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iQf-Y8-koM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TqY-lC-j5Q">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d7L-9B-laP">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберете категорию" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvY-Nc-zwA">
+                                                <rect key="frame" x="104.66666666666669" y="150" width="166" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="166" id="0dV-AU-vhB"/>
+                                                    <constraint firstAttribute="height" constant="46" id="T4c-FC-ECo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название одежды" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dv-FX-L9a">
+                                                <rect key="frame" x="27" y="108" width="322" height="34"/>
+                                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnn-tn-4ag">
+                                                <rect key="frame" x="27" y="238" width="0.0" height="216"/>
+                                            </pickerView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Нажмите для выбора" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQ1-p4-QqK">
+                                                <rect key="frame" x="27" y="204" width="322" height="34"/>
+                                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Укажите название" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdZ-Us-qDh">
+                                                <rect key="frame" x="114" y="61" width="147" height="39"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="39" id="XIg-hQ-bki"/>
+                                                    <constraint firstAttribute="width" constant="147" id="atp-eC-6O3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название категории" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1A-xJ-zy1">
+                                                <rect key="frame" x="27" y="262" width="322" height="34"/>
+                                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="jQ1-p4-QqK" secondAttribute="trailing" constant="26" id="5PP-Gk-ryS"/>
+                                            <constraint firstItem="5dv-FX-L9a" firstAttribute="leading" secondItem="d7L-9B-laP" secondAttribute="leading" constant="27" id="6dk-B0-lD6"/>
+                                            <constraint firstItem="CdZ-Us-qDh" firstAttribute="top" secondItem="d7L-9B-laP" secondAttribute="top" constant="61" id="9e6-t4-bkl"/>
+                                            <constraint firstItem="5dv-FX-L9a" firstAttribute="top" secondItem="CdZ-Us-qDh" secondAttribute="bottom" constant="8" id="BzL-xm-Njf"/>
+                                            <constraint firstItem="jQ1-p4-QqK" firstAttribute="leading" secondItem="d7L-9B-laP" secondAttribute="leading" constant="27" id="UfN-dv-Xyu"/>
+                                            <constraint firstAttribute="trailing" secondItem="5dv-FX-L9a" secondAttribute="trailing" constant="26" id="XrU-KN-9bd"/>
+                                            <constraint firstItem="lvY-Nc-zwA" firstAttribute="centerX" secondItem="d7L-9B-laP" secondAttribute="centerX" id="a5S-F8-zF5"/>
+                                            <constraint firstItem="O1A-xJ-zy1" firstAttribute="top" secondItem="jQ1-p4-QqK" secondAttribute="bottom" constant="24" id="d2r-m6-qlc"/>
+                                            <constraint firstItem="lnn-tn-4ag" firstAttribute="top" secondItem="jQ1-p4-QqK" secondAttribute="bottom" id="gBi-Ky-nzJ"/>
+                                            <constraint firstItem="CdZ-Us-qDh" firstAttribute="centerX" secondItem="d7L-9B-laP" secondAttribute="centerX" id="hNs-QC-BG2"/>
+                                            <constraint firstItem="lvY-Nc-zwA" firstAttribute="top" secondItem="5dv-FX-L9a" secondAttribute="bottom" constant="8" id="mmb-41-jA7"/>
+                                            <constraint firstAttribute="trailing" secondItem="lnn-tn-4ag" secondAttribute="trailing" constant="26" id="nzC-Ba-kwO"/>
+                                            <constraint firstItem="jQ1-p4-QqK" firstAttribute="top" secondItem="lvY-Nc-zwA" secondAttribute="bottom" constant="8" id="sbg-6X-K8U"/>
+                                            <constraint firstItem="O1A-xJ-zy1" firstAttribute="leading" secondItem="d7L-9B-laP" secondAttribute="leading" constant="27" id="uU3-Oq-0d3"/>
+                                            <constraint firstAttribute="trailing" secondItem="O1A-xJ-zy1" secondAttribute="trailing" constant="26" id="v4S-rj-skw"/>
+                                            <constraint firstItem="lnn-tn-4ag" firstAttribute="leading" secondItem="d7L-9B-laP" secondAttribute="leading" constant="27" id="zfj-h0-ISk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="d7L-9B-laP" firstAttribute="leading" secondItem="TqY-lC-j5Q" secondAttribute="leading" id="ZOp-Vl-RaV"/>
+                                    <constraint firstAttribute="bottom" secondItem="d7L-9B-laP" secondAttribute="bottom" id="g6u-J0-YN9"/>
+                                    <constraint firstAttribute="trailing" secondItem="d7L-9B-laP" secondAttribute="trailing" id="p8K-vC-xSb"/>
+                                    <constraint firstItem="d7L-9B-laP" firstAttribute="top" secondItem="TqY-lC-j5Q" secondAttribute="top" id="piz-gt-Lfn"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-Pc-hHR">
+                                <rect key="frame" x="15" y="730" width="344" height="34"/>
+                                <color key="backgroundColor" red="0.73090312759999998" green="0.88789188409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="25s-7j-Q5O"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                <state key="normal" title="Далее">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="TqY-lC-j5Q" firstAttribute="trailing" secondItem="qpT-DS-OZL" secondAttribute="trailing" id="Fod-uc-APP"/>
+                            <constraint firstItem="4wa-Pc-hHR" firstAttribute="leading" secondItem="qpT-DS-OZL" secondAttribute="leading" constant="15" id="HPe-d8-HQE"/>
+                            <constraint firstItem="TqY-lC-j5Q" firstAttribute="leading" secondItem="qpT-DS-OZL" secondAttribute="leading" id="I0n-nh-58U"/>
+                            <constraint firstItem="TqY-lC-j5Q" firstAttribute="top" secondItem="qpT-DS-OZL" secondAttribute="top" id="JTo-lo-Vt1"/>
+                            <constraint firstItem="TqY-lC-j5Q" firstAttribute="bottom" secondItem="qpT-DS-OZL" secondAttribute="bottom" id="OYx-pT-Khq"/>
+                            <constraint firstItem="d7L-9B-laP" firstAttribute="width" secondItem="iQf-Y8-koM" secondAttribute="width" id="cVt-QE-DXh"/>
+                            <constraint firstItem="d7L-9B-laP" firstAttribute="height" secondItem="iQf-Y8-koM" secondAttribute="height" priority="250" id="lTa-8A-aaJ"/>
+                            <constraint firstItem="qpT-DS-OZL" firstAttribute="trailing" secondItem="4wa-Pc-hHR" secondAttribute="trailing" constant="16" id="muR-rY-3QZ"/>
+                            <constraint firstItem="qpT-DS-OZL" firstAttribute="bottom" secondItem="4wa-Pc-hHR" secondAttribute="bottom" constant="14" id="vCf-Ic-bCs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qpT-DS-OZL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEH-sb-MxP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>

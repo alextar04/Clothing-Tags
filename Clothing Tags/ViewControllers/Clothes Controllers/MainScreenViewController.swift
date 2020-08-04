@@ -21,33 +21,11 @@ class MainScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationBarTuning()
+        //navigationBarTuning()
+        BaseSettings.navigationBarTuning(navigationController: self.navigationController,
+                                         navigationItem: navigationItem,
+                                         nameTop: "Мой гардероб")
         loadMainMenu()
-    }
-    
-    
-    func navigationBarTuning(){
-        // Цвет панели
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        
-        // Надпись по центру панели
-        let labelCenterName = UILabel()
-        labelCenterName.text = "Мой гардероб"
-        labelCenterName.backgroundColor = .clear
-        labelCenterName.font = UIFont(name: "a_BosaNova", size: 18)
-        labelCenterName.sizeToFit()
-        navigationItem.titleView = labelCenterName
-        
-        // Иконка левого меню
-        let menuButton = UIButton(type: .custom)
-        menuButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
-        menuButton.setImage(UIImage(named: "menu.png"), for: .normal)
-        
-        // Открытие меню по нажатию кнопки
-        menuButton.addTarget(self, action: #selector(loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
-        
-        //navigationController?.navigationBar.shadowImage = UIImage()
     }
     
     // CORE DATA

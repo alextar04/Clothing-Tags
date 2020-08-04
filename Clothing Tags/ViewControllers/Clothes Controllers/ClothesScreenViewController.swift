@@ -29,27 +29,15 @@ class ClothesScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarTuning()
+        
+        
+        //navigationBarTuning()
+        BaseSettings.navigationBarTuning(navigationController: self.navigationController,
+                                         navigationItem: navigationItem,
+                                         nameTop: "Одежда")
         loadClothesScreen()
     }
 
-    
-    func navigationBarTuning(){
-        // Надпись по центру панели
-        let labelCenterName = UILabel()
-        labelCenterName.text = "Одежда"
-        labelCenterName.backgroundColor = .clear
-        labelCenterName.font = UIFont(name: "a_BosaNova", size: 18)
-        labelCenterName.sizeToFit()
-        navigationItem.titleView = labelCenterName
-        
-        // Обновление цвета кнопки назад
-        self.navigationController?.navigationBar.tintColor = .black
-        if let viewControllers = self.navigationController?.viewControllers {
-            let previousVC: UIViewController? = viewControllers.count >= 2 ? viewControllers[viewControllers.count - 2] : nil
-            previousVC?.title = ""
-        }
-    }
     
     // CORE DATA
     class TagData{
@@ -68,9 +56,7 @@ class ClothesScreenViewController: UIViewController {
         
         // Округление кнопок для публикации в заметках соцсети
         [facebookButton, vkButton, yandexButton].map{
-            $0!.imageView?.layer.cornerRadius = ($0!.imageView?.frame.height)!/2
-            $0!.imageView?.layer.borderColor = UIColor.black.cgColor
-            $0!.imageView?.layer.borderWidth = 1
+            $0!.imageView?.roundingImageCell(newPicture: nil)
         }
         
         // CORE DATA
