@@ -34,6 +34,7 @@
 		CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F11024C2074E00A2ABBE /* RxCocoa */; };
 		CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */; };
 		CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */; };
+		CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8EC24DBBE90004E8E94 /* AboutApplicationScreen.storyboard */; };
 		CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */; };
 		CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */; };
 		CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */; };
@@ -92,6 +93,7 @@
 		CE80300E24D5BA8C00F16D22 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
+		CE90C8EC24DBBE90004E8E94 /* AboutApplicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApplicationScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCathegoryScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagListChooseScreen.storyboard; sourceTree = "<group>"; };
@@ -233,14 +235,22 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		CEA2BC6224D99A54002C5FD5 /* Add Storyboard */ = {
+		CE90C8EB24DBBE1C004E8E94 /* About Application Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				CE90C8EC24DBBE90004E8E94 /* AboutApplicationScreen.storyboard */,
+			);
+			path = "About Application Storyboard";
+			sourceTree = "<group>";
+		};
+		CEA2BC6224D99A54002C5FD5 /* Add Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */,
 				CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */,
 				CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */,
 			);
-			path = "Add Storyboard";
+			path = "Add Storyboards";
 			sourceTree = "<group>";
 		};
 		CEA2BC6B24D99B79002C5FD5 /* Add Controllers */ = {
@@ -293,7 +303,8 @@
 				CEAE938924BF5F8700A47DAA /* SplashScreen.storyboard */,
 				CE0061C724C33D72000F66CD /* MenuScreen.storyboard */,
 				CE67AA2D24D8673400502A79 /* Clothes Storyboards */,
-				CEA2BC6224D99A54002C5FD5 /* Add Storyboard */,
+				CEA2BC6224D99A54002C5FD5 /* Add Storyboards */,
+				CE90C8EB24DBBE1C004E8E94 /* About Application Storyboard */,
 				CE39E84924BA95C400060239 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -398,6 +409,7 @@
 				CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */,
 				CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */,
 				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
+				CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
 				CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */,
