@@ -51,7 +51,12 @@ class MenuViewController: UIViewController{
         
         tableView.rx.modelSelected(MenuData.self).subscribe(
             onNext: {
-                print("You selected: \($0.nameAction)")
+                switch $0.nameAction{
+                case "Добавить одежду":
+                    AppDelegate.appDelegateLink.rootViewController.switchToAddTagScreen()
+                default:
+                    print("You selected: \($0.nameAction)")
+                }
             }).disposed(by: disposeBag)
     }
 }

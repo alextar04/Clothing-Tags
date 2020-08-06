@@ -51,12 +51,13 @@ class RootViewController: UIViewController {
         currentViewController = newController
     }
     
-    // MARK: Переход в главный экран
+    // MARK: Переход в главный экран: Мой гардероб
     func switchToMainScreen(){
         
         let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
         let newRootController = UINavigationController(rootViewController: mainScreenController)
-
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
+        
         newChildViewController(newController: newRootController, animationClosure: { UIView.transition(with: self.view, duration: 0.5, options: [.transitionFlipFromRight, .allowAnimatedContent], animations: {self.view.addSubview(newRootController.view)},
             completion: nil)}
         )
@@ -129,12 +130,8 @@ class RootViewController: UIViewController {
         
         switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: offsetRootView)
         
-        // MARK: Тень на окно при открытии меню
-        self.currentViewController.view.layer.shadowColor = UIColor.gray.cgColor
-        self.currentViewController.view.layer.shadowOpacity = 0.9
-        self.currentViewController.view.layer.shadowOffset = CGSize.zero
-        self.currentViewController.view.layer.shadowRadius = 6
-        
+        // Тень на окно при открытии меню
+        self.currentViewController.shadowForScreen()
         
     }
     
@@ -162,7 +159,10 @@ class RootViewController: UIViewController {
         }
     }
     
-    
+    // MARK: Переход в раздел: Добавить бирку
+    func switchToAddTagScreen(){
+        print("Перешли в раздел - добавить бирку")
+    }
 }
 
 
