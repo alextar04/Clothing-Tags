@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Photo Screen View Controller-->
         <scene sceneID="yIh-MI-fXb">
             <objects>
-                <viewController id="Kr4-CT-lsV" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoScreenID" automaticallyAdjustsScrollViewInsets="NO" id="Kr4-CT-lsV" customClass="PhotoScreenViewController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Maa-bi-fhG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqt-82-PuT">
-                                                <rect key="frame" x="8" y="25" width="359" height="159"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="159"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="159" id="LG0-9A-NWo"/>
@@ -37,7 +37,7 @@
                                                 <state key="normal" image="camera.png"/>
                                             </button>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-DX-pTj">
-                                                <rect key="frame" x="8" y="192" width="359" height="475"/>
+                                                <rect key="frame" x="8" y="175" width="359" height="492"/>
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R9j-xV-KS6">
                                                     <size key="itemSize" width="113" height="113"/>
@@ -46,7 +46,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AL5-ei-Qb1">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoScreenCell" id="AL5-ei-Qb1" customClass="ScreenPhotosCell" customModule="Clothing_Tags" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="10" width="113" height="113"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xn9-jk-LJA">
@@ -59,6 +59,9 @@
                                                                 </imageView>
                                                             </subviews>
                                                         </collectionViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="imageFromGallery" destination="0Y1-CR-9oc" id="mUG-VY-OD1"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
@@ -70,7 +73,7 @@
                                             <constraint firstItem="oqt-82-PuT" firstAttribute="leading" secondItem="oGT-L6-Tk9" secondAttribute="leading" constant="8" id="3ww-1k-3EH"/>
                                             <constraint firstAttribute="trailing" secondItem="oqt-82-PuT" secondAttribute="trailing" constant="8" id="ANB-4M-W3F"/>
                                             <constraint firstAttribute="trailing" secondItem="vcC-DX-pTj" secondAttribute="trailing" constant="8" id="E5u-b0-wHK"/>
-                                            <constraint firstItem="oqt-82-PuT" firstAttribute="top" secondItem="oGT-L6-Tk9" secondAttribute="top" constant="25" id="lLD-3E-XOl"/>
+                                            <constraint firstItem="oqt-82-PuT" firstAttribute="top" secondItem="oGT-L6-Tk9" secondAttribute="top" constant="8" id="lLD-3E-XOl"/>
                                             <constraint firstItem="vcC-DX-pTj" firstAttribute="top" secondItem="oqt-82-PuT" secondAttribute="bottom" constant="8" id="t3X-tf-Sqa"/>
                                         </constraints>
                                     </view>
@@ -96,6 +99,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nFC-9I-87O" firstAttribute="trailing" secondItem="VAH-Ks-qw0" secondAttribute="trailing" constant="16" id="0hk-QA-8Cm"/>
                             <constraint firstItem="oGT-L6-Tk9" firstAttribute="height" secondItem="Maa-bi-fhG" secondAttribute="height" priority="250" id="3ua-Ma-BBg"/>
@@ -108,9 +112,22 @@
                             <constraint firstItem="nFC-9I-87O" firstAttribute="bottom" secondItem="VAH-Ks-qw0" secondAttribute="bottom" constant="14" id="tvX-go-XaD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nFC-9I-87O"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uJO-th-Xpf" appends="YES" id="qp3-Iu-MaY"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="buttonNewPicture" destination="oqt-82-PuT" id="SiQ-3H-Jzs"/>
+                        <outlet property="buttonNextScreen" destination="VAH-Ks-qw0" id="aps-rS-dWW"/>
+                        <outlet property="collectionExistingPhotos" destination="vcC-DX-pTj" id="LEE-v3-bDm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh4-Al-Dx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uJO-th-Xpf">
+                    <connections>
+                        <action selector="swipeDetected:" destination="Kr4-CT-lsV" id="31r-cH-pQg"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="124" y="60.719640179910051"/>
         </scene>

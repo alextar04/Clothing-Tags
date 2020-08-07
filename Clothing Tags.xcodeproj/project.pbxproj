@@ -26,6 +26,8 @@
 		CE3D7AFF24D83E360054FBB7 /* facebookLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */; };
 		CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */; };
 		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
+		CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */; };
+		CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */; };
 		CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */; };
 		CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */; };
 		CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */; };
@@ -90,6 +92,8 @@
 		CE3D7AFE24D83E360054FBB7 /* facebookLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebookLogo.png; sourceTree = "<group>"; };
 		CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
 		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoScreenViewController.swift; path = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
+		CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPhotosCell.swift; sourceTree = "<group>"; };
 		CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewController.swift; sourceTree = "<group>"; };
 		CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDescriptionCell.swift; sourceTree = "<group>"; };
 		CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesScreen.storyboard; sourceTree = "<group>"; };
@@ -193,13 +197,30 @@
 		CE43E5F524D2F3000001D4DB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */,
+				CE571D8124DDA1DE0071AB22 /* Main Cells */,
+				CE571D8024DDA1AA0071AB22 /* Add Cells */,
 				CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE571D8024DDA1AA0071AB22 /* Add Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */,
+			);
+			path = "Add Cells";
+			sourceTree = "<group>";
+		};
+		CE571D8124DDA1DE0071AB22 /* Main Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */,
 				CEE3626B24D4358000848279 /* CategoryScreenCell.swift */,
 				CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */,
 				CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */,
 			);
-			path = Cells;
+			path = "Main Cells";
 			sourceTree = "<group>";
 		};
 		CE67AA2C24D866CC00502A79 /* Clothes Controllers */ = {
@@ -292,6 +313,7 @@
 		CEA2BC6B24D99B79002C5FD5 /* Add Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */,
 			);
 			path = "Add Controllers";
 			sourceTree = "<group>";
@@ -492,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */,
 				CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */,
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
@@ -502,6 +525,7 @@
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
+				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,
 				CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */,
 				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,

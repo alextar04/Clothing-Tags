@@ -27,6 +27,15 @@ class BaseSettings{
             let previousVC: UIViewController? = viewControllers.count >= 2 ? viewControllers[viewControllers.count - 2] : nil
             previousVC?.title = ""
         }
+        
+        // Иконка левого меню
+        let menuButton = UIButton(type: .custom)
+        menuButton.frame = CGRect(x: 0.0, y: 0.0, width: 20, height: 20)
+        menuButton.setImage(UIImage(named: "menu.png"), for: .normal)
+
+         // Открытие меню по нажатию кнопки
+        /*menuButton.addTarget(navigationController, action: #selector(loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)*/
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
     }
     
     static func updateBarTintColor(navigationController : UINavigationController){

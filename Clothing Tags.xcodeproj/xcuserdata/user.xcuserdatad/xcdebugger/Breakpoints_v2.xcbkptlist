@@ -142,8 +142,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "switcherMenuViewController(needShowMenu:distanceSwiped:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,9 +286,89 @@
             filePath = "Clothing Tags/ViewControllers/Clothes Controllers/ClothesScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "loadClothesScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC961D80-09A0-459F-9731-13B38198F183"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "switcherMenuViewController(needShowMenu:distanceSwiped:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F32CA3E3-E69A-4CA0-AF77-8A17E42C2751"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "loadNewPicturePart()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F32CA3E3-E69A-4CA0-AF77-8A17E42C2751 - d50c6c9b285adc76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_Tags.PhotoScreenViewController.loadNewPicturePart() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/Add%20Controllers/PhotoScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "F32CA3E3-E69A-4CA0-AF77-8A17E42C2751 - 4c4427dbd4669da6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Clothing_Tags.PhotoScreenViewController.loadNewPicturePart() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/Add%20Controllers/PhotoScreenViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "541D1C30-3345-4CAA-93FF-6EDF78D0ECFF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

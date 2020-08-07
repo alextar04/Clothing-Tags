@@ -53,7 +53,6 @@ class RootViewController: UIViewController {
     
     // MARK: Переход в главный экран: Мой гардероб
     func switchToMainScreen(){
-        
         let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
         let newRootController = UINavigationController(rootViewController: mainScreenController)
         BaseSettings.updateBarTintColor(navigationController: newRootController)
@@ -62,7 +61,24 @@ class RootViewController: UIViewController {
             completion: nil)}
         )
         updateRootViewController(newController: newRootController)
+        
     }
+    
+    // MARK: Переход в раздел: Добавить бирку
+    func switchToAddTagScreen(){
+        let addScreenController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as! PhotoScreenViewController
+        let newRootController = UINavigationController(rootViewController: addScreenController)
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
+        
+        newChildViewController(newController: newRootController, animationClosure: nil)
+        updateRootViewController(newController: newRootController)
+        
+        self.currentViewController.shadowForScreen()
+        self.currentViewController.view.frame.origin.x = 240
+        needShowMenu = false
+        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
+    }
+    
     
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!
@@ -150,18 +166,14 @@ class RootViewController: UIViewController {
         }
         else{
             UIView.animate(withDuration: 0.2,
-            delay: 0,
+                           delay: 0,
             usingSpringWithDamping: 0.8,
             initialSpringVelocity: 0,
             options: .curveEaseInOut,
-            animations: { self.currentViewController.view.frame.origin.x = 0},
+            animations: { self.currentViewController.view.frame.origin.x = 0
+                },
             completion: nil)
         }
-    }
-    
-    // MARK: Переход в раздел: Добавить бирку
-    func switchToAddTagScreen(){
-        print("Перешли в раздел - добавить бирку")
     }
 }
 

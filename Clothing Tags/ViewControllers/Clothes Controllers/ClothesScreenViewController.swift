@@ -30,8 +30,6 @@ class ClothesScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        //navigationBarTuning()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
                                          nameTop: "Одежда")
