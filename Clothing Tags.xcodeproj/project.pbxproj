@@ -53,6 +53,7 @@
 		CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */; };
 		CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
 		CEC4183524C22FE400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
+		CEE13E0E24DF17DA00FF3BB0 /* blueBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */; };
 		CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3626924D4341800848279 /* CategoryScreen.storyboard */; };
 		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
 		CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */; };
@@ -116,6 +117,7 @@
 		CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		CEC4183324C226D400ECA02E /* bosaNova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bosaNova.ttf; sourceTree = "<group>"; };
+		CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBorder.png; sourceTree = "<group>"; };
 		CEE3626924D4341800848279 /* CategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryScreen.storyboard; sourceTree = "<group>"; };
 		CEE3626B24D4358000848279 /* CategoryScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenCell.swift; sourceTree = "<group>"; };
 		CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCategoryCell.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */,
 				CEA2BC6E24D9A6DA002C5FD5 /* camera.png */,
 				CE10A0AC24D8A42D00F36D2F /* vkLogo.png */,
 				CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */,
@@ -472,6 +475,7 @@
 				CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */,
 				CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */,
 				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
+				CEE13E0E24DF17DA00FF3BB0 /* blueBorder.png in Resources */,
 				CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */,
 				CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,

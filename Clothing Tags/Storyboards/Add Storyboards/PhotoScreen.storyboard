@@ -36,9 +36,12 @@
                                                 </constraints>
                                                 <state key="normal" image="camera.png"/>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-DX-pTj">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-DX-pTj">
                                                 <rect key="frame" x="8" y="175" width="359" height="492"/>
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="492" id="Vyd-8x-KBA"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="R9j-xV-KS6">
                                                     <size key="itemSize" width="113" height="113"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -53,7 +56,11 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listClothes.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-CR-9oc">
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listClothes.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-CR-9oc">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pzn-We-PzU">
                                                                     <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 </imageView>
@@ -61,6 +68,7 @@
                                                         </collectionViewCellContentView>
                                                         <connections>
                                                             <outlet property="imageFromGallery" destination="0Y1-CR-9oc" id="mUG-VY-OD1"/>
+                                                            <outlet property="selectedBorder" destination="Pzn-We-PzU" id="tC1-se-TPv"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -120,6 +128,7 @@
                         <outlet property="buttonNewPicture" destination="oqt-82-PuT" id="SiQ-3H-Jzs"/>
                         <outlet property="buttonNextScreen" destination="VAH-Ks-qw0" id="aps-rS-dWW"/>
                         <outlet property="collectionExistingPhotos" destination="vcC-DX-pTj" id="LEE-v3-bDm"/>
+                        <outlet property="heightPhotoColleciton" destination="Vyd-8x-KBA" id="afq-dN-8ko"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh4-Al-Dx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,6 +142,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blueBorder.png" width="835" height="626"/>
         <image name="camera.png" width="100" height="100"/>
         <image name="listClothes.png" width="64" height="64"/>
     </resources>

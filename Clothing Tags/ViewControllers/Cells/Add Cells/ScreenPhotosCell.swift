@@ -11,4 +11,5 @@ import UIKit
 class ScreenPhotosCell: UICollectionViewCell {
     
     @IBOutlet weak var imageFromGallery: UIImageView!
+    @IBOutlet weak var selectedBorder: UIImageView!
 }
