@@ -11,15 +11,25 @@ import RxSwift
 import RxCocoa
 import Photos
 
-class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    @IBOutlet weak var collectionExistingPhotos: UICollectionView!
+class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
+    
     @IBOutlet weak var buttonNewPicture: UIButton!
-    @IBOutlet weak var buttonNextScreen: UIButton!
+    
+    @IBOutlet weak var collectionExistingPhotos: UICollectionView!
     @IBOutlet weak var heightPhotoColleciton: NSLayoutConstraint!
+    @IBOutlet weak var loadingCollectionWheel: UIActivityIndicatorView!
+    @IBOutlet weak var loadingCollectionWheelConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var buttonNextScreen: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var offsetFromBottomScrollView: NSLayoutConstraint!
     
     lazy var photoController = UIImagePickerController()
     lazy var currentSelectedIndex : IndexPath! = nil
+    
+    lazy var listPhotoInformation = [PHAsset]()
     lazy var imageStorage : [UIImageView] = []
+    var viewModelData = Variable<[UIImageView]>([])
     let disposeBag = DisposeBag()
     
     
@@ -31,11 +41,9 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                                          nameTop: "Выбор одежды")
         baseSettingsPhotoController()
         loadNewPicturePart()
+        
+        baseSettingsScrollingSettings()
         loadListPhotoPart()
-        // Сделать колбэк через добавление в массив как в методичке!
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, flags: .barrier){
-            print("Получилось")
-        }
     }
     
     // MARK: Базовая настройка экрана, отвечающего за доступ к камере
@@ -65,25 +73,55 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         // Паттерн Команда для кнопки далее и этого случая
     }
     
+    
+    
+    // MARK: Настройка скролящийся площади для появление колеса загрузки
+    func baseSettingsScrollingSettings(){
+        scrollView.rx.didScroll.subscribe(onNext: {
+            if self.loadingCollectionWheel.isHidden == true{
+                let scrollOffset = self.scrollView.contentOffset.y
+                
+                let startCollection = self.collectionExistingPhotos.frame.minY +
+                    UIApplication.shared.statusBarFrame.height +
+                    (self.navigationController?.navigationBar.frame.height)!
+                
+                let heightCollection = self.heightPhotoColleciton.constant
+                let offsetTable = startCollection + heightCollection - self.view.frame.height
+
+                if scrollOffset >= offsetTable + 48{
+                    print("Надо ставить колесико!")
+                    self.loadingCollectionWheelConstraint.constant = self.collectionExistingPhotos.frame.maxY - 35
+                    self.heightPhotoColleciton.constant += 55
+                    self.loadingCollectionWheel.isHidden = false
+                    self.loadListPhotoPart()
+                }
+            }
+        })
+    }
+    
+    
     // MARK: API-Загрузка библиотеки фото
-    func getImageFromLibrary(countLoadedPhotos : Int = 10,
+    func getImageFromLibrary(countLoadedPhotos : Int = 9,
                              completionClosure : @escaping (Result<[UIImageView],                                        ErrorPhotoScreen>)->Void){
-        var images = [PHAsset]()
-        var imagesResult = [UIImageView]()
+        var imagesInformationLocal = [PHAsset]()
+        var imagesResultLocal = [UIImageView]()
         
         let assets = PHAsset.fetchAssets(with: .image, options: nil)
         DispatchQueue.global().async {
-            assets.enumerateObjects{(object, count, stop) in
-                images.append(object)
+            // Однократная инициализация списка информации о фотографиях
+            if self.listPhotoInformation.count == 0{
+                assets.enumerateObjects{(object, count, stop) in
+                    self.listPhotoInformation.append(object)
+                }
+                self.listPhotoInformation.reverse()
             }
-            images.reverse()
-            images = Array(images[self.imageStorage.count...(self.imageStorage.count + countLoadedPhotos)])
+            imagesInformationLocal = Array(self.listPhotoInformation[self.imageStorage.count...(self.imageStorage.count + countLoadedPhotos)])
         
             let imageManager = PHCachingImageManager()
             let imageOptions = PHImageRequestOptions()
             imageOptions.isSynchronous = true
-            if images.count != 0 {
-                images.map{object in
+            if imagesInformationLocal.count != 0 {
+                imagesInformationLocal.map{object in
                     //let sizeImage = CGSize(width: 1334, height: 750)
                     let sizeImage = CGSize(width: 500, height: 500)
                     imageManager.requestImage(for: object, targetSize: sizeImage, contentMode: .aspectFit, options: imageOptions){
@@ -92,56 +130,71 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                             completionClosure(.failure(ErrorPhotoScreen(errorMessage: "Ошибка конвертирования изображения!")))
                             return
                         }
-                        imagesResult.append(UIImageView(image: convertedImage))
+                        imagesResultLocal.append(UIImageView(image: convertedImage))
                     }
                 }
             }
-            completionClosure(.success(imagesResult))
+            completionClosure(.success(imagesResultLocal))
         }
     }
     
+
+
     // MARK: Размещение коллекции фотографий
     func loadListPhotoPart(){
         getImageFromLibrary{ result in
             switch result{
                 case .success(let recievedData):
+                    let sizeImageStorageBeforeDownloading = self.imageStorage.count
+                    
                     let countCellsInString = self.view.frame.width / 118.0
-                    let countStringsCollection : Int = Int(ceil(CGFloat(recievedData.count) / countCellsInString))
+                    let countStringsCollection : Int = Int(ceil(CGFloat(self.imageStorage.count + recievedData.count) / countCellsInString))
+                    
                     recievedData.map{self.imageStorage.append($0)}
                     
                     DispatchQueue.main.async {
-                        self.heightPhotoColleciton.constant = 125.0 * CGFloat(countStringsCollection)
-                        let viewModelData = Observable.just(self.imageStorage)
-                        viewModelData.bind(to: self.collectionExistingPhotos.rx.items){
-                            collection, row, item in
-                            let cell = collection.dequeueReusableCell(withReuseIdentifier: "PhotoScreenCell", for: IndexPath.init(row: row, section: 0)) as! ScreenPhotosCell
+                        self.heightPhotoColleciton.constant = (123.0 * CGFloat(countStringsCollection)) + 55
+                        self.loadingCollectionWheel.isHidden = true
+                        self.collectionExistingPhotos.isHidden = false
                         
-                                cell.imageFromGallery.image = item.image
-                                cell.selectedBorder.isHidden = true
-                            
-                                return cell
-                        }.disposed(by: self.disposeBag)
-                        
-                        self.collectionExistingPhotos.rx.itemSelected.subscribe(
-                        onNext: {selectedIndex in
-                            // Отмена выделения старой ячейки
-                            if let index = self.currentSelectedIndex{
-                                let cell = self.collectionExistingPhotos.cellForItem(at: index) as! ScreenPhotosCell
-                                cell.selectedBorder.isHidden = true
-                            }
-                            // Выделение новой ячейки
-                            let cell = self.collectionExistingPhotos.cellForItem(at: selectedIndex) as! ScreenPhotosCell
-                            print(cell.selectedBorder.isHidden)
-                            cell.selectedBorder.isHidden = false
-                            self.currentSelectedIndex = selectedIndex
-                            
-                        }).disposed(by: self.disposeBag)
-                    }
+                        // Привязка требуется лишь единожды при инициализации
+                        if sizeImageStorageBeforeDownloading == 0{
+                            self.viewModelData.value = self.imageStorage
+                            self.viewModelData.asObservable().bind(to: self.collectionExistingPhotos.rx.items){
+                                    collection, row, item in
+                                    let cell = collection.dequeueReusableCell(withReuseIdentifier: "PhotoScreenCell", for: IndexPath.init(row: row, section: 0)) as! ScreenPhotosCell
+                                
+                                        cell.imageFromGallery.image = item.image
+                                        cell.selectedBorder.isHidden = true
+                                    
+                                        return cell
+                                }.disposed(by: self.disposeBag)
+                                
+                                self.collectionExistingPhotos.rx.itemSelected.subscribe(
+                                onNext: {selectedIndex in
+                                    // Отмена выделения старой ячейки
+                                    if let index = self.currentSelectedIndex{
+                                        let cell = self.collectionExistingPhotos.cellForItem(at: index) as! ScreenPhotosCell
+                                        cell.selectedBorder.isHidden = true
+                                    }
+                                    // Выделение новой ячейки
+                                    let cell = self.collectionExistingPhotos.cellForItem(at: selectedIndex) as! ScreenPhotosCell
+                                    print(cell.selectedBorder.isHidden)
+                                    cell.selectedBorder.isHidden = false
+                                    self.currentSelectedIndex = selectedIndex
+                                    
+                                }).disposed(by: self.disposeBag)
+                        }else{
+                            self.viewModelData.value = self.imageStorage
+                        }
+                }
                 case .failure(let error):
                     print("Ошибка \(error.errorMessage)")
             }
         }
     }
+    
+    
     
     func loadNextScreen(){
         print("Загрузка нового экрана")

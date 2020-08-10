@@ -36,7 +36,7 @@
                                                 </constraints>
                                                 <state key="normal" image="camera.png"/>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-DX-pTj">
+                                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-DX-pTj">
                                                 <rect key="frame" x="8" y="175" width="359" height="492"/>
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -73,14 +73,24 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3h6-6v-Qqz">
+                                                <rect key="frame" x="173.5" y="186" width="28" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="28" id="DZU-ED-gIx"/>
+                                                    <constraint firstAttribute="height" constant="20" id="rNK-fb-s5o"/>
+                                                </constraints>
+                                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="vcC-DX-pTj" firstAttribute="leading" secondItem="oGT-L6-Tk9" secondAttribute="leading" constant="8" id="0BN-Em-CkV"/>
                                             <constraint firstAttribute="bottom" secondItem="vcC-DX-pTj" secondAttribute="bottom" id="38g-HJ-tV2"/>
+                                            <constraint firstItem="3h6-6v-Qqz" firstAttribute="top" secondItem="oGT-L6-Tk9" secondAttribute="top" constant="186" id="3tU-Cz-8zF"/>
                                             <constraint firstItem="oqt-82-PuT" firstAttribute="leading" secondItem="oGT-L6-Tk9" secondAttribute="leading" constant="8" id="3ww-1k-3EH"/>
                                             <constraint firstAttribute="trailing" secondItem="oqt-82-PuT" secondAttribute="trailing" constant="8" id="ANB-4M-W3F"/>
                                             <constraint firstAttribute="trailing" secondItem="vcC-DX-pTj" secondAttribute="trailing" constant="8" id="E5u-b0-wHK"/>
+                                            <constraint firstItem="3h6-6v-Qqz" firstAttribute="centerX" secondItem="oGT-L6-Tk9" secondAttribute="centerX" id="ZAf-jI-q3r"/>
                                             <constraint firstItem="oqt-82-PuT" firstAttribute="top" secondItem="oGT-L6-Tk9" secondAttribute="top" constant="8" id="lLD-3E-XOl"/>
                                             <constraint firstItem="vcC-DX-pTj" firstAttribute="top" secondItem="oqt-82-PuT" secondAttribute="bottom" constant="8" id="t3X-tf-Sqa"/>
                                         </constraints>
@@ -129,6 +139,10 @@
                         <outlet property="buttonNextScreen" destination="VAH-Ks-qw0" id="aps-rS-dWW"/>
                         <outlet property="collectionExistingPhotos" destination="vcC-DX-pTj" id="LEE-v3-bDm"/>
                         <outlet property="heightPhotoColleciton" destination="Vyd-8x-KBA" id="afq-dN-8ko"/>
+                        <outlet property="loadingCollectionWheel" destination="3h6-6v-Qqz" id="jH6-8w-pfP"/>
+                        <outlet property="loadingCollectionWheelConstraint" destination="3tU-Cz-8zF" id="SP7-ob-HDn"/>
+                        <outlet property="offsetFromBottomScrollView" destination="dXr-MA-Ki3" id="fcl-7d-Rhz"/>
+                        <outlet property="scrollView" destination="6D5-v0-3pB" id="cMY-nu-ghx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yh4-Al-Dx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

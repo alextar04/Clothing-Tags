@@ -318,8 +318,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "loadNewPicturePart()"
             landmarkType = "7">
             <Locations>
@@ -366,8 +366,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "getImageFromLibrary(countLoadedPhotos:completionClosure:)"
             landmarkType = "7">
             <Locations>
@@ -414,8 +414,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "getImageFromLibrary(countLoadedPhotos:completionClosure:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -430,8 +430,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
          </BreakpointContent>
@@ -439,16 +439,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9D5510A5-0C50-4849-B0BB-D096F60CCB8E"
+            uuid = "DBA6AFE9-A0C9-4C1C-ACB0-80335770F481"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "baseSettingsScrollingSettings()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
