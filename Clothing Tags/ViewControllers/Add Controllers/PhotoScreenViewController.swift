@@ -29,7 +29,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     lazy var listPhotoInformation = [PHAsset]()
     lazy var imageStorage : [UIImageView] = []
-    var viewModelData = Variable<[UIImageView]>([])
+    var viewModelData = BehaviorRelay(value: [UIImageView]())
     let disposeBag = DisposeBag()
     
     
@@ -57,10 +57,11 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Размещение функционала камеры
     func loadNewPicturePart(){
+        
         buttonNewPicture.rx.tap.asObservable().subscribe(onNext: {
             self.photoController.sourceType = .camera
             self.present(self.photoController, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+        }).disposed(by: self.disposeBag)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -77,6 +78,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Настройка скролящийся площади для появление колеса загрузки
     func baseSettingsScrollingSettings(){
+        
         scrollView.rx.didScroll.subscribe(onNext: {
             if self.loadingCollectionWheel.isHidden == true{
                 let scrollOffset = self.scrollView.contentOffset.y
@@ -91,17 +93,16 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                 if scrollOffset >= offsetTable + 48{
                     print("Надо ставить колесико!")
                     self.loadingCollectionWheelConstraint.constant = self.collectionExistingPhotos.frame.maxY - 35
-                    self.heightPhotoColleciton.constant += 55
                     self.loadingCollectionWheel.isHidden = false
                     self.loadListPhotoPart()
                 }
             }
-        })
+        }).disposed(by: self.disposeBag)
     }
     
     
     // MARK: API-Загрузка библиотеки фото
-    func getImageFromLibrary(countLoadedPhotos : Int = 9,
+    func getImageFromLibrary(countLoadedPhotos : Int = 10,
                              completionClosure : @escaping (Result<[UIImageView],                                        ErrorPhotoScreen>)->Void){
         var imagesInformationLocal = [PHAsset]()
         var imagesResultLocal = [UIImageView]()
@@ -122,8 +123,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
             imageOptions.isSynchronous = true
             if imagesInformationLocal.count != 0 {
                 imagesInformationLocal.map{object in
-                    //let sizeImage = CGSize(width: 1334, height: 750)
-                    let sizeImage = CGSize(width: 500, height: 500)
+                    let sizeImage = CGSize(width: 200, height: 200)
                     imageManager.requestImage(for: object, targetSize: sizeImage, contentMode: .aspectFit, options: imageOptions){
                             image, _ in
                         guard let convertedImage = image else{
@@ -142,24 +142,30 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
 
     // MARK: Размещение коллекции фотографий
     func loadListPhotoPart(){
+        
         getImageFromLibrary{ result in
             switch result{
                 case .success(let recievedData):
                     let sizeImageStorageBeforeDownloading = self.imageStorage.count
                     
-                    let countCellsInString = self.view.frame.width / 118.0
-                    let countStringsCollection : Int = Int(ceil(CGFloat(self.imageStorage.count + recievedData.count) / countCellsInString))
+                    var sumWidthOfCellsInString = 0.0
+                    var countCellsInString = 0
+                    while sumWidthOfCellsInString < Double(self.collectionExistingPhotos.frame.width) {
+                        sumWidthOfCellsInString += (113.0 + 10.0)
+                        countCellsInString += 1
+                    }
+                    let countStringsCollection : Int = Int(ceil(CGFloat(self.imageStorage.count + recievedData.count) / CGFloat(countCellsInString)))
                     
                     recievedData.map{self.imageStorage.append($0)}
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async{
                         self.heightPhotoColleciton.constant = (123.0 * CGFloat(countStringsCollection)) + 55
                         self.loadingCollectionWheel.isHidden = true
                         self.collectionExistingPhotos.isHidden = false
                         
                         // Привязка требуется лишь единожды при инициализации
                         if sizeImageStorageBeforeDownloading == 0{
-                            self.viewModelData.value = self.imageStorage
+                            self.viewModelData.accept(self.imageStorage)
                             self.viewModelData.asObservable().bind(to: self.collectionExistingPhotos.rx.items){
                                     collection, row, item in
                                     let cell = collection.dequeueReusableCell(withReuseIdentifier: "PhotoScreenCell", for: IndexPath.init(row: row, section: 0)) as! ScreenPhotosCell
@@ -168,7 +174,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                                         cell.selectedBorder.isHidden = true
                                     
                                         return cell
-                                }.disposed(by: self.disposeBag)
+                            }.disposed(by: self.disposeBag)
                                 
                                 self.collectionExistingPhotos.rx.itemSelected.subscribe(
                                 onNext: {selectedIndex in
@@ -185,7 +191,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                                     
                                 }).disposed(by: self.disposeBag)
                         }else{
-                            self.viewModelData.value = self.imageStorage
+                            self.viewModelData.accept(self.imageStorage)
                         }
                 }
                 case .failure(let error):
