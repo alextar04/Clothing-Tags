@@ -67,6 +67,7 @@ class RootViewController: UIViewController {
     // MARK: Переход в раздел: Добавить бирку
     func switchToAddTagScreen(){
         let addScreenController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as! PhotoScreenViewController
+        addScreenController.nameScreen = "Выбор одежды"
         let newRootController = UINavigationController(rootViewController: addScreenController)
         BaseSettings.updateBarTintColor(navigationController: newRootController)
         

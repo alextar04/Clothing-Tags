@@ -12,7 +12,7 @@ import RxCocoa
 import Photos
 
 class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate{
-    
+    var nameScreen : String = ""
     @IBOutlet weak var buttonNewPicture: UIButton!
     
     @IBOutlet weak var collectionExistingPhotos: UICollectionView!
@@ -26,24 +26,26 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     lazy var photoController = UIImagePickerController()
     lazy var currentSelectedIndex : IndexPath! = nil
+    lazy var currentSelectedPhoto : UIImageView? = nil
     
     lazy var listPhotoInformation = [PHAsset]()
     lazy var imageStorage : [UIImageView] = []
     var viewModelData = BehaviorRelay(value: [UIImageView]())
     let disposeBag = DisposeBag()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: "Выбор одежды")
+                                         nameTop: nameScreen)//"Выбор одежды")
         baseSettingsPhotoController()
         loadNewPicturePart()
         
         baseSettingsScrollingSettings()
         loadListPhotoPart()
+        
+        setSettingsNextButton()
     }
     
     // MARK: Базовая настройка экрана, отвечающего за доступ к камере
@@ -71,7 +73,6 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         
         loadNextScreen()
         picker.dismiss(animated: true, completion: nil)
-        // Паттерн Команда для кнопки далее и этого случая
     }
     
     
@@ -185,9 +186,9 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                                     }
                                     // Выделение новой ячейки
                                     let cell = self.collectionExistingPhotos.cellForItem(at: selectedIndex) as! ScreenPhotosCell
-                                    print(cell.selectedBorder.isHidden)
                                     cell.selectedBorder.isHidden = false
                                     self.currentSelectedIndex = selectedIndex
+                                    self.currentSelectedPhoto = cell.imageFromGallery
                                     
                                 }).disposed(by: self.disposeBag)
                         }else{
@@ -201,9 +202,35 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
+    // MARK: Настройка кнопки "Далее"
+    func setSettingsNextButton(){
+        buttonNextScreen.rx.tap.bind{
+            self.loadNextScreen()
+        }
+    }
     
+    // MARK: Загрузка нового экрана
     func loadNextScreen(){
-        print("Загрузка нового экрана")
+        if nameScreen == "Выбор одежды"{
+            let tagPhotoScreenViewController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as? PhotoScreenViewController
+            tagPhotoScreenViewController?.nameScreen = "Выбор бирки"
+            Clothes.getInstance()?.photoClothes = currentSelectedPhoto
+            
+            if let tagPhotoScreen = tagPhotoScreenViewController{
+                self.navigationController?.pushViewController(tagPhotoScreen, animated: true)
+            }
+        }
+        
+        if nameScreen == "Выбор бирки"{
+            print(currentSelectedPhoto)
+            Clothes.getInstance()?.photoTag = currentSelectedPhoto
+            print("Загрузка экрана с названием и категорией")
+            
+            print("Заполнился объект")
+            print(Clothes.getInstance()?.photoClothes)
+            print(Clothes.getInstance()?.photoTag)
+        }
+        
     }
     
     @IBAction func swipeDetected(_ sender: UIPanGestureRecognizer) {
