@@ -41,7 +41,7 @@
 		CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */; };
 		CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */; };
 		CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */; };
-		CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */; };
+		CEA2BC6824D99AFF002C5FD5 /* NameCategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */; };
 		CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */; };
 		CEA2BC6F24D9A6DA002C5FD5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6E24D9A6DA002C5FD5 /* camera.png */; };
 		CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */; };
@@ -58,6 +58,7 @@
 		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
 		CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */; };
 		CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */; };
+		CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +108,7 @@
 		CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Reminder Screen.storyboard"; sourceTree = "<group>"; };
 		CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
 		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
-		CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCathegoryScreen.storyboard; sourceTree = "<group>"; };
+		CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCategoryScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagListChooseScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6E24D9A6DA002C5FD5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +124,7 @@
 		CEE3626B24D4358000848279 /* CategoryScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenCell.swift; sourceTree = "<group>"; };
 		CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCategoryCell.swift; sourceTree = "<group>"; };
 		CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesInformation.swift; sourceTree = "<group>"; };
+		CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCategoryScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,7 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */,
-				CEA2BC6724D99AFF002C5FD5 /* NameCathegoryScreen.storyboard */,
+				CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */,
 				CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */,
 			);
 			path = "Add Storyboards";
@@ -319,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */,
+				CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */,
 			);
 			path = "Add Controllers";
 			sourceTree = "<group>";
@@ -483,7 +486,7 @@
 				CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
-				CEA2BC6824D99AFF002C5FD5 /* NameCathegoryScreen.storyboard in Resources */,
+				CEA2BC6824D99AFF002C5FD5 /* NameCategoryScreen.storyboard in Resources */,
 				CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */,
 				CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */,
 				CE90C8F024DBD123004E8E94 /* TagsCollectionScreen.storyboard in Resources */,
@@ -529,6 +532,7 @@
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
+				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,

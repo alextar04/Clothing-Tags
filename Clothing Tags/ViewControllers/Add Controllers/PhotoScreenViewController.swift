@@ -38,7 +38,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
 
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)//"Выбор одежды")
+                                         nameTop: nameScreen)
         baseSettingsPhotoController()
         loadNewPicturePart()
         
@@ -70,7 +70,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         guard let editedImage = info[.editedImage] as? UIImage else{
             fatalError("Ошибка получения фотографии")
         }
-        
+        currentSelectedPhoto = UIImageView(image: editedImage)
         loadNextScreen()
         picker.dismiss(animated: true, completion: nil)
     }
@@ -212,9 +212,9 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: Загрузка нового экрана
     func loadNextScreen(){
         if nameScreen == "Выбор одежды"{
+            Clothes.getInstance()?.photoClothes = currentSelectedPhoto
             let tagPhotoScreenViewController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as? PhotoScreenViewController
             tagPhotoScreenViewController?.nameScreen = "Выбор бирки"
-            Clothes.getInstance()?.photoClothes = currentSelectedPhoto
             
             if let tagPhotoScreen = tagPhotoScreenViewController{
                 self.navigationController?.pushViewController(tagPhotoScreen, animated: true)
@@ -222,13 +222,13 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         if nameScreen == "Выбор бирки"{
-            print(currentSelectedPhoto)
             Clothes.getInstance()?.photoTag = currentSelectedPhoto
-            print("Загрузка экрана с названием и категорией")
+            let inputNameAndCategoryViewController = UIStoryboard(name: "NameCategoryScreen", bundle: nil).instantiateViewController(withIdentifier: "NameCategoryScreenID") as? NameCategoryScreenController
+            inputNameAndCategoryViewController?.nameScreen = "Выбор названия и категории"
             
-            print("Заполнился объект")
-            print(Clothes.getInstance()?.photoClothes)
-            print(Clothes.getInstance()?.photoTag)
+            if let inputInformationScreen = inputNameAndCategoryViewController{
+                self.navigationController?.pushViewController(inputInformationScreen, animated: true)
+            }
         }
         
     }
