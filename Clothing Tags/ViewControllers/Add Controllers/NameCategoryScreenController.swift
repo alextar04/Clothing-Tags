@@ -52,19 +52,25 @@ class NameCategoryScreenController : UIViewController{
     func loadCategoryPartScreen(){
         newCategoryField.isHidden = true
         
-        
-        let viewModelData = Observable.just(["(ПУСТО)", "Калготки", "Трусы", "Носки", "(Прочее)"])
-        viewModelData.bind(to: pickerCategoryList.rx.itemTitles){row, element in
-            return element
+        let viewModelData = ["Калготки", "Трусы", "Носки", "(Прочее)"]
+        let viewModelDataObservable = Observable.just(viewModelData)
+        viewModelDataObservable.bind(to: pickerCategoryList.rx.items){row, element, view in
+            let label = UILabel()
+            label.font = UIFont(name: "a_BosaNova", size: 15)
+            label.textAlignment = .center
+            label.text = element
+            return label
         }.disposed(by: disposeBag)
         
         categoryButton.rx.tap.bind{
             self.pickerCategoryList.isHidden = !self.pickerCategoryList.isHidden
-        }
+        }.disposed(by: disposeBag)
         
-        pickerCategoryList.rx.itemSelected.subscribe(onNext: {index, value in
-            self.categoryButton.titleLabel?.text = String(index)
-            }).disposed(by: disposeBag)
+        pickerCategoryList.rx.itemSelected.subscribe(onNext: {index in
+            self.categoryButton.setTitle(viewModelData[index.row], for: .normal)
+            self.newCategoryField.isHidden = (viewModelData[index.row] == "(Прочее)") ? false : true
+        }).disposed(by: disposeBag)
+        
     }
     
     // MARK: Загрузка части для кнопки перехода к дальнейшему окну
