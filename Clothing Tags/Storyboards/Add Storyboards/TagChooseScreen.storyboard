@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Tag Choose Screen Controller-->
         <scene sceneID="sEa-Ib-tHd">
             <objects>
-                <viewController id="EKl-uR-vCS" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseTagScreenID" automaticallyAdjustsScrollViewInsets="NO" id="EKl-uR-vCS" customClass="TagChooseScreenController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dNs-qa-Erf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,19 +32,27 @@
                                     <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="OQJ-TY-DtP">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ScreenChooseTagCell" id="OQJ-TY-DtP" customClass="ScreenChooseTagCell" customModule="Clothing_Tags" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="103" height="103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0cc-rT-Skt">
                                             <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yBl-Ef-pDd">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1vE-a4-7ko">
+                                                    <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="bqW-H1-zZg">
                                                     <rect key="frame" x="0.0" y="0.0" width="103" height="103"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageSticker" destination="1vE-a4-7ko" id="vyG-nb-RTZ"/>
+                                            <outlet property="selectedBorder" destination="bqW-H1-zZg" id="G4S-Y6-kDF"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -72,10 +80,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k2S-49-Kzp"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="INE-Wn-xXk" id="FCz-6s-WFI"/>
+                        <outlet property="nextScreenButton" destination="ebe-bl-mVS" id="OoG-m4-4oU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OA9-TI-fH0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="84" y="-110.19490254872565"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blueBorder.png" width="835" height="626"/>
+    </resources>
 </document>

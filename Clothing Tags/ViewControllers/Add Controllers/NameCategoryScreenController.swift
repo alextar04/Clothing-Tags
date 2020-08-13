@@ -75,12 +75,18 @@ class NameCategoryScreenController : UIViewController{
     
     // MARK: Загрузка части для кнопки перехода к дальнейшему окну
     func loadNextButtonPart(){
-        let clothesInstance = Clothes.getInstance()
-        clothesInstance?.name = nameClothes.text
-        
-        
         nextScreenButton.rx.tap.bind{
-            print("Загрузить новое окно!")
+            let clothesInstance = Clothes.getInstance()
+            clothesInstance?.name = self.nameClothes.text
+            clothesInstance?.category = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
+            
+            
+            let chooseTagScreenController = UIStoryboard(name: "TagChooseScreen", bundle: nil).instantiateViewController(withIdentifier: "ChooseTagScreenID") as? TagChooseScreenController
+            chooseTagScreenController?.nameScreen = "Выбор значков на бирке"
+            
+            if let chooseTagScreen = chooseTagScreenController{
+                self.navigationController?.pushViewController(chooseTagScreen, animated: true)
+            }
         }
     }
     

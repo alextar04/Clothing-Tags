@@ -30,6 +30,7 @@
 		CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */; };
 		CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */; };
 		CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */; };
+		CE6FB5B024E57C260016B86B /* TagChooseScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FB5AF24E57C260016B86B /* TagChooseScreenController.swift */; };
 		CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */; };
 		CE80300F24D5BA8C00F16D22 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CE80300E24D5BA8C00F16D22 /* delete.png */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
@@ -40,9 +41,11 @@
 		CE90C8F024DBD123004E8E94 /* TagsCollectionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */; };
 		CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */; };
 		CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */; };
+		CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */; };
+		CE96270D24E594B6006CD1F8 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CE96270C24E594B6006CD1F8 /* RxDataSources */; };
 		CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */; };
 		CEA2BC6824D99AFF002C5FD5 /* NameCategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */; };
-		CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */; };
+		CEA2BC6A24D99B47002C5FD5 /* TagChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagChooseScreen.storyboard */; };
 		CEA2BC6F24D9A6DA002C5FD5 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6E24D9A6DA002C5FD5 /* camera.png */; };
 		CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */; };
 		CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */; };
@@ -99,6 +102,7 @@
 		CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPhotosCell.swift; sourceTree = "<group>"; };
 		CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewController.swift; sourceTree = "<group>"; };
 		CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDescriptionCell.swift; sourceTree = "<group>"; };
+		CE6FB5AF24E57C260016B86B /* TagChooseScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChooseScreenController.swift; sourceTree = "<group>"; };
 		CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesScreen.storyboard; sourceTree = "<group>"; };
 		CE80300E24D5BA8C00F16D22 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
@@ -107,9 +111,10 @@
 		CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagsCollectionScreen.storyboard; sourceTree = "<group>"; };
 		CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Reminder Screen.storyboard"; sourceTree = "<group>"; };
 		CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
+		CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTagChooseCell.swift; sourceTree = "<group>"; };
 		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCategoryScreen.storyboard; sourceTree = "<group>"; };
-		CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagListChooseScreen.storyboard; sourceTree = "<group>"; };
+		CEA2BC6924D99B47002C5FD5 /* TagChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagChooseScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6E24D9A6DA002C5FD5 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsViewController.swift; sourceTree = "<group>"; };
 		CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsImage.swift; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE96270D24E594B6006CD1F8 /* RxDataSources in Frameworks */,
 				CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */,
 				CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */,
 			);
@@ -214,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */,
+				CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */,
 			);
 			path = "Add Cells";
 			sourceTree = "<group>";
@@ -312,7 +319,7 @@
 			children = (
 				CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */,
 				CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */,
-				CEA2BC6924D99B47002C5FD5 /* TagListChooseScreen.storyboard */,
+				CEA2BC6924D99B47002C5FD5 /* TagChooseScreen.storyboard */,
 			);
 			path = "Add Storyboards";
 			sourceTree = "<group>";
@@ -322,6 +329,7 @@
 			children = (
 				CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */,
 				CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */,
+				CE6FB5AF24E57C260016B86B /* TagChooseScreenController.swift */,
 			);
 			path = "Add Controllers";
 			sourceTree = "<group>";
@@ -409,6 +417,7 @@
 			packageProductDependencies = (
 				CE89F10E24C2074E00A2ABBE /* RxSwift */,
 				CE89F11024C2074E00A2ABBE /* RxCocoa */,
+				CE96270C24E594B6006CD1F8 /* RxDataSources */,
 			);
 			productName = "Clothing Tags";
 			productReference = CE39E84024BA95C400060239 /* Clothing Tags.app */;
@@ -462,6 +471,7 @@
 			mainGroup = CE39E83724BA95C400060239;
 			packageReferences = (
 				CE89F10D24C2074E00A2ABBE /* XCRemoteSwiftPackageReference "RxSwift" */,
+				CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = CE39E84124BA95C400060239 /* Products */;
 			projectDirPath = "";
@@ -497,7 +507,7 @@
 				CE0061C024C32E89000F66CD /* tags.png in Resources */,
 				CE80300F24D5BA8C00F16D22 /* delete.png in Resources */,
 				CEA2BC6F24D9A6DA002C5FD5 /* camera.png in Resources */,
-				CEA2BC6A24D99B47002C5FD5 /* TagListChooseScreen.storyboard in Resources */,
+				CEA2BC6A24D99B47002C5FD5 /* TagChooseScreen.storyboard in Resources */,
 				CEAE938A24BF5F8700A47DAA /* SplashScreen.storyboard in Resources */,
 				CE10A0AE24D8A42D00F36D2F /* vkLogo.png in Resources */,
 				CE3D7AFF24D83E360054FBB7 /* facebookLogo.png in Resources */,
@@ -529,8 +539,10 @@
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
+				CE6FB5B024E57C260016B86B /* TagChooseScreenController.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
+				CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
@@ -822,6 +834,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -834,6 +854,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE89F10D24C2074E00A2ABBE /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		CE96270C24E594B6006CD1F8 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 
