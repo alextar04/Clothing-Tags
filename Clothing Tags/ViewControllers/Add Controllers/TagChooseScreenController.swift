@@ -129,13 +129,9 @@ class TagChooseScreenController: UIViewController{
             // Обновление БД
             
             
-            // Сделать страницу одежды корневой
             if let clothesScreen = clothesScreenViewController{
-                self.navigationController?.pushViewController(clothesScreen, animated: true)
+                self.navigationController?.pushViewController(clothesScreenViewController!, animated: true)
             }
-           
-           // Отчистим стек предыдущих экранов
-            //self.navigationController?.popToRootViewController(animated: false)
         }.disposed(by: disposeBag)
     }
 }

@@ -230,6 +230,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bn-MA-QRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="X43-jn-ZUC">
+                    <connections>
+                        <action selector="swipeRecognize:" destination="hUn-ZD-Cm9" id="PVc-eH-zGd"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="106.40000000000001" y="30.134932533733135"/>
         </scene>

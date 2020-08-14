@@ -80,6 +80,19 @@ class RootViewController: UIViewController {
         switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
     }
     
+    // Открытие из раздела добавления бирки готовой страницы с одеждой
+    func switchToClothesScreenFromAdding(controller: ClothesScreenViewController){
+        let newRootController = UINavigationController(rootViewController: controller)
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
+        
+        newChildViewController(newController: newRootController, animationClosure: nil)
+        updateRootViewController(newController: newRootController)
+        
+        
+        self.currentViewController.shadowForScreen()
+        self.currentViewController.view.frame.origin.x = 0
+    }
+    
     
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!

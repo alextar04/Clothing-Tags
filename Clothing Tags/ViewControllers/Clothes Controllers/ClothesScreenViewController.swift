@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 
 class ClothesScreenViewController: UIViewController {
-    
     @IBOutlet weak var photoClothes: UIImageView!
     @IBOutlet weak var photoTag: UIImageView!
     
@@ -94,4 +93,15 @@ class ClothesScreenViewController: UIViewController {
         print("Изменили ползунок")
     }
     
+    @IBAction func swipeRecognize(_ sender: UIPanGestureRecognizer) {
+        let transition = sender.translation(in: view).x
+        var endStatus : Bool? = nil
+        if sender.state == .began || sender.state == .changed{
+            endStatus = false
+        }
+        if sender.state == .ended{
+            endStatus = true
+        }
+        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: endStatus)
+    }
 }
