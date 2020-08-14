@@ -27,6 +27,21 @@ class ClothesScreenViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
+    
+    // Предварительно
+    // CORE DATA
+    var recievedData : [TagData] = [
+        TagData("Полоскайте белье под температурой 30 градусов на бережной стирке", UIImage(named: "tags.png")!),
+        TagData("Теннисные носки", UIImage(named: "facebookLogo.png")!),
+        TagData("Теннисные носки", UIImage(named: "tags.png")!),
+        TagData("Теннисные носки", UIImage(named: "tags.png")!),
+        TagData("Теннисные носки", UIImage(named: "tags.png")!),
+    ]
+    var photoClothesData: UIImageView!
+    var photoTagData: UIImageView!
+    var nameClothesData: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,34 +52,26 @@ class ClothesScreenViewController: UIViewController {
     }
 
     
-    // CORE DATA
-    class TagData{
-        var descriptionTag : String = ""
-        var pictureTag : UIImage!
-        init(_ name : String, _ picture : UIImage) {
-            descriptionTag = name
-            pictureTag = picture
-        }
-    }
-    
     func loadClothesScreen(){
         
-        photoClothes.image = UIImage(named: "facebookLogo.png")!
-        photoTag.image = UIImage(named: "facebookLogo.png")!
+        //  Предварительно
+        if photoClothesData == nil{
+            photoClothes.image = UIImage(named: "facebookLogo.png")!
+            photoTag.image = UIImage(named: "facebookLogo.png")!
+        }else{
+            photoClothes.image = photoClothesData.image
+            photoTag.image = photoTagData.image
+            nameClothes.text = nameClothesData.text
+        }
+        
+        // 0x10168dc40
+        //print("Изображение принято:  \(photoClothes)")
+        //print("Название одежды: \(nameClothes.text)")
         
         // Округление кнопок для публикации в заметках соцсети
         [facebookButton, vkButton, yandexButton].map{
             $0!.imageView?.roundingImageCell(newPicture: nil)
         }
-        
-        // CORE DATA
-        let recievedData : [TagData] = [
-            TagData("Полоскайте белье под температурой 30 градусов на бережной стирке", UIImage(named: "tags.png")!),
-            TagData("Теннисные носки", UIImage(named: "facebookLogo.png")!),
-            TagData("Теннисные носки", UIImage(named: "tags.png")!),
-            TagData("Теннисные носки", UIImage(named: "tags.png")!),
-            TagData("Теннисные носки", UIImage(named: "tags.png")!),
-        ]
         
         // Получение высоты таблицы
         tableHeightConstraint.constant = tagsTable.rowHeight * CGFloat(recievedData.count)

@@ -42,7 +42,9 @@
 		CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */; };
 		CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */; };
 		CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */; };
-		CE96270D24E594B6006CD1F8 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CE96270C24E594B6006CD1F8 /* RxDataSources */; };
+		CE96271024E698DE006CD1F8 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = CE96270F24E698DE006CD1F8 /* Differentiator */; };
+		CE96271224E698DE006CD1F8 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CE96271124E698DE006CD1F8 /* RxDataSources */; };
+		CE96271424E6A9C1006CD1F8 /* HeaderStickersCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96271324E6A9C1006CD1F8 /* HeaderStickersCollection.swift */; };
 		CEA2BC6424D99AAB002C5FD5 /* PhotoScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */; };
 		CEA2BC6824D99AFF002C5FD5 /* NameCategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */; };
 		CEA2BC6A24D99B47002C5FD5 /* TagChooseScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BC6924D99B47002C5FD5 /* TagChooseScreen.storyboard */; };
@@ -112,6 +114,7 @@
 		CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Reminder Screen.storyboard"; sourceTree = "<group>"; };
 		CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
 		CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTagChooseCell.swift; sourceTree = "<group>"; };
+		CE96271324E6A9C1006CD1F8 /* HeaderStickersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickersCollection.swift; sourceTree = "<group>"; };
 		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6724D99AFF002C5FD5 /* NameCategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NameCategoryScreen.storyboard; sourceTree = "<group>"; };
 		CEA2BC6924D99B47002C5FD5 /* TagChooseScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagChooseScreen.storyboard; sourceTree = "<group>"; };
@@ -137,8 +140,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE96270D24E594B6006CD1F8 /* RxDataSources in Frameworks */,
 				CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */,
+				CE96271224E698DE006CD1F8 /* RxDataSources in Frameworks */,
+				CE96271024E698DE006CD1F8 /* Differentiator in Frameworks */,
 				CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +225,7 @@
 			children = (
 				CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */,
 				CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */,
+				CE96271324E6A9C1006CD1F8 /* HeaderStickersCollection.swift */,
 			);
 			path = "Add Cells";
 			sourceTree = "<group>";
@@ -417,7 +422,8 @@
 			packageProductDependencies = (
 				CE89F10E24C2074E00A2ABBE /* RxSwift */,
 				CE89F11024C2074E00A2ABBE /* RxCocoa */,
-				CE96270C24E594B6006CD1F8 /* RxDataSources */,
+				CE96270F24E698DE006CD1F8 /* Differentiator */,
+				CE96271124E698DE006CD1F8 /* RxDataSources */,
 			);
 			productName = "Clothing Tags";
 			productReference = CE39E84024BA95C400060239 /* Clothing Tags.app */;
@@ -471,7 +477,7 @@
 			mainGroup = CE39E83724BA95C400060239;
 			packageReferences = (
 				CE89F10D24C2074E00A2ABBE /* XCRemoteSwiftPackageReference "RxSwift" */,
-				CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				CE96270E24E698DE006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = CE39E84124BA95C400060239 /* Products */;
 			projectDirPath = "";
@@ -549,6 +555,7 @@
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,
+				CE96271424E6A9C1006CD1F8 /* HeaderStickersCollection.swift in Sources */,
 				CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */,
 				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
@@ -834,12 +841,12 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+		CE96270E24E698DE006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.1;
+				kind = exactVersion;
+				version = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -855,9 +862,14 @@
 			package = CE89F10D24C2074E00A2ABBE /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		CE96270C24E594B6006CD1F8 /* RxDataSources */ = {
+		CE96270F24E698DE006CD1F8 /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE96270B24E594B6006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			package = CE96270E24E698DE006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		CE96271124E698DE006CD1F8 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE96270E24E698DE006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */

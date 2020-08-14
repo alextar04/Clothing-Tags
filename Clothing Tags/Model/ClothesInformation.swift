@@ -14,7 +14,7 @@ class Clothes{
     var photoClothes : UIImageView? = nil
     var photoTag : UIImageView? = nil
     var category : String? = nil
-    var tagCollection : UIImageView? = nil
+    var tagCollection : [TagData]? = nil
     
     private static var clothes : Clothes?
     private init() {}
@@ -25,5 +25,19 @@ class Clothes{
             return self.clothes
         }
         return instance
+    }
+}
+
+// CORE DATA
+class TagData: Equatable{
+    static func == (lhs: TagData, rhs: TagData) -> Bool {
+        return lhs.descriptionTag == rhs.descriptionTag
+    }
+    
+    var descriptionTag : String = ""
+    var pictureTag : UIImage!
+    init(_ name : String, _ picture : UIImage) {
+        descriptionTag = name
+        pictureTag = picture
     }
 }
