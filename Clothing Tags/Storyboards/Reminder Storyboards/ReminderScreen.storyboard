@@ -13,19 +13,19 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Reminder Screen Controller-->
         <scene sceneID="WW3-oM-s9U">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="HlX-YG-5Cf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReminderScreenID" automaticallyAdjustsScrollViewInsets="NO" id="HlX-YG-5Cf" customClass="ReminderScreenController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ba-bb-lAU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-VR-2OU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-VR-2OU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jrz-HN-5nS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderTableCell" id="jrz-HN-5nS" customClass="ReminderTableCell" customModule="Clothing_Tags" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jrz-HN-5nS" id="4Rw-Wt-1yp">
@@ -43,7 +43,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Дата постирки" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-0P-7XE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="21.03.19 23:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-0P-7XE">
                                                     <rect key="frame" x="103" y="56" width="257" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
@@ -53,11 +53,17 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="dateLaundry" destination="1cf-0P-7XE" id="bAp-es-9wZ"/>
+                                            <outlet property="imageClothes" destination="X7c-QU-cRX" id="1Om-dm-eoW"/>
+                                            <outlet property="nameClothes" destination="wAf-fR-674" id="lKq-t8-i5w"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UZh-VR-2OU" firstAttribute="top" secondItem="xTD-zn-FfX" secondAttribute="top" id="2Ck-AT-7qq"/>
                             <constraint firstItem="UZh-VR-2OU" firstAttribute="leading" secondItem="xTD-zn-FfX" secondAttribute="leading" id="2Ra-cK-VKQ"/>
@@ -65,9 +71,20 @@
                             <constraint firstItem="UZh-VR-2OU" firstAttribute="trailing" secondItem="xTD-zn-FfX" secondAttribute="trailing" id="xgn-UB-1zj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xTD-zn-FfX"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="eEP-qg-vZX" appends="YES" id="0cd-Kc-mXu"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="listClothesForLaundry" destination="UZh-VR-2OU" id="WoS-pb-iXq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAK-Mi-JSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="eEP-qg-vZX">
+                    <connections>
+                        <action selector="swipeDetection:" destination="HlX-YG-5Cf" id="aLz-p3-fca"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="100" y="111.99400299850076"/>
         </scene>

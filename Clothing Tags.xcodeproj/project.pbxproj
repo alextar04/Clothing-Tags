@@ -39,7 +39,7 @@
 		CE90070724BCD405004D9BC6 /* loadingMenu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */; };
 		CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8EC24DBBE90004E8E94 /* AboutApplicationScreen.storyboard */; };
 		CE90C8F024DBD123004E8E94 /* TagsCollectionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */; };
-		CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */; };
+		CE90C8F324DBD5E7004E8E94 /* ReminderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* ReminderScreen.storyboard */; };
 		CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */; };
 		CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */; };
 		CE96271024E698DE006CD1F8 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = CE96270F24E698DE006CD1F8 /* Differentiator */; };
@@ -66,6 +66,8 @@
 		CEE93BA624E7EDCC0063305A /* TagsCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BA524E7EDCC0063305A /* TagsCollectionController.swift */; };
 		CEE93BA924E7F8BA0063305A /* TagDescriptionGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BA824E7F8BA0063305A /* TagDescriptionGalleryCell.swift */; };
 		CEE93BAB24E809D50063305A /* extensionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAA24E809D50063305A /* extensionsColor.swift */; };
+		CEE93BAD24E81F810063305A /* ReminderScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAC24E81F810063305A /* ReminderScreenController.swift */; };
+		CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAF24E821810063305A /* ReminderTableCell.swift */; };
 		CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */; };
 		CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */; };
 /* End PBXBuildFile section */
@@ -115,7 +117,7 @@
 		CE90070124BCD1E6004D9BC6 /* loadingMenu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loadingMenu.jpg; sourceTree = "<group>"; };
 		CE90C8EC24DBBE90004E8E94 /* AboutApplicationScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutApplicationScreen.storyboard; sourceTree = "<group>"; };
 		CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagsCollectionScreen.storyboard; sourceTree = "<group>"; };
-		CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Reminder Screen.storyboard"; sourceTree = "<group>"; };
+		CE90C8F224DBD5E6004E8E94 /* ReminderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReminderScreen.storyboard; sourceTree = "<group>"; };
 		CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
 		CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTagChooseCell.swift; sourceTree = "<group>"; };
 		CE96271324E6A9C1006CD1F8 /* HeaderStickersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickersCollection.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		CEE93BA524E7EDCC0063305A /* TagsCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionController.swift; sourceTree = "<group>"; };
 		CEE93BA824E7F8BA0063305A /* TagDescriptionGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDescriptionGalleryCell.swift; sourceTree = "<group>"; };
 		CEE93BAA24E809D50063305A /* extensionsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsColor.swift; sourceTree = "<group>"; };
+		CEE93BAC24E81F810063305A /* ReminderScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScreenController.swift; sourceTree = "<group>"; };
+		CEE93BAF24E821810063305A /* ReminderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableCell.swift; sourceTree = "<group>"; };
 		CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesInformation.swift; sourceTree = "<group>"; };
 		CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCategoryScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +227,7 @@
 			children = (
 				CE571D8124DDA1DE0071AB22 /* Main Cells */,
 				CE571D8024DDA1AA0071AB22 /* Add Cells */,
+				CEE93BAE24E8208A0063305A /* Reminder Cells */,
 				CEE93BA724E7F8740063305A /* Gallery Cells */,
 				CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */,
 			);
@@ -309,7 +314,7 @@
 		CE90C8F124DBD53C004E8E94 /* Reminder Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				CE90C8F224DBD5E6004E8E94 /* Reminder Screen.storyboard */,
+				CE90C8F224DBD5E6004E8E94 /* ReminderScreen.storyboard */,
 			);
 			path = "Reminder Storyboards";
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 		CE90C8F624DBE0E3004E8E94 /* Reminder Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CEE93BAC24E81F810063305A /* ReminderScreenController.swift */,
 			);
 			path = "Reminder Controllers";
 			sourceTree = "<group>";
@@ -379,8 +385,8 @@
 			isa = PBXGroup;
 			children = (
 				CE43E5F524D2F3000001D4DB /* Cells */,
-				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 				CEAE938524BF3A0600A47DAA /* SplashScreenViewController.swift */,
+				CEAE938724BF5AF200A47DAA /* RootViewController.swift */,
 				CE0061C524C33D49000F66CD /* MenuViewController.swift */,
 				CE67AA2C24D866CC00502A79 /* Clothes Controllers */,
 				CEA2BC6B24D99B79002C5FD5 /* Add Controllers */,
@@ -429,6 +435,14 @@
 				CEE93BA824E7F8BA0063305A /* TagDescriptionGalleryCell.swift */,
 			);
 			path = "Gallery Cells";
+			sourceTree = "<group>";
+		};
+		CEE93BAE24E8208A0063305A /* Reminder Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CEE93BAF24E821810063305A /* ReminderTableCell.swift */,
+			);
+			path = "Reminder Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,7 +540,7 @@
 				CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */,
 				CE0061C424C32F64000F66CD /* iconInApp.png in Resources */,
 				CEE13E0E24DF17DA00FF3BB0 /* blueBorder.png in Resources */,
-				CE90C8F324DBD5E7004E8E94 /* Reminder Screen.storyboard in Resources */,
+				CE90C8F324DBD5E7004E8E94 /* ReminderScreen.storyboard in Resources */,
 				CE90C8ED24DBBE90004E8E94 /* AboutApplicationScreen.storyboard in Resources */,
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
@@ -571,6 +585,7 @@
 				CEE93BA924E7F8BA0063305A /* TagDescriptionGalleryCell.swift in Sources */,
 				CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */,
 				CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */,
+				CEE93BAD24E81F810063305A /* ReminderScreenController.swift in Sources */,
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
@@ -582,6 +597,7 @@
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
+				CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,

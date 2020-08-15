@@ -53,11 +53,15 @@ class MenuViewController: UIViewController{
             onNext: {
                 switch $0.nameAction{
                 case "Добавить одежду":
-                    AppDelegate.appDelegateLink.rootViewController.switchToAddTagScreen()
+                    AppDelegate.appDelegateLink.rootViewController.switchTo(section: .addTagScreen)
+                case "Мой гардероб":
+                    AppDelegate.appDelegateLink.rootViewController.switchTo(section: .mainScreen)
+                case "Напоминание постирать":
+                    AppDelegate.appDelegateLink.rootViewController.switchTo(section: .reminderScreen)
                 case "Галерея бирок":
-                    AppDelegate.appDelegateLink.rootViewController.switchToTagGalleryScreen()
+                    AppDelegate.appDelegateLink.rootViewController.switchTo(section: .tagGalleryScreen)
                 case "О приложении":
-                    AppDelegate.appDelegateLink.rootViewController.switchToAboutApplicationScreen()
+                    AppDelegate.appDelegateLink.rootViewController.switchTo(section: .aboutApplicationScreen)
                 default:
                     print("You selected: \($0.nameAction)")
                 }

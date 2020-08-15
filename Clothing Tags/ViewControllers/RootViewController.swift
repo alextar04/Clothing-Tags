@@ -51,7 +51,7 @@ class RootViewController: UIViewController {
         currentViewController = newController
     }
     
-    // MARK: Переход в главный экран: Мой гардероб
+    // MARK: Начальный переход в главный экран: Мой гардероб
     func switchToMainScreen(){
         let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
         let newRootController = UINavigationController(rootViewController: mainScreenController)
@@ -64,13 +64,40 @@ class RootViewController: UIViewController {
         
     }
     
-    // MARK: Переход в раздел: Добавить бирку
-    func switchToAddTagScreen(){
-        let addScreenController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as! PhotoScreenViewController
-        addScreenController.nameScreen = "Выбор одежды"
-        let newRootController = UINavigationController(rootViewController: addScreenController)
-        BaseSettings.updateBarTintColor(navigationController: newRootController)
+    
+    // MARK: Переходы из меню в разделы
+    func switchTo(section: SectionMenu){
+        var newRootController : UINavigationController
         
+        switch section{
+        case .addTagScreen:
+            let addScreenController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as! PhotoScreenViewController
+            addScreenController.nameScreen = "Выбор одежды"
+            newRootController = UINavigationController(rootViewController: addScreenController)
+            
+        case .mainScreen:
+            let mainScreenController = UIStoryboard(name: "MainScreen", bundle: nil).instantiateViewController(withIdentifier: "MainScreenID") as! MainScreenViewController
+            mainScreenController.nameScreen = "Мой гардероб"
+            newRootController = UINavigationController(rootViewController: mainScreenController)
+            
+        case .reminderScreen:
+            let reminderScreenController = UIStoryboard(name: "ReminderScreen", bundle: nil).instantiateViewController(withIdentifier: "ReminderScreenID") as! ReminderScreenController
+            reminderScreenController.nameScreen = "Напоминание для стирки"
+            newRootController = UINavigationController(rootViewController: reminderScreenController)
+            
+        case .tagGalleryScreen:
+            let tagGalleryScreenController = UIStoryboard(name: "TagsCollectionScreen", bundle: nil).instantiateViewController(withIdentifier: "TagsCollectionID") as! TagsCollectionController
+            tagGalleryScreenController.nameScreen = "Галерея бирок"
+            newRootController = UINavigationController(rootViewController: tagGalleryScreenController)
+            
+        case .aboutApplicationScreen:
+            let aboutApplicationScreenController = UIStoryboard(name: "AboutApplicationScreen", bundle: nil).instantiateViewController(withIdentifier: "AboutApplicationScreenID") as! AboutApplicationScreenController
+            aboutApplicationScreenController.nameScreen = "О приложении"
+            newRootController = UINavigationController(rootViewController: aboutApplicationScreenController)
+            
+        }
+        
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
         newChildViewController(newController: newRootController, animationClosure: nil)
         updateRootViewController(newController: newRootController)
         
@@ -94,37 +121,6 @@ class RootViewController: UIViewController {
         self.currentViewController.view.frame.origin.x = 0
     }
     
-    // MARK: Переход в раздел: Галерея бирок
-    func switchToTagGalleryScreen(){
-        let tagGalleryScreenController = UIStoryboard(name: "TagsCollectionScreen", bundle: nil).instantiateViewController(withIdentifier: "TagsCollectionID") as! TagsCollectionController
-        tagGalleryScreenController.nameScreen = "Галерея бирок"
-        let newRootController = UINavigationController(rootViewController: tagGalleryScreenController)
-        BaseSettings.updateBarTintColor(navigationController: newRootController)
-        
-        newChildViewController(newController: newRootController, animationClosure: nil)
-        updateRootViewController(newController: newRootController)
-        
-        self.currentViewController.shadowForScreen()
-        self.currentViewController.view.frame.origin.x = 240
-        needShowMenu = false
-        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
-    }
-    
-    // MARK: Переход в раздел: О приложении
-    func switchToAboutApplicationScreen(){
-        let aboutApplicationScreenController = UIStoryboard(name: "AboutApplicationScreen", bundle: nil).instantiateViewController(withIdentifier: "AboutApplicationScreenID") as! AboutApplicationScreenController
-        aboutApplicationScreenController.nameScreen = "О приложении"
-        let newRootController = UINavigationController(rootViewController: aboutApplicationScreenController)
-        BaseSettings.updateBarTintColor(navigationController: newRootController)
-        
-        newChildViewController(newController: newRootController, animationClosure: nil)
-        updateRootViewController(newController: newRootController)
-        
-        self.currentViewController.shadowForScreen()
-        self.currentViewController.view.frame.origin.x = 240
-        needShowMenu = false
-        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
-    }
     
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!
@@ -223,4 +219,6 @@ class RootViewController: UIViewController {
     }
 }
 
-
+enum SectionMenu{
+    case addTagScreen, mainScreen, reminderScreen, tagGalleryScreen, aboutApplicationScreen
+}

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class MainScreenViewController: UIViewController {
+    var nameScreen: String = "Мой гардероб"
     @IBOutlet weak var collectionView: UICollectionView!
     let disposeBag = DisposeBag()
     
@@ -24,7 +25,7 @@ class MainScreenViewController: UIViewController {
         //navigationBarTuning()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: "Мой гардероб")
+                                         nameTop: nameScreen)
         loadMainMenu()
     }
     
