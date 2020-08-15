@@ -142,8 +142,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
             landmarkName = "loadingMenuScreen(sourceLoading:distanceSwiped:endStatus:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "switcherMenuViewController(needShowMenu:distanceSwiped:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "Clothing Tags/ViewControllers/RootViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "switcherMenuViewController(needShowMenu:distanceSwiped:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -561,6 +561,38 @@
             startingLineNumber = "84"
             endingLineNumber = "84"
             landmarkName = "loadNextButtonPart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41E5C358-779B-412C-9C36-ED5E0976A03A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/Cells/Main Cells/TagDescriptionCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "TagDescriptionCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7F366BF9-AA9A-4899-A9BB-5D18F91D560F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/Tags Collection Controllers/TagsCollectionController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "loadStickersTable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

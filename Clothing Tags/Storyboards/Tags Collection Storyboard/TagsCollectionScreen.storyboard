@@ -13,19 +13,19 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Tags Collection Controller-->
         <scene sceneID="u9Q-ep-zXk">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8ud-fw-IxM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TagsCollectionID" automaticallyAdjustsScrollViewInsets="NO" id="8ud-fw-IxM" customClass="TagsCollectionController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zuw-0J-2u2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-JR-wUV">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QOw-JR-wUV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SGk-Da-laP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TagDescriptionGalleryCell" id="SGk-Da-laP" customClass="TagDescriptionGalleryCell" customModule="Clothing_Tags" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SGk-Da-laP" id="6ZL-c8-5w4">
@@ -46,11 +46,16 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tagDescription" destination="E00-oc-oF6" id="J9T-HK-Okb"/>
+                                            <outlet property="tagImage" destination="cgy-TR-RFg" id="Qlt-6n-FxE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QOw-JR-wUV" firstAttribute="top" secondItem="tj0-Hf-adi" secondAttribute="top" id="DIk-ZR-WIN"/>
                             <constraint firstItem="QOw-JR-wUV" firstAttribute="bottom" secondItem="tj0-Hf-adi" secondAttribute="bottom" id="Trk-9S-ZB9"/>
@@ -58,9 +63,20 @@
                             <constraint firstItem="QOw-JR-wUV" firstAttribute="leading" secondItem="tj0-Hf-adi" secondAttribute="leading" id="nmX-pv-1Xy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tj0-Hf-adi"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tHS-Li-GAG" appends="YES" id="jn7-do-wSo"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="tagTable" destination="QOw-JR-wUV" id="NHG-hL-O5z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuB-Gc-Sh6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tHS-Li-GAG">
+                    <connections>
+                        <action selector="swipeDetection:" destination="8ud-fw-IxM" id="MgK-Hs-Syq"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-133.59999999999999" y="-71.514242878560722"/>
         </scene>

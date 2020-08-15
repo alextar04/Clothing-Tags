@@ -94,6 +94,22 @@ class RootViewController: UIViewController {
         self.currentViewController.view.frame.origin.x = 0
     }
     
+    // MARK: Переход в раздел: Галерея бирок
+    func switchToTagGalleryScreen(){
+        let tagGalleryScreenController = UIStoryboard(name: "TagsCollectionScreen", bundle: nil).instantiateViewController(withIdentifier: "TagsCollectionID") as! TagsCollectionController
+        tagGalleryScreenController.nameScreen = "Галерея бирок"
+        let newRootController = UINavigationController(rootViewController: tagGalleryScreenController)
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
+        
+        newChildViewController(newController: newRootController, animationClosure: nil)
+        updateRootViewController(newController: newRootController)
+        
+        self.currentViewController.shadowForScreen()
+        self.currentViewController.view.frame.origin.x = 240
+        needShowMenu = false
+        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
+    }
+    
     // MARK: Переход в раздел: О приложении
     func switchToAboutApplicationScreen(){
         let aboutApplicationScreenController = UIStoryboard(name: "AboutApplicationScreen", bundle: nil).instantiateViewController(withIdentifier: "AboutApplicationScreenID") as! AboutApplicationScreenController
