@@ -207,6 +207,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="p4B-qF-p1q" firstAttribute="top" secondItem="vZs-pN-buk" secondAttribute="top" id="0nA-bM-KG9"/>
                             <constraint firstItem="p4B-qF-p1q" firstAttribute="bottom" secondItem="vZs-pN-buk" secondAttribute="bottom" id="5Zx-pw-tKr"/>
@@ -216,6 +217,9 @@
                             <constraint firstItem="aIK-sF-QUy" firstAttribute="height" secondItem="GVJ-da-rgy" secondAttribute="height" priority="250" id="x5F-M7-Mzd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vZs-pN-buk"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="PcW-nY-keh" appends="YES" id="JDQ-M0-Rlw"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="dateReminding" destination="Lw8-Ep-qjQ" id="eTT-vh-2u5"/>
@@ -230,9 +234,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bn-MA-QRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="X43-jn-ZUC">
+                <panGestureRecognizer minimumNumberOfTouches="1" id="PcW-nY-keh">
                     <connections>
-                        <action selector="swipeRecognize:" destination="hUn-ZD-Cm9" id="PVc-eH-zGd"/>
+                        <action selector="swipeDetection:" destination="hUn-ZD-Cm9" id="4Nz-t1-GFl"/>
                     </connections>
                 </panGestureRecognizer>
             </objects>

@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 
 class ClothesScreenViewController: UIViewController {
+    var openFromCreationClothesScreen: Bool = false
+    
     @IBOutlet weak var photoClothes: UIImageView!
     @IBOutlet weak var photoTag: UIImageView!
     
@@ -63,13 +65,13 @@ class ClothesScreenViewController: UIViewController {
             nameClothes.text = nameClothesData.text
         }
         
-        // 0x10168dc40
-        //print("Изображение принято:  \(photoClothes)")
-        //print("Название одежды: \(nameClothes.text)")
-        
         // Округление кнопок для публикации в заметках соцсети
         [facebookButton, vkButton, yandexButton].map{
             $0!.imageView?.roundingImageCell(newPicture: nil)
+        }
+        // Округление углов фотографий одежды и тега
+        [photoClothes, photoTag].map{
+            $0.roundingRect()
         }
         
         // Получение высоты таблицы
@@ -93,7 +95,10 @@ class ClothesScreenViewController: UIViewController {
         print("Изменили ползунок")
     }
     
-    @IBAction func swipeRecognize(_ sender: UIPanGestureRecognizer) {
+    @IBAction func swipeDetection(_ sender: UIPanGestureRecognizer) {
+        if !openFromCreationClothesScreen{
+            return
+        }
         let transition = sender.translation(in: view).x
         var endStatus : Bool? = nil
         if sender.state == .began || sender.state == .changed{

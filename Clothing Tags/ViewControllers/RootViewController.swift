@@ -85,7 +85,8 @@ class RootViewController: UIViewController {
         let newRootController = UINavigationController(rootViewController: controller)
         BaseSettings.updateBarTintColor(navigationController: newRootController)
         
-        newChildViewController(newController: newRootController, animationClosure: nil)
+        newChildViewController(newController: newRootController, animationClosure: { UIView.transition(with: self.view, duration: 0.5, options: [.transitionFlipFromRight, .allowAnimatedContent], animations: {self.view.addSubview(newRootController.view)},
+        completion: nil)})
         updateRootViewController(newController: newRootController)
         
         
@@ -93,6 +94,21 @@ class RootViewController: UIViewController {
         self.currentViewController.view.frame.origin.x = 0
     }
     
+    // MARK: Переход в раздел: О приложении
+    func switchToAboutApplicationScreen(){
+        let aboutApplicationScreenController = UIStoryboard(name: "AboutApplicationScreen", bundle: nil).instantiateViewController(withIdentifier: "AboutApplicationScreenID") as! AboutApplicationScreenController
+        aboutApplicationScreenController.nameScreen = "О приложении"
+        let newRootController = UINavigationController(rootViewController: aboutApplicationScreenController)
+        BaseSettings.updateBarTintColor(navigationController: newRootController)
+        
+        newChildViewController(newController: newRootController, animationClosure: nil)
+        updateRootViewController(newController: newRootController)
+        
+        self.currentViewController.shadowForScreen()
+        self.currentViewController.view.frame.origin.x = 240
+        needShowMenu = false
+        switcherMenuViewController(needShowMenu: needShowMenu, distanceSwiped: 0)
+    }
     
     // MARK: Переход в меню приложения
     var menuViewController : MenuViewController!

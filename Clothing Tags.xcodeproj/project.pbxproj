@@ -62,6 +62,7 @@
 		CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3626924D4341800848279 /* CategoryScreen.storyboard */; };
 		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
 		CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */; };
+		CEE93BA424E7E3930063305A /* AboutApplicationScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BA324E7E3930063305A /* AboutApplicationScreenController.swift */; };
 		CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */; };
 		CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,7 @@
 		CEE3626924D4341800848279 /* CategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryScreen.storyboard; sourceTree = "<group>"; };
 		CEE3626B24D4358000848279 /* CategoryScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenCell.swift; sourceTree = "<group>"; };
 		CEE3626D24D43CFF00848279 /* TagCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCategoryCell.swift; sourceTree = "<group>"; };
+		CEE93BA324E7E3930063305A /* AboutApplicationScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutApplicationScreenController.swift; sourceTree = "<group>"; };
 		CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesInformation.swift; sourceTree = "<group>"; };
 		CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCategoryScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -375,6 +377,7 @@
 				CEA2BC6B24D99B79002C5FD5 /* Add Controllers */,
 				CE90C8F624DBE0E3004E8E94 /* Reminder Controllers */,
 				CE90C8F724DBE130004E8E94 /* Tags Collection Controllers */,
+				CEE93BA224E7E3210063305A /* About Application Controller */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +404,14 @@
 				CEC4183324C226D400ECA02E /* bosaNova.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CEE93BA224E7E3210063305A /* About Application Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CEE93BA324E7E3930063305A /* AboutApplicationScreenController.swift */,
+			);
+			path = "About Application Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +571,7 @@
 				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
+				CEE93BA424E7E3930063305A /* AboutApplicationScreenController.swift in Sources */,
 				CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */,
 				CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */,
 				CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */,

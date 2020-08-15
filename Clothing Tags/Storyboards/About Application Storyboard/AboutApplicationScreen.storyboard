@@ -13,10 +13,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--About Application Screen Controller-->
         <scene sceneID="2s7-Ia-ksq">
             <objects>
-                <viewController id="BlN-p3-Xjk" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutApplicationScreenID" id="BlN-p3-Xjk" customClass="AboutApplicationScreenController" customModule="Clothing_Tags" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V9a-Uw-Zng">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,10 +37,19 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="3Ak-v8-ZWw"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hJM-yU-2d5" appends="YES" id="u9L-7r-zvg"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49v-SB-JYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="hJM-yU-2d5">
+                    <connections>
+                        <action selector="swipeDetection:" destination="BlN-p3-Xjk" id="7Lc-fV-TdB"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-45" y="82.394366197183103"/>
         </scene>

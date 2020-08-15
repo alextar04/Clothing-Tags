@@ -54,6 +54,8 @@ class MenuViewController: UIViewController{
                 switch $0.nameAction{
                 case "Добавить одежду":
                     AppDelegate.appDelegateLink.rootViewController.switchToAddTagScreen()
+                case "О приложении":
+                    AppDelegate.appDelegateLink.rootViewController.switchToAboutApplicationScreen()
                 default:
                     print("You selected: \($0.nameAction)")
                 }

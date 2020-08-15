@@ -18,4 +18,8 @@ extension UIImageView{
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 1
     }
+    
+    func roundingRect(){
+        self.layer.cornerRadius = 10
+    }
 }

@@ -126,11 +126,13 @@ class TagChooseScreenController: UIViewController{
             nameLabel.text = clothesLink?.name
             clothesScreenViewController?.nameClothesData = nameLabel
             clothesScreenViewController?.recievedData = (clothesLink?.tagCollection)!
+            clothesScreenViewController?.openFromCreationClothesScreen = true
             // Обновление БД
             
             
             if let clothesScreen = clothesScreenViewController{
-                self.navigationController?.pushViewController(clothesScreenViewController!, animated: true)
+                self.navigationController?.viewControllers = []
+                AppDelegate.appDelegateLink.rootViewController.switchToClothesScreenFromAdding(controller: clothesScreenViewController!)
             }
         }.disposed(by: disposeBag)
     }
