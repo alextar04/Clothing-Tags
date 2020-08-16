@@ -15,6 +15,8 @@
 		CE0061C424C32F64000F66CD /* iconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C324C32F64000F66CD /* iconInApp.png */; };
 		CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0061C524C33D49000F66CD /* MenuViewController.swift */; };
 		CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0061C724C33D72000F66CD /* MenuScreen.storyboard */; };
+		CE0FA58424E95A5E00814A82 /* extensionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FA58324E95A5E00814A82 /* extensionsView.swift */; };
+		CE0FA58624E967DE00814A82 /* extensionsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FA58524E967DE00814A82 /* extensionsDate.swift */; };
 		CE10A0AE24D8A42D00F36D2F /* vkLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE10A0AC24D8A42D00F36D2F /* vkLogo.png */; };
 		CE10A0AF24D8A42D00F36D2F /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */; };
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
@@ -91,6 +93,8 @@
 		CE0061C324C32F64000F66CD /* iconInApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconInApp.png; sourceTree = "<group>"; };
 		CE0061C524C33D49000F66CD /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CE0061C724C33D72000F66CD /* MenuScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuScreen.storyboard; sourceTree = "<group>"; };
+		CE0FA58324E95A5E00814A82 /* extensionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsView.swift; sourceTree = "<group>"; };
+		CE0FA58524E967DE00814A82 /* extensionsDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsDate.swift; sourceTree = "<group>"; };
 		CE10A0AC24D8A42D00F36D2F /* vkLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vkLogo.png; sourceTree = "<group>"; };
 		CE10A0AD24D8A42D00F36D2F /* yandexLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yandexLogo.png; sourceTree = "<group>"; };
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,8 +363,10 @@
 			isa = PBXGroup;
 			children = (
 				CEA2BC7124D9C7F5002C5FD5 /* extensionsViewController.swift */,
+				CE0FA58324E95A5E00814A82 /* extensionsView.swift */,
 				CEA2BC7324D9C82D002C5FD5 /* extensionsImage.swift */,
 				CEE93BAA24E809D50063305A /* extensionsColor.swift */,
+				CE0FA58524E967DE00814A82 /* extensionsDate.swift */,
 				CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */,
 			);
 			path = Utils;
@@ -597,7 +603,9 @@
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
+				CE0FA58624E967DE00814A82 /* extensionsDate.swift in Sources */,
 				CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */,
+				CE0FA58424E95A5E00814A82 /* extensionsView.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,

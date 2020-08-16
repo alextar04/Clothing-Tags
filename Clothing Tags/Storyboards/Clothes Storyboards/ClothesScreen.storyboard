@@ -42,9 +42,6 @@
                                                 </constraints>
                                                 <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <connections>
-                                                    <action selector="reminderSwitchPressed:" destination="hUn-ZD-Cm9" eventType="valueChanged" id="xML-Fm-grq"/>
-                                                </connections>
                                             </switch>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allert.png" translatesAutoresizingMaskIntoConstraints="NO" id="OFe-RX-3TV">
                                                 <rect key="frame" x="43.5" y="417" width="30" height="30"/>
@@ -167,6 +164,63 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3a-ot-lhG">
+                                                <rect key="frame" x="27.5" y="150" width="320" height="272"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Установить дату напоминания" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTS-Eq-pMu">
+                                                        <rect key="frame" x="47" y="16" width="226" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="21" id="E5o-ef-Kcx"/>
+                                                            <constraint firstAttribute="width" constant="226" id="Ugd-v7-Aax"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pp3-IM-IDF">
+                                                        <rect key="frame" x="0.0" y="45" width="320" height="162"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="162" id="09n-xp-LOz"/>
+                                                            <constraint firstAttribute="width" constant="320" id="aFa-zc-Pmr"/>
+                                                        </constraints>
+                                                    </datePicker>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apN-wh-fRo">
+                                                        <rect key="frame" x="47.5" y="222" width="113" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="113" id="ZG3-3i-yra"/>
+                                                            <constraint firstAttribute="height" constant="30" id="tHO-ty-0RN"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                        <state key="normal" title="Установить">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7O-Dq-mXN">
+                                                        <rect key="frame" x="167.5" y="222" width="105" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="105" id="4Ax-39-PKz"/>
+                                                            <constraint firstAttribute="height" constant="30" id="elC-6Q-935"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="15"/>
+                                                        <state key="normal" title="Отмена">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="w7O-Dq-mXN" firstAttribute="centerX" secondItem="f3a-ot-lhG" secondAttribute="centerX" constant="60" id="Dqv-6F-PE8"/>
+                                                    <constraint firstAttribute="width" constant="320" id="I4H-wq-W86"/>
+                                                    <constraint firstAttribute="height" constant="272" id="Lhp-u1-8xP"/>
+                                                    <constraint firstItem="apN-wh-fRo" firstAttribute="centerX" secondItem="f3a-ot-lhG" secondAttribute="centerX" constant="-56" id="LoZ-5L-4wI"/>
+                                                    <constraint firstItem="pp3-IM-IDF" firstAttribute="centerX" secondItem="f3a-ot-lhG" secondAttribute="centerX" id="VoR-1A-MzD"/>
+                                                    <constraint firstItem="pp3-IM-IDF" firstAttribute="top" secondItem="dTS-Eq-pMu" secondAttribute="bottom" constant="8" id="eZZ-x5-bCy"/>
+                                                    <constraint firstItem="dTS-Eq-pMu" firstAttribute="centerX" secondItem="f3a-ot-lhG" secondAttribute="centerX" id="g23-Q2-5Co"/>
+                                                    <constraint firstItem="apN-wh-fRo" firstAttribute="top" secondItem="pp3-IM-IDF" secondAttribute="bottom" constant="15" id="khB-zF-o5n"/>
+                                                    <constraint firstItem="w7O-Dq-mXN" firstAttribute="top" secondItem="pp3-IM-IDF" secondAttribute="bottom" constant="15" id="luY-sQ-Exo"/>
+                                                    <constraint firstItem="dTS-Eq-pMu" firstAttribute="top" secondItem="f3a-ot-lhG" secondAttribute="top" constant="16" id="zd1-Yw-vtl"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -190,9 +244,11 @@
                                             <constraint firstItem="lNl-BI-8D7" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" id="cPs-lW-btN"/>
                                             <constraint firstItem="Lw8-Ep-qjQ" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" constant="-32" id="cgq-7t-Nz4"/>
                                             <constraint firstItem="OFe-RX-3TV" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" constant="-129" id="gIx-HE-KDK"/>
+                                            <constraint firstItem="f3a-ot-lhG" firstAttribute="top" secondItem="aIK-sF-QUy" secondAttribute="top" constant="150" id="iFL-H5-aOo"/>
                                             <constraint firstItem="tk2-pS-zkC" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" constant="117" id="iRX-yv-8g7"/>
                                             <constraint firstItem="cee-rA-wPk" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" constant="-93" id="mzl-NC-ITZ"/>
                                             <constraint firstItem="JHc-uD-iVa" firstAttribute="top" secondItem="EqO-Fk-Wff" secondAttribute="bottom" constant="18" id="pZo-Ax-ZSw"/>
+                                            <constraint firstItem="f3a-ot-lhG" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" id="qQE-ix-ePL"/>
                                             <constraint firstItem="EqO-Fk-Wff" firstAttribute="top" secondItem="aIK-sF-QUy" secondAttribute="top" constant="25" id="vaQ-Ay-yP6"/>
                                             <constraint firstItem="Lw8-Ep-qjQ" firstAttribute="top" secondItem="2i5-IS-lzG" secondAttribute="bottom" constant="8" id="wo4-jo-jUW"/>
                                         </constraints>
@@ -222,11 +278,16 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="w7O-Dq-mXN" id="luK-AX-CAd"/>
+                        <outlet property="datePicker" destination="pp3-IM-IDF" id="0CP-4d-IYa"/>
                         <outlet property="dateReminding" destination="Lw8-Ep-qjQ" id="eTT-vh-2u5"/>
                         <outlet property="facebookButton" destination="cee-rA-wPk" id="8ah-uW-8je"/>
                         <outlet property="nameClothes" destination="ToC-5E-ZKq" id="gtL-YX-BX3"/>
                         <outlet property="photoClothes" destination="EqO-Fk-Wff" id="8ai-rs-ZFN"/>
                         <outlet property="photoTag" destination="KvS-kY-rAi" id="crw-J8-F1w"/>
+                        <outlet property="remindingView" destination="f3a-ot-lhG" id="ony-DR-9OB"/>
+                        <outlet property="remindingViewSwitcher" destination="tk2-pS-zkC" id="tM1-vI-otv"/>
+                        <outlet property="setupButton" destination="apN-wh-fRo" id="EOs-51-FKN"/>
                         <outlet property="tableHeightConstraint" destination="Vv9-Sb-YtH" id="Pae-pg-9mi"/>
                         <outlet property="tagsTable" destination="lNl-BI-8D7" id="Qyw-wg-DAa"/>
                         <outlet property="vkButton" destination="0hm-ZY-d3y" id="i25-CM-cSw"/>

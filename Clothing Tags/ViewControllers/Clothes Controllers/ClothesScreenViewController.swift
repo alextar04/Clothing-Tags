@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import EventKit
 
 class ClothesScreenViewController: UIViewController {
     var openFromCreationClothesScreen: Bool = false
@@ -21,6 +22,14 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var yandexButton: UIButton!
     
     @IBOutlet weak var nameClothes: UILabel!
+    
+    @IBOutlet weak var remindingView: UIView!
+    var eventObject: EKEventStore? = nil
+    var reminder: EKReminder? = nil
+    @IBOutlet weak var remindingViewSwitcher: UISwitch!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var setupButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var dateReminding: UILabel!
     
     @IBOutlet weak var tagsTable: UITableView!
@@ -74,6 +83,8 @@ class ClothesScreenViewController: UIViewController {
             $0.roundingRect()
         }
         
+        setSettingsReminderView()
+        
         // Получение высоты таблицы
         tableHeightConstraint.constant = tagsTable.rowHeight * CGFloat(recievedData.count)
         let viewModelData = Observable.just(recievedData)
@@ -87,12 +98,69 @@ class ClothesScreenViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
     
-    @IBAction func deleteButtonPressed(_ sender: Any) {
-        print("Меня решили удалить!")
+    // Настройка экрана установки напоминаний
+    func setSettingsReminderView(){
+        remindingView.shadowForScreen()
+        remindingViewSwitcher.rx.controlEvent(.valueChanged).bind{
+            // Открыть окно установки нового значения
+            if self.remindingViewSwitcher.isOn{
+                self.remindingView.isHidden = false
+            }
+            // Удаление старого значения
+            else{
+                self.deleteReminder()
+                // + Удалить из БД
+                self.dateReminding.text = "--:--:--"
+            }
+        }
+        
+        setupButton.rx.tap.bind{
+            self.remindingView.isHidden = true
+            self.remindingViewSwitcher.isOn = true
+            self.addReminder()
+            // Изменения в БД
+            // Установка на экране значения
+            self.dateReminding.text = self.datePicker.date.parsingForClothesScreen()
+        }.disposed(by: disposeBag)
+        
+        cancelButton.rx.tap.bind{
+            self.remindingView.isHidden = true
+        }.disposed(by: disposeBag)
     }
     
-    @IBAction func reminderSwitchPressed(_ sender: Any) {
-        print("Изменили ползунок")
+    func addReminder(){
+            eventObject = EKEventStore.init()
+            eventObject!.requestAccess(to: .reminder){ granted, error in
+                let newReminder = EKReminder(eventStore: self.eventObject!)
+            newReminder.title = self.nameClothes.text
+            newReminder.notes = "Необходимо постирать!"
+            newReminder.priority = 0
+            
+            let alarmTime = EKAlarm(absoluteDate: self.datePicker.date)
+            newReminder.addAlarm(alarmTime)
+            
+                newReminder.calendar = self.eventObject!.defaultCalendarForNewReminders()
+            self.reminder = newReminder
+            do {
+                try self.eventObject!.save(self.reminder!, commit: true)
+            }catch{
+                fatalError("Ошибка создания напоминания!")
+            }
+            print("Напоминание сохранено!")
+            }
+    }
+    
+    func deleteReminder(){
+            do{
+                try eventObject!.remove(self.reminder!, commit: true)
+            } catch{
+                fatalError("Ошибка во время удаления!")
+            }
+            print("Удаление успешно!")
+    }
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        print("Меня решили удалить!")
     }
     
     @IBAction func swipeDetection(_ sender: UIPanGestureRecognizer) {

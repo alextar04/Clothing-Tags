@@ -286,8 +286,8 @@
             filePath = "Clothing Tags/ViewControllers/Clothes Controllers/ClothesScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "loadClothesScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "Clothing Tags/ViewControllers/Clothes Controllers/ClothesScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
