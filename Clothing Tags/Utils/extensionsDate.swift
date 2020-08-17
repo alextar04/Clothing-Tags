@@ -15,4 +15,10 @@ extension Date{
         let dateString = dateFormatter.string(from: self)
         return dateString
     }
+    
+    func zeroingSecondsInAlarmForReminders()->Date{
+        var upadatedComponents = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute, .second], from: self)
+        upadatedComponents.second = 0
+        return Calendar.current.date(from: upadatedComponents)!
+    }
 }

@@ -25,7 +25,7 @@ class ClothesScreenViewController: UIViewController {
     
     @IBOutlet weak var remindingView: UIView!
     var eventObject: EKEventStore? = nil
-    var reminder: EKReminder? = nil
+    var event: EKEvent? = nil
     @IBOutlet weak var remindingViewSwitcher: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var setupButton: UIButton!
@@ -129,30 +129,32 @@ class ClothesScreenViewController: UIViewController {
     }
     
     func addReminder(){
-            eventObject = EKEventStore.init()
-            eventObject!.requestAccess(to: .reminder){ granted, error in
-                let newReminder = EKReminder(eventStore: self.eventObject!)
-            newReminder.title = self.nameClothes.text
-            newReminder.notes = "Необходимо постирать!"
-            newReminder.priority = 0
-            
-            let alarmTime = EKAlarm(absoluteDate: self.datePicker.date)
-            newReminder.addAlarm(alarmTime)
-            
-                newReminder.calendar = self.eventObject!.defaultCalendarForNewReminders()
-            self.reminder = newReminder
-            do {
-                try self.eventObject!.save(self.reminder!, commit: true)
-            }catch{
-                fatalError("Ошибка создания напоминания!")
-            }
-            print("Напоминание сохранено!")
+            eventObject = EKEventStore()
+            eventObject!.requestAccess(to: .event){ granted, error in
+                let newEvent = EKEvent(eventStore: self.eventObject!)
+                newEvent.title = self.nameClothes.text
+                newEvent.notes = "Необходимо постирать!"
+
+                let updatedDate = self.datePicker.date.zeroingSecondsInAlarmForReminders()
+                print(updatedDate)
+                newEvent.startDate = updatedDate
+                newEvent.endDate = updatedDate
+                newEvent.addAlarm(EKAlarm(absoluteDate: updatedDate))
+                
+                newEvent.calendar = self.eventObject!.defaultCalendarForNewEvents
+                self.event = newEvent
+                do {
+                    try self.eventObject!.save(self.event!,span: .thisEvent, commit: true)
+                }catch{
+                    fatalError("Ошибка создания напоминания!")
+                }
+                print("Напоминание сохранено!")
             }
     }
     
     func deleteReminder(){
             do{
-                try eventObject!.remove(self.reminder!, commit: true)
+                try eventObject!.remove(self.event!,span: .thisEvent, commit: true)
             } catch{
                 fatalError("Ошибка во время удаления!")
             }
