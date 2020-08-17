@@ -125,6 +125,7 @@ class ClothesScreenViewController: UIViewController {
         
         cancelButton.rx.tap.bind{
             self.remindingView.isHidden = true
+            self.remindingViewSwitcher.isOn = false
         }.disposed(by: disposeBag)
     }
     
