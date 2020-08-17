@@ -35,7 +35,7 @@ class TagsCollectionController: UIViewController, UITableViewDelegate{
     func loadStickersTable(){
         var listRecievedStickers = [TagData]()
         for i in 0...23{
-            listRecievedStickers.append(TagData(String(i), UIImage(named: "add.png")!))
+            listRecievedStickers.append(TagData(String(i), UIImage(named: "sticker1_1.png")!))
         }
         stickersData = [SectionOfImageStickerData(header: "First", items: Array(listRecievedStickers[0...5])),
                             SectionOfImageStickerData(header: "Second", items: Array(listRecievedStickers[6...11])),

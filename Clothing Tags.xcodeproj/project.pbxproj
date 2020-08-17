@@ -60,6 +60,12 @@
 		CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */; };
 		CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
 		CEC4183524C22FE400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
+		CED23E0124EAC5C90056472E /* CoreDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E0024EAC5C90056472E /* CoreDataConfiguration.swift */; };
+		CED23E1624EACD0A0056472E /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1024EACD0A0056472E /* Clothes.swift */; };
+		CED23E1824EACD0A0056472E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1224EACD0A0056472E /* Category.swift */; };
+		CED23E1A24EACD0A0056472E /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1424EACD0A0056472E /* Sticker.swift */; };
+		CED23E1D24EAD1DF0056472E /* StickerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1C24EAD1DF0056472E /* StickerRequests.swift */; };
+		CED23E2424EAF4560056472E /* sticker1_1.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E2324EAF4560056472E /* sticker1_1.png */; };
 		CEE13E0E24DF17DA00FF3BB0 /* blueBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */; };
 		CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3626924D4341800848279 /* CategoryScreen.storyboard */; };
 		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
@@ -137,6 +143,12 @@
 		CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		CEC4183324C226D400ECA02E /* bosaNova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bosaNova.ttf; sourceTree = "<group>"; };
+		CED23E0024EAC5C90056472E /* CoreDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfiguration.swift; sourceTree = "<group>"; };
+		CED23E1024EACD0A0056472E /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
+		CED23E1224EACD0A0056472E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CED23E1424EACD0A0056472E /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
+		CED23E1C24EAD1DF0056472E /* StickerRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerRequests.swift; sourceTree = "<group>"; };
+		CED23E2324EAF4560056472E /* sticker1_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sticker1_1.png; sourceTree = "<group>"; };
 		CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBorder.png; sourceTree = "<group>"; };
 		CEE3626924D4341800848279 /* CategoryScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CategoryScreen.storyboard; sourceTree = "<group>"; };
 		CEE3626B24D4358000848279 /* CategoryScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenCell.swift; sourceTree = "<group>"; };
@@ -173,13 +185,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		782EBF2FAA7D872A1483DB55 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		CE39E83724BA95C400060239 = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +192,6 @@
 				CE39E84224BA95C400060239 /* Clothing Tags */,
 				CE39E85C24BA95CD00060239 /* Clothing Tags Tests */,
 				CE39E84124BA95C400060239 /* Products */,
-				782EBF2FAA7D872A1483DB55 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,7 +216,6 @@
 				CE39E84324BA95C400060239 /* AppDelegate.swift */,
 				CE39E84F24BA95CC00060239 /* Assets.xcassets */,
 				CE39E85424BA95CC00060239 /* Info.plist */,
-				CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */,
 			);
 			path = "Clothing Tags";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				CED23E2024EAF4000056472E /* stickers */,
 				CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */,
 				CEA2BC6E24D9A6DA002C5FD5 /* camera.png */,
 				CE10A0AC24D8A42D00F36D2F /* vkLogo.png */,
@@ -375,6 +379,7 @@
 		CEA9138824C1E4BA00CCA7E7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CED23E1C24EAD1DF0056472E /* StickerRequests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -382,6 +387,11 @@
 		CEA9138924C1E4DD00CCA7E7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */,
+				CED23E0024EAC5C90056472E /* CoreDataConfiguration.swift */,
+				CED23E1024EACD0A0056472E /* Clothes.swift */,
+				CED23E1224EACD0A0056472E /* Category.swift */,
+				CED23E1424EACD0A0056472E /* Sticker.swift */,
 				CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */,
 			);
 			path = Model;
@@ -425,6 +435,14 @@
 				CEC4183324C226D400ECA02E /* bosaNova.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CED23E2024EAF4000056472E /* stickers */ = {
+			isa = PBXGroup;
+			children = (
+				CED23E2324EAF4560056472E /* sticker1_1.png */,
+			);
+			path = stickers;
 			sourceTree = "<group>";
 		};
 		CEE93BA224E7E3210063305A /* About Application Controller */ = {
@@ -551,6 +569,7 @@
 				CE0061C224C32E89000F66CD /* allert.png in Resources */,
 				CE0061C824C33D72000F66CD /* MenuScreen.storyboard in Resources */,
 				CEA2BC6824D99AFF002C5FD5 /* NameCategoryScreen.storyboard in Resources */,
+				CED23E2424EAF4560056472E /* sticker1_1.png in Resources */,
 				CE39E85324BA95CC00060239 /* LaunchScreen.storyboard in Resources */,
 				CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */,
 				CE90C8F024DBD123004E8E94 /* TagsCollectionScreen.storyboard in Resources */,
@@ -590,12 +609,14 @@
 			files = (
 				CEE93BA924E7F8BA0063305A /* TagDescriptionGalleryCell.swift in Sources */,
 				CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */,
+				CED23E0124EAC5C90056472E /* CoreDataConfiguration.swift in Sources */,
 				CEA2BC7224D9C7F5002C5FD5 /* extensionsViewController.swift in Sources */,
 				CEE93BAD24E81F810063305A /* ReminderScreenController.swift in Sources */,
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
 				CEE93BAB24E809D50063305A /* extensionsColor.swift in Sources */,
+				CED23E1D24EAD1DF0056472E /* StickerRequests.swift in Sources */,
 				CE6FB5B024E57C260016B86B /* TagChooseScreenController.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
@@ -607,14 +628,17 @@
 				CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */,
 				CE0FA58424E95A5E00814A82 /* extensionsView.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
+				CED23E1A24EACD0A0056472E /* Sticker.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,
+				CED23E1824EACD0A0056472E /* Category.swift in Sources */,
 				CE96271424E6A9C1006CD1F8 /* HeaderStickersCollection.swift in Sources */,
 				CEE93BA624E7EDCC0063305A /* TagsCollectionController.swift in Sources */,
 				CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */,
 				CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */,
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
+				CED23E1624EACD0A0056472E /* Clothes.swift in Sources */,
 				CEE93BA424E7E3930063305A /* AboutApplicationScreenController.swift in Sources */,
 				CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */,
 				CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */,

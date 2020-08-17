@@ -76,7 +76,7 @@ class NameCategoryScreenController : UIViewController{
     // MARK: Загрузка части для кнопки перехода к дальнейшему окну
     func loadNextButtonPart(){
         nextScreenButton.rx.tap.bind{
-            let clothesInstance = Clothes.getInstance()
+            let clothesInstance = ClotheS.getInstance()
             clothesInstance?.name = self.nameClothes.text
             clothesInstance?.category = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
             

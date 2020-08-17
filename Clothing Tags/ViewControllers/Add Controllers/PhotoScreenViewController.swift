@@ -212,7 +212,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: Загрузка нового экрана
     func loadNextScreen(){
         if nameScreen == "Выбор одежды"{
-            Clothes.getInstance()?.photoClothes = currentSelectedPhoto
+            ClotheS.getInstance()?.photoClothes = currentSelectedPhoto
             let tagPhotoScreenViewController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as? PhotoScreenViewController
             tagPhotoScreenViewController?.nameScreen = "Выбор бирки"
             
@@ -222,7 +222,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         if nameScreen == "Выбор бирки"{
-            Clothes.getInstance()?.photoTag = currentSelectedPhoto
+            ClotheS.getInstance()?.photoTag = currentSelectedPhoto
             let inputNameAndCategoryViewController = UIStoryboard(name: "NameCategoryScreen", bundle: nil).instantiateViewController(withIdentifier: "NameCategoryScreenID") as? NameCategoryScreenController
             inputNameAndCategoryViewController?.nameScreen = "Выбор названия и категории"
             

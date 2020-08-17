@@ -43,7 +43,7 @@ class ClothesScreenViewController: UIViewController {
     var recievedData : [TagData] = [
         TagData("Полоскайте белье под температурой 30 градусов на бережной стирке", UIImage(named: "tags.png")!),
         TagData("Теннисные носки", UIImage(named: "facebookLogo.png")!),
-        TagData("Теннисные носки", UIImage(named: "tags.png")!),
+        TagData("Теннисные носки", UIImage(named: "sticker1_1.png")!),
         TagData("Теннисные носки", UIImage(named: "tags.png")!),
         TagData("Теннисные носки", UIImage(named: "tags.png")!),
     ]

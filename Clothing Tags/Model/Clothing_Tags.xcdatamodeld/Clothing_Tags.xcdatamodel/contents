@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+    </entity>
+    <entity name="Clothes" representedClassName=".Clothes" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photoClothes" optional="YES" attributeType="Binary"/>
+        <attribute name="photoTag" optional="YES" attributeType="Binary"/>
+        <attribute name="remindWashing" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="categoryId" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="stickerId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sticker"/>
+    </entity>
+    <entity name="Sticker" representedClassName=".Sticker" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="specification" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Clothes" positionX="-54" positionY="-9" width="128" height="148"/>
+        <element name="Sticker" positionX="-36" positionY="9" width="128" height="88"/>
+    </elements>
+</model>

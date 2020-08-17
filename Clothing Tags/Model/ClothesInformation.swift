@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-class Clothes{
+class ClotheS{
     var name : String? = nil
     var photoClothes : UIImageView? = nil
     var photoTag : UIImageView? = nil
     var category : String? = nil
     var tagCollection : [TagData]? = nil
     
-    private static var clothes : Clothes?
+    private static var clothes : ClotheS?
     private init() {}
     
-    public static func getInstance()->Clothes?{
+    public static func getInstance()->ClotheS?{
         guard let instance = self.clothes else {
-            self.clothes = Clothes()
+            self.clothes = ClotheS()
             return self.clothes
         }
         return instance
