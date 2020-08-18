@@ -38,4 +38,12 @@ class DataStorage{
             }
         }
     }
+    
+    // Миграция из сторонней БД для инциализации хранилища приложения
+    func migrationFromDB(){
+        let database = CoreDataInitializationData()
+        //fillStickers(database.getStickers())
+        //fillCategories(database.getCategories())
+        //fillClothes(database.getClothes())
+    }
 }

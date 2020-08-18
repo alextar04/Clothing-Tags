@@ -41,7 +41,7 @@ class MainScreenViewController: UIViewController {
     func loadMainMenu(){
         
         // CORE DATA
-        let recievedData : [A] = [A("loadingMenu.jpg"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
+        let recievedData : [A] = [A("loadingMenu.jpg"),A("add.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
         let viewModelData = Observable.just(recievedData)
         
         viewModelData.bind(to: collectionView.rx.items){

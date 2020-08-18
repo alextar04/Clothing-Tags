@@ -15,17 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var storage: DataStorage?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        /* Запуск приложения с корневого RootViewController */
+        // Запускать приложение из корневого RootViewController
         window?.rootViewController = RootViewController()
+        // Инициализация хранилища
         storage = DataStorage()
-        let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true)
-        print("\(path)")
+        storage?.migrationFromDB()
+        
         return true
     }
     
     /* Обеспечим доступ к RootViewController */
-    /* 1. Доступ к экземпляру делегата */
-    /* 2. Непосредственный доступ */
+    /* 1. Доступ к экземпляру делегата
+       2. Непосредственный доступ   */
     static var appDelegateLink : AppDelegate{
         return UIApplication.shared.delegate as! AppDelegate
     }
