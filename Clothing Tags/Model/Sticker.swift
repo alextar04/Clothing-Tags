@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Sticker)
+//@objc(Sticker)
 public class Sticker: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Sticker> {
@@ -20,5 +20,5 @@ public class Sticker: NSManagedObject {
     @NSManaged public var id: Int16
     @NSManaged public var image: Data?
     @NSManaged public var specification: String?
-    
+    @NSManaged public var category: String?
 }

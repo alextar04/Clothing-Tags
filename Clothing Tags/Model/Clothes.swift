@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-@objc(Clothes)
+//@objc(Clothes)
 public class Clothes: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Clothes> {

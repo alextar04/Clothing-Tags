@@ -8,13 +8,19 @@
 
 import Foundation
 import CoreData
+import SQLite
 
 class DataStorage{
     
     // MARK: Инициализация PersistentCoordinator&Context
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Clothing_Tags")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        var modelURL = Bundle(for: type(of: self)).url(forResource: "Clothing_Tags", withExtension: "momd")!
+        modelURL.appendPathComponent("Clothing_Tags.mom")
+        let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
+        
+        
+        let container = NSPersistentContainer(name: "Clothing_Tags", managedObjectModel: managedObjectModel!)
+        container.loadPersistentStores(completionHandler: {(storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
@@ -42,8 +48,79 @@ class DataStorage{
     // Миграция из сторонней БД для инциализации хранилища приложения
     func migrationFromDB(){
         let database = CoreDataInitializationData()
-        //fillStickers(database.getStickers())
-        //fillCategories(database.getCategories())
-        //fillClothes(database.getClothes())
+        fillContents(.Sticker, database.getTableInformation(.Sticker))
+        fillContents(.Category, database.getTableInformation(.Category))
+        //fillContents(.Clothes, database.getTableInformation(.Clothes))
+        
+        getPastedContents()
     }
+    
+    // Инциализация БД CoreData
+    func fillContents(_ tablename: Tablename, _ contents: (CoreDataInitializationData.TableDatabase, [SQLite.Row])){
+        switch tablename {
+            case .Category:
+                //let item = Category(context: getContext())
+                let table = contents.0 as? CoreDataInitializationData.Category
+                for record in contents.1{
+                    let item = Category(context: getContext())
+                    item.id = Int16((record[(table?.id)!])!)
+                    item.name = record[(table?.name)!]
+                    item.photo = Data.fromDatatypeValue(record[(table?.photo)!])
+                    saveContext()
+                }
+            case .Clothes:
+                let item = Clothes(context: getContext())
+                let table = contents.0 as? CoreDataInitializationData.Clothes
+                for record in contents.1{
+                    item.id = Int16((record[(table?.id)!])!)
+                    item.name = record[(table?.name)!]
+                    item.photoClothes = Data.fromDatatypeValue(record[(table?.photoClothes)!])
+                    item.photoTag = Data.fromDatatypeValue(record[(table?.photoTag)!])
+                    item.remindWashing = nil
+                    
+                    // ИСПРАВИТЬ!!!
+                    item.categoryId = nil
+                    // Парсинг строки с стикерами
+                    // Поиск стикеров
+                    // Добавление стикеров
+                    item.stickerId = nil
+                    
+                    saveContext()
+                }
+            case .Sticker:
+                //let item = Sticker(context: getContext())
+                let table = contents.0 as? CoreDataInitializationData.Sticker
+                for record in contents.1{
+                    let item = Sticker(context: getContext())
+                    item.id = Int16((record[(table?.id)!])!)
+                    item.image = Data.fromDatatypeValue(record[(table?.image)!])
+                    item.specification = record[(table?.specification)!]
+                    item.category = record[(table?.category)!]
+                    saveContext()
+                }
+        }
+    }
+    
+    func getPastedContents(){
+        do{
+            let fetchRequestCategory: NSFetchRequest<Category> = Category.fetchRequest()
+            let objectsCategory = try getContext().fetch(fetchRequestCategory)
+            
+            let fetchRequestSticker: NSFetchRequest<Sticker> = Sticker.fetchRequest()
+            let objectsSticker = try getContext().fetch(fetchRequestSticker)
+            
+            let fetchRequestClothes: NSFetchRequest<Clothes> = Clothes.fetchRequest()
+            let objectsClothes = try getContext().fetch(fetchRequestClothes)
+            
+            print("Число категорий: \(objectsCategory.count)")
+            print("Число стикеров: \(objectsSticker.count)")
+            print("Число одежд: \(objectsClothes.count)")
+        }catch{
+            print("Пiймали сепара!")
+        }
+    }
+}
+
+enum Tablename{
+    case Category, Sticker, Clothes
 }
