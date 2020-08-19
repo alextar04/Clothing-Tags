@@ -48,9 +48,9 @@ class DataStorage{
     // Миграция из сторонней БД для инциализации хранилища приложения
     func migrationFromDB(){
         let database = CoreDataInitializationData()
-        fillContents(.Sticker, database.getTableInformation(.Sticker))
-        fillContents(.Category, database.getTableInformation(.Category))
-        //fillContents(.Clothes, database.getTableInformation(.Clothes))
+        // fillContents(.Sticker, database.getTableInformation(.Sticker))
+        // fillContents(.Category, database.getTableInformation(.Category))
+        // fillContents(.Clothes, database.getTableInformation(.Clothes))
         
         getPastedContents()
     }
@@ -59,7 +59,6 @@ class DataStorage{
     func fillContents(_ tablename: Tablename, _ contents: (CoreDataInitializationData.TableDatabase, [SQLite.Row])){
         switch tablename {
             case .Category:
-                //let item = Category(context: getContext())
                 let table = contents.0 as? CoreDataInitializationData.Category
                 for record in contents.1{
                     let item = Category(context: getContext())
@@ -69,9 +68,9 @@ class DataStorage{
                     saveContext()
                 }
             case .Clothes:
-                let item = Clothes(context: getContext())
                 let table = contents.0 as? CoreDataInitializationData.Clothes
                 for record in contents.1{
+                    let item = Clothes(context: getContext())
                     item.id = Int16((record[(table?.id)!])!)
                     item.name = record[(table?.name)!]
                     item.photoClothes = Data.fromDatatypeValue(record[(table?.photoClothes)!])
@@ -79,16 +78,18 @@ class DataStorage{
                     item.remindWashing = nil
                     
                     // ИСПРАВИТЬ!!!
-                    item.categoryId = nil
+                    item.categoryId = getCategoryFromId(record[(table?.idCategory)!]!)
+                    
                     // Парсинг строки с стикерами
-                    // Поиск стикеров
+                    let arrayStickersId = getStickersIdFromString(record[table!.idsSticker]!)
                     // Добавление стикеров
-                    item.stickerId = nil
+                    arrayStickersId.map{id in
+                        item.stickerId?.adding(getStickerFromId(id))
+                    }
                     
                     saveContext()
                 }
             case .Sticker:
-                //let item = Sticker(context: getContext())
                 let table = contents.0 as? CoreDataInitializationData.Sticker
                 for record in contents.1{
                     let item = Sticker(context: getContext())

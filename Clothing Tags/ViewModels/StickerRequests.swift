@@ -22,3 +22,7 @@ class StickerRequests{
         return nil
     }
 }
+
+func getStickerFromId(_ id: Int)->Sticker{
+    return Sticker()
+}

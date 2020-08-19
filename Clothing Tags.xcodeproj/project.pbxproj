@@ -19,6 +19,7 @@
 		CE39E85E24BA95CD00060239 /* Clothing_TagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E85D24BA95CD00060239 /* Clothing_TagsTests.swift */; };
 		CE414B7624D448F6009FC4E8 /* CategoryScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */; };
 		CE43E5F724D2F3370001D4DB /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */; };
+		CE51950B24ED9C98001407D7 /* CategoryRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE51950A24ED9C98001407D7 /* CategoryRequests.swift */; };
 		CE570C3624EC3FDF00003C9C /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E3624EC2F720056472E /* add.png */; };
 		CE570C3724EC3FDF00003C9C /* allert.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E3724EC2F720056472E /* allert.png */; };
 		CE570C3824EC3FDF00003C9C /* iconInApp.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E3824EC2F720056472E /* iconInApp.png */; };
@@ -110,6 +111,7 @@
 		CE39E85F24BA95CD00060239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE414B7524D448F6009FC4E8 /* CategoryScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewController.swift; sourceTree = "<group>"; };
 		CE43E5F624D2F3370001D4DB /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
+		CE51950A24ED9C98001407D7 /* CategoryRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRequests.swift; sourceTree = "<group>"; };
 		CE571D7C24DD77DF0071AB22 /* PhotoScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoScreenViewController.swift; path = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
 		CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPhotosCell.swift; sourceTree = "<group>"; };
 		CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewController.swift; sourceTree = "<group>"; };
@@ -381,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				CED23E1C24EAD1DF0056472E /* StickerRequests.swift */,
+				CE51950A24ED9C98001407D7 /* CategoryRequests.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */,
 				CE0FA58424E95A5E00814A82 /* extensionsView.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
+				CE51950B24ED9C98001407D7 /* CategoryRequests.swift in Sources */,
 				CED23E1A24EACD0A0056472E /* Sticker.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,
