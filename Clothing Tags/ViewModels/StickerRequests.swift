@@ -24,5 +24,12 @@ class StickerRequests{
 }
 
 func getStickerFromId(_ id: Int)->Sticker{
-    return Sticker()
+    let request: NSFetchRequest<Sticker> = Sticker.fetchRequest()
+    request.predicate = NSPredicate(format: "id = %@", String(id))
+    do{
+        let sticker = try AppDelegate.appDelegateLink.dataStorage.getContext().fetch(request)
+        return sticker.first!
+    } catch{
+        fatalError("Ошибка получения стикера по Id!")
+    }
 }

@@ -48,11 +48,13 @@ class DataStorage{
     // Миграция из сторонней БД для инциализации хранилища приложения
     func migrationFromDB(){
         let database = CoreDataInitializationData()
-        // fillContents(.Sticker, database.getTableInformation(.Sticker))
-        // fillContents(.Category, database.getTableInformation(.Category))
-        // fillContents(.Clothes, database.getTableInformation(.Clothes))
+         fillContents(.Sticker, database.getTableInformation(.Sticker))
+         fillContents(.Category, database.getTableInformation(.Category))
+         fillContents(.Clothes, database.getTableInformation(.Clothes))
         
         getPastedContents()
+        database.connection = nil
+        print("Подключение к внешней БД закрыто!")
     }
     
     // Инциализация БД CoreData
@@ -76,8 +78,6 @@ class DataStorage{
                     item.photoClothes = Data.fromDatatypeValue(record[(table?.photoClothes)!])
                     item.photoTag = Data.fromDatatypeValue(record[(table?.photoTag)!])
                     item.remindWashing = nil
-                    
-                    // ИСПРАВИТЬ!!!
                     item.categoryId = getCategoryFromId(record[(table?.idCategory)!]!)
                     
                     // Парсинг строки с стикерами
@@ -117,7 +117,7 @@ class DataStorage{
             print("Число стикеров: \(objectsSticker.count)")
             print("Число одежд: \(objectsClothes.count)")
         }catch{
-            print("Пiймали сепара!")
+            print("Ошибка инициализации стартовой БД!")
         }
     }
 }

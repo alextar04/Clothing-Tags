@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import CoreData
 
 func getCategoryFromId(_ id: Int)->Category{
-    return Category()
+    let request: NSFetchRequest<Category> = Category.fetchRequest()
+    request.predicate = NSPredicate(format: "id = %@", String(id))
+    do{
+        let category = try AppDelegate.appDelegateLink.dataStorage.getContext().fetch(request)
+        return category.first!
+    } catch{
+        fatalError("Ошибка получения категории по Id!")
+    }
 }
 
 

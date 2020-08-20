@@ -12,9 +12,19 @@ import RxCocoa
 import RxDataSources
 
 class TagsCollectionController: UIViewController, UITableViewDelegate{
-    var nameScreen: String = ""
+    
     @IBOutlet weak var tagTable: UITableView!
+    
+    var nameScreen: String = ""
+    let viewModel = TagsCollectionViewModel()
     var disposeBag = DisposeBag()
+    
+    // Вспомогательная структура для отображения данных в виде секции
+    var stickersSectionalData = [SectionOfImageStickerData]()
+    struct SectionOfImageStickerData{
+        var header: String
+        var items: [Sticker]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,36 +34,33 @@ class TagsCollectionController: UIViewController, UITableViewDelegate{
         loadStickersTable()
     }
     
-    // CORE DATA
-    struct SectionOfImageStickerData{
-      var header: String
-      var items: [TagData]
-    }
-    var stickersData = [SectionOfImageStickerData]()
-    
     // MARK: Загрузка таблицы со стикерами на тэгах
     func loadStickersTable(){
-        var listRecievedStickers = [TagData]()
-        for i in 0...23{
-            listRecievedStickers.append(TagData(String(i), UIImage(named: "sticker1_1.png")!))
+        let recievedStickers = viewModel.stickers
+        recievedStickers.map{ groupSticker in
+            var groupForPaste = [Sticker]()
+            var headerForPaste = groupSticker[0].category
+            
+            // Итерация по словарю группы
+            groupSticker.map{
+                groupForPaste.append($0)
+            }
+            
+            let groupSection = SectionOfImageStickerData(header: headerForPaste!, items: groupForPaste)
+            stickersSectionalData.append(groupSection)
         }
-        stickersData = [SectionOfImageStickerData(header: "First", items: Array(listRecievedStickers[0...5])),
-                            SectionOfImageStickerData(header: "Second", items: Array(listRecievedStickers[6...11])),
-                            SectionOfImageStickerData(header: "Third", items: Array(listRecievedStickers[12...17])),
-                            SectionOfImageStickerData(header: "Fourth", items: Array(listRecievedStickers[18...23]))
-        ]
         
         // Конфигурация содержимого для ячеек таблицы
         let dataSource = RxTableViewSectionedReloadDataSource<SectionOfImageStickerData>(configureCell: {
             dataSource, table, index, item in
             let cell = table.dequeueReusableCell(withIdentifier: "TagDescriptionGalleryCell", for: index) as! TagDescriptionGalleryCell
-            cell.tagDescription.text = item.descriptionTag
-            cell.tagImage.image = item.pictureTag
+            cell.tagDescription.text = item.specification
+            cell.tagImage.image = UIImage(data: item.image!)
             return cell
         })
         
         // Связывание данных и таблицы
-        Observable.just(stickersData).bind(to: tagTable.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        Observable.just(stickersSectionalData).bind(to: tagTable.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         // Установка делегата для установки кастомной шапки секции
         tagTable.rx.setDelegate(self)
     }
@@ -62,7 +69,7 @@ class TagsCollectionController: UIViewController, UITableViewDelegate{
         let label = UILabel()
         label.backgroundColor = .tagCollectionHeaderColor
         label.font = UIFont(name: "a_BosaNova", size: 17)
-        label.text = " \(stickersData[section].header)"
+        label.text = " \(stickersSectionalData[section].header)"
         return label
     }
     
@@ -80,7 +87,7 @@ class TagsCollectionController: UIViewController, UITableViewDelegate{
 }
 
 extension TagsCollectionController.SectionOfImageStickerData: SectionModelType{
-    init(original: TagsCollectionController.SectionOfImageStickerData, items: [TagData]) {
+    init(original: TagsCollectionController.SectionOfImageStickerData, items: [Sticker]) {
         self = original
         self.items = items
     }

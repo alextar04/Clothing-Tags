@@ -32,6 +32,7 @@
 		CE571D7F24DDA19F0071AB22 /* ScreenPhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */; };
 		CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */; };
 		CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */; };
+		CE67B45A24EE92BC00DD958B /* TagsCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE67B45924EE92BC00DD958B /* TagsCollectionViewModel.swift */; };
 		CE6FB5B024E57C260016B86B /* TagChooseScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FB5AF24E57C260016B86B /* TagChooseScreenController.swift */; };
 		CE80300D24D5B5CD00F16D22 /* ClothesScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */; };
 		CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE89F10E24C2074E00A2ABBE /* RxSwift */; };
@@ -116,6 +117,7 @@
 		CE571D7E24DDA19F0071AB22 /* ScreenPhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPhotosCell.swift; sourceTree = "<group>"; };
 		CE67AA2824D864F900502A79 /* ClothesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewController.swift; sourceTree = "<group>"; };
 		CE67AA2A24D8658000502A79 /* TagDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDescriptionCell.swift; sourceTree = "<group>"; };
+		CE67B45924EE92BC00DD958B /* TagsCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewModel.swift; sourceTree = "<group>"; };
 		CE6FB5AF24E57C260016B86B /* TagChooseScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagChooseScreenController.swift; sourceTree = "<group>"; };
 		CE80300C24D5B5CD00F16D22 /* ClothesScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ClothesScreen.storyboard; sourceTree = "<group>"; };
 		CE8A67DF24D3304E00D654DC /* MenuScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenCell.swift; sourceTree = "<group>"; };
@@ -294,6 +296,14 @@
 			path = "Clothes Storyboards";
 			sourceTree = "<group>";
 		};
+		CE67B45824EE928E00DD958B /* TagCollectionViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE67B45924EE92BC00DD958B /* TagsCollectionViewModel.swift */,
+			);
+			path = TagCollectionViewModel;
+			sourceTree = "<group>";
+		};
 		CE90070424BCD233004D9BC6 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,6 +394,7 @@
 			children = (
 				CED23E1C24EAD1DF0056472E /* StickerRequests.swift */,
 				CE51950A24ED9C98001407D7 /* CategoryRequests.swift */,
+				CE67B45824EE928E00DD958B /* TagCollectionViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -659,6 +670,7 @@
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
 				CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
+				CE67B45A24EE92BC00DD958B /* TagsCollectionViewModel.swift in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
 				CE0FA58624E967DE00814A82 /* extensionsDate.swift in Sources */,

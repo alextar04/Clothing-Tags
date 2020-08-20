@@ -24,6 +24,12 @@ class SplashScreenViewController: UIViewController {
     
     private func startingSetupSettings(){
         loadingWheel.startAnimating()
+        
+        // Инициализация хранилища
+        AppDelegate.appDelegateLink.storage = DataStorage()
+        // Для первого запуска приложения
+        // AppDelegate.appDelegateLink.storage?.migrationFromDB()
+        
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(3)) {
             // Будем что-то загружать из БД (скорее всего)
             self.loadingWheel.stopAnimating()

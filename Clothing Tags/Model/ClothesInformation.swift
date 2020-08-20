@@ -28,6 +28,7 @@ class ClotheS{
     }
 }
 
+
 // CORE DATA
 class TagData: Equatable{
     static func == (lhs: TagData, rhs: TagData) -> Bool {
