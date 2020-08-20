@@ -318,8 +318,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "loadNewPicturePart()"
             landmarkType = "7">
             <Locations>
@@ -359,70 +359,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EB213038-0CA6-40F0-A383-47C8AA660146"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "getImageFromLibrary(countLoadedPhotos:completionClosure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EB213038-0CA6-40F0-A383-47C8AA660146 - 416b03d7ab77d1d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Clothing_Tags.PhotoScreenViewController.getImageFromLibrary() -&gt; Swift.Array&lt;__C.UIImage&gt;"
-                  moduleName = "Clothing Tags"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/Add%20Controllers/PhotoScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "828">
-               </Location>
-               <Location
-                  uuid = "EB213038-0CA6-40F0-A383-47C8AA660146 - fbf5da01d3eef4b1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (__C.PHAsset) -&gt; () in Clothing_Tags.PhotoScreenViewController.getImageFromLibrary() -&gt; Swift.Array&lt;__C.UIImage&gt;"
-                  moduleName = "Clothing Tags"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewControllers/Add%20Controllers/PhotoScreenViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "48">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ACB9C318-EE3A-41DE-A413-7C3A5D1E8ECC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "getImageFromLibrary(countLoadedPhotos:completionClosure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "76AC9DE3-6559-47E5-86E7-5A0A1C552DDC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -430,8 +366,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,8 +382,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "baseSettingsScrollingSettings()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,8 +398,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
          </BreakpointContent>
@@ -881,6 +817,70 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "loadStickersTable()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D66552E-6F09-4399-96E6-C8B231B5A135"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/AddControllersViewModel/PhotoScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getImageFromLibrary(countLoadedPhotos:completionClosure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D66552E-6F09-4399-96E6-C8B231B5A135 - bd1e1123a61747ff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Clothing_Tags.PhotoScreenViewModel.getImageFromLibrary(countLoadedPhotos: Swift.Int, completionClosure: (Swift.Result&lt;Swift.Array&lt;__C.UIImageView&gt;, Clothing_Tags.ErrorPhotoScreen&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/AddControllersViewModel/PhotoScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1928">
+               </Location>
+               <Location
+                  uuid = "8D66552E-6F09-4399-96E6-C8B231B5A135 - c33bdf8bbc08247e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (__C.UIImageView) -&gt; () in closure #1 () -&gt; () in Clothing_Tags.PhotoScreenViewModel.getImageFromLibrary(countLoadedPhotos: Swift.Int, completionClosure: (Swift.Result&lt;Swift.Array&lt;__C.UIImageView&gt;, Clothing_Tags.ErrorPhotoScreen&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/AddControllersViewModel/PhotoScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A914450-DC10-41A9-A45F-6520F546E2B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewControllers/Add Controllers/PhotoScreenViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

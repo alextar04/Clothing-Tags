@@ -43,6 +43,7 @@
 		CE90C8F024DBD123004E8E94 /* TagsCollectionScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */; };
 		CE90C8F324DBD5E7004E8E94 /* ReminderScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE90C8F224DBD5E6004E8E94 /* ReminderScreen.storyboard */; };
 		CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */; };
+		CE958E4F24EED0A600CF4AF1 /* PhotoScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE958E4E24EED0A600CF4AF1 /* PhotoScreenViewModel.swift */; };
 		CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */; };
 		CE96271024E698DE006CD1F8 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = CE96270F24E698DE006CD1F8 /* Differentiator */; };
 		CE96271224E698DE006CD1F8 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = CE96271124E698DE006CD1F8 /* RxDataSources */; };
@@ -126,6 +127,7 @@
 		CE90C8EF24DBD123004E8E94 /* TagsCollectionScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TagsCollectionScreen.storyboard; sourceTree = "<group>"; };
 		CE90C8F224DBD5E6004E8E94 /* ReminderScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReminderScreen.storyboard; sourceTree = "<group>"; };
 		CE90C8F424DBDFC8004E8E94 /* BaseSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSettings.swift; sourceTree = "<group>"; };
+		CE958E4E24EED0A600CF4AF1 /* PhotoScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoScreenViewModel.swift; sourceTree = "<group>"; };
 		CE96270924E588C2006CD1F8 /* ScreenTagChooseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTagChooseCell.swift; sourceTree = "<group>"; };
 		CE96271324E6A9C1006CD1F8 /* HeaderStickersCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderStickersCollection.swift; sourceTree = "<group>"; };
 		CEA2BC6324D99AAB002C5FD5 /* PhotoScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoScreen.storyboard; sourceTree = "<group>"; };
@@ -355,6 +357,14 @@
 			path = "Tags Collection Controllers";
 			sourceTree = "<group>";
 		};
+		CE958E4D24EECF9200CF4AF1 /* AddControllersViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE958E4E24EED0A600CF4AF1 /* PhotoScreenViewModel.swift */,
+			);
+			path = AddControllersViewModel;
+			sourceTree = "<group>";
+		};
 		CEA2BC6224D99A54002C5FD5 /* Add Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +404,7 @@
 			children = (
 				CED23E1C24EAD1DF0056472E /* StickerRequests.swift */,
 				CE51950A24ED9C98001407D7 /* CategoryRequests.swift */,
+				CE958E4D24EECF9200CF4AF1 /* AddControllersViewModel */,
 				CE67B45824EE928E00DD958B /* TagCollectionViewModel */,
 			);
 			path = ViewModels;
@@ -672,6 +683,7 @@
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE67B45A24EE92BC00DD958B /* TagsCollectionViewModel.swift in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
+				CE958E4F24EED0A600CF4AF1 /* PhotoScreenViewModel.swift in Sources */,
 				CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */,
 				CE0FA58624E967DE00814A82 /* extensionsDate.swift in Sources */,
 				CED23E4424EC321A0056472E /* CoreDataInitializationData.swift in Sources */,
