@@ -11,8 +11,8 @@
         <attribute name="photoClothes" optional="YES" attributeType="Binary"/>
         <attribute name="photoTag" optional="YES" attributeType="Binary"/>
         <attribute name="remindWashing" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="categoryExternal" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
-        <relationship name="stickerExternal" toMany="YES" deletionRule="Nullify" destinationEntity="Sticker"/>
+        <attribute name="stickersId" optional="YES" attributeType="String"/>
+        <relationship name="categoryExternal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
     </entity>
     <entity name="Sticker" representedClassName=".Sticker" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
@@ -21,8 +21,8 @@
         <attribute name="specification" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Category" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Clothes" positionX="-54" positionY="-9" width="128" height="148"/>
-        <element name="Sticker" positionX="-36" positionY="9" width="128" height="103"/>
+        <element name="Category" positionX="152.79296875" positionY="90.85546875" width="128" height="88"/>
+        <element name="Clothes" positionX="434.51171875" positionY="261.953125" width="128" height="148"/>
+        <element name="Sticker" positionX="415.328125" positionY="2.3671875" width="128" height="103"/>
     </elements>
 </model>

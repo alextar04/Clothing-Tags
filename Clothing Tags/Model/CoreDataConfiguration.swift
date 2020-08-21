@@ -79,20 +79,17 @@ class DataStorage{
                     item.photoTag = Data.fromDatatypeValue(record[(table?.photoTag)!])
                     item.remindWashing = nil
                     item.categoryExternal = getCategoryFromId(record[(table?.idCategory)!]!)
+                    item.stickersId = record[table!.idsSticker]!
                     
-                    /*// Парсинг строки с стикерами
-                    let arrayStickersId = getStickersIdFromString(record[table!.idsSticker]!)
+                    // Парсинг строки с стикерами
+                    //let arrayStickersId = getStickersIdFromString(record[table!.idsSticker]!)
                     // Добавление стикеров в коллекцию
-                    let setStickers = Clothes.mutableSetValue(forKey: "stickerExternal")
-                    arrayStickersId.map{id in
-                        //stickers.add(getStickerFromId(id))
-                        //stickerCollection.adding(getStickerFromId(id))
-                        let sticker = Sticker(context: getContext())
-                        sticker.setValue(getStickerFromId(id).id, forKey: "id")
-                        
-                        setStickers.add(sticker)
-                    }
-                    item.stickerExternal = setStickers*/
+                    //var setStickers = Set<Sticker>()
+                    //arrayStickersId.map{id in
+                    //    setStickers.insert(getStickerFromId(id))
+                    //}
+                    //item.stickerExternal = setStickers
+                    //print("Число стикеров при вставке: \(item.stickerExternal?.count)")
                     
                     saveContext()
                 }
@@ -112,18 +109,17 @@ class DataStorage{
     func getPastedContents(){
         do{
             let fetchRequestCategory: NSFetchRequest<Category> = Category.fetchRequest()
-            let objectsCategory = try getContext().fetch(fetchRequestCategory)
+            let objectsCategory = try AppDelegate.appDelegateLink.storage!.getContext().fetch(fetchRequestCategory)
             
             let fetchRequestSticker: NSFetchRequest<Sticker> = Sticker.fetchRequest()
-            let objectsSticker = try getContext().fetch(fetchRequestSticker)
+            let objectsSticker = try AppDelegate.appDelegateLink.storage!.getContext().fetch(fetchRequestSticker)
             
             let fetchRequestClothes: NSFetchRequest<Clothes> = Clothes.fetchRequest()
-            let objectsClothes = try getContext().fetch(fetchRequestClothes)
+            let objectsClothes = try AppDelegate.appDelegateLink.storage!.getContext().fetch(fetchRequestClothes)
             
             print("Число категорий: \(objectsCategory.count)")
             print("Число стикеров: \(objectsSticker.count)")
             print("Число одежд: \(objectsClothes.count)")
-            print("Число стикеров на первой одежде: \(objectsClothes[0].stickerExternal?.count)")
         }catch{
             print("Ошибка инициализации стартовой БД!")
         }

@@ -34,13 +34,9 @@ class CategoryScreenViewModel{
         clothes.map{ oneClothes in
             var imagesOneClothes = [UIImage]()
             
-            var a0:String = oneClothes.name!
-            var a2:String = (oneClothes.categoryExternal?.name)!
-            var a1 = oneClothes.stickerExternal?.count
-            
-            let stickers = oneClothes.stickerExternal as! Set<Sticker>
-            stickers.map{ sticker in
-                imagesOneClothes.append(UIImage(data: sticker.image!)!)
+            let stickersIds: [Int] = getStickersIdFromString(oneClothes.stickersId!)
+            stickersIds.map{ stickerId in
+                imagesOneClothes.append(UIImage(data: getStickerFromId(stickerId).image!)!)
             }
             imagesClothes.append(imagesOneClothes)
             

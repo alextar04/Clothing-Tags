@@ -23,17 +23,5 @@ public class Clothes: NSManagedObject {
     @NSManaged public var photoTag: Data?
     @NSManaged public var remindWashing: Date?
     @NSManaged public var categoryExternal: Category?
-    @NSManaged public var stickerExternal: NSSet?
-    
-    @objc(addStickerExternalObject:)
-    @NSManaged public func addToStickerExternal(_ value: Sticker)
-
-    @objc(removeStickerExternalObject:)
-    @NSManaged public func removeFromStickerExternal(_ value: Sticker)
-
-    @objc(addStickerExternal:)
-    @NSManaged public func addToStickerExternal(_ values: NSSet)
-
-    @objc(removeStickerExternal:)
-    @NSManaged public func removeFromStickerExternal(_ values: NSSet)
+    @NSManaged public var stickersId: String?
 }
