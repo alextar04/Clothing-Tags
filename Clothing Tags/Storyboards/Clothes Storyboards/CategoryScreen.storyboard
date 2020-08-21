@@ -35,25 +35,25 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QSD-i2-JIw">
-                                                    <rect key="frame" x="80" y="42" width="261" height="31"/>
+                                                    <rect key="frame" x="80" y="42" width="261" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="hmM-c7-ShL">
-                                                        <size key="itemSize" width="24" height="24"/>
+                                                        <size key="itemSize" width="30" height="24"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tagCategoryCell" id="Cw0-07-kWm" customClass="TagCategoryCell" customModule="Clothing_Tags" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hyf-Bp-mr7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconInApp.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C5x-8E-2FR">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
                                                                     </imageView>
                                                                 </subviews>
                                                                 <constraints>
@@ -63,7 +63,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="C5x-8E-2FR" secondAttribute="bottom" id="dWn-wl-0i9"/>
                                                                 </constraints>
                                                             </collectionViewCellContentView>
-                                                            <size key="customSize" width="24" height="24"/>
+                                                            <size key="customSize" width="30" height="24"/>
                                                             <connections>
                                                                 <outlet property="tagImage" destination="C5x-8E-2FR" id="SzP-ug-yz9"/>
                                                             </connections>
