@@ -10,7 +10,7 @@
 import Foundation
 import CoreData
 
-//@objc(Clothes)
+
 public class Clothes: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Clothes> {
@@ -22,18 +22,18 @@ public class Clothes: NSManagedObject {
     @NSManaged public var photoClothes: Data?
     @NSManaged public var photoTag: Data?
     @NSManaged public var remindWashing: Date?
-    @NSManaged public var categoryId: Category?
-    @NSManaged public var stickerId: NSSet?
+    @NSManaged public var categoryExternal: Category?
+    @NSManaged public var stickerExternal: NSSet?
     
-    @objc(addStickerIdObject:)
-    @NSManaged public func addToStickerId(_ value: Sticker)
+    @objc(addStickerExternalObject:)
+    @NSManaged public func addToStickerExternal(_ value: Sticker)
 
-    @objc(removeStickerIdObject:)
-    @NSManaged public func removeFromStickerId(_ value: Sticker)
+    @objc(removeStickerExternalObject:)
+    @NSManaged public func removeFromStickerExternal(_ value: Sticker)
 
-    @objc(addStickerId:)
-    @NSManaged public func addToStickerId(_ values: NSSet)
+    @objc(addStickerExternal:)
+    @NSManaged public func addToStickerExternal(_ values: NSSet)
 
-    @objc(removeStickerId:)
-    @NSManaged public func removeFromStickerId(_ values: NSSet)
+    @objc(removeStickerExternal:)
+    @NSManaged public func removeFromStickerExternal(_ values: NSSet)
 }

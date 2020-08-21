@@ -11,8 +11,10 @@ import RxSwift
 import RxCocoa
 
 class MainScreenViewController: UIViewController {
-    var nameScreen: String = "Мой гардероб"
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var nameScreen: String = "Мой гардероб"
+    var viewModel = MainScreenViewModel()
     let disposeBag = DisposeBag()
     
     override var prefersStatusBarHidden: Bool {
@@ -21,41 +23,30 @@ class MainScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //navigationBarTuning()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
                                          nameTop: nameScreen)
         loadMainMenu()
     }
     
-    // CORE DATA
-    class A{
-        var name: String = ""
-        init(_ s: String) {
-            name = s
-        }
-    }
-    
     // MARK: Привязка таблицы к данным, описание взаимодействия с пользователем
     func loadMainMenu(){
-        
-        // CORE DATA
-        let recievedData : [A] = [A("loadingMenu.jpg"),A("add.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png"),A("listClothes.png")]
-        let viewModelData = Observable.just(recievedData)
-        
-        viewModelData.bind(to: collectionView.rx.items){
+        Observable.just(viewModel.categories).bind(to: collectionView.rx.items){
             collection, row, item in
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "mainScreenCell", for: IndexPath.init(row: row, section: 0)) as! MainScreenCell
             
-            cell.imageView?.image = UIImage(named: item.name)
+            cell.imageView?.image = UIImage(data: item.photo!)
+            cell.imageView.roundingRect()
             cell.label.text = item.name
             return cell
         }.disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(A.self).subscribe(
+        // Выбор определенной категории одежды
+        collectionView.rx.modelSelected(Category.self).subscribe(
             onNext: {selectedItem in
                 let categoryScreenViewController = UIStoryboard(name: "CategoryScreen", bundle: nil).instantiateViewController(withIdentifier: "CategoryScreenID") as? CategoryScreenViewController
+                categoryScreenViewController?.idCategory = Int(selectedItem.id)
+                categoryScreenViewController?.nameCategory = selectedItem.name
                 
                 if let categoryScreen = categoryScreenViewController{
                     self.navigationController?.pushViewController(categoryScreen, animated: true)
@@ -80,5 +71,4 @@ class MainScreenViewController: UIViewController {
         }
         AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "swipe" ,distanceSwiped: Int(transition), endStatus: endStatus)
     }
-    
 }

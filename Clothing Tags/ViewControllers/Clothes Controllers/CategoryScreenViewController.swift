@@ -13,34 +13,21 @@ import RxCocoa
 class CategoryScreenViewController: UIViewController {
     @IBOutlet weak var tableClothes: UITableView!
     let disposeBag = DisposeBag()
+    var idCategory: Int? = nil
+    var nameCategory: String? = nil
+    var viewModel: CategoryScreenViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // CORE DATA
-        loadDataCategory()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: "Носки")
+                                         nameTop: nameCategory!)
+        self.viewModel = CategoryScreenViewModel(idCategory: idCategory!)
         loadCategoryTable()
     }
     
-    func loadDataCategory(){
-        
-    }
-    
-    // CORE DATA
-    class ClothesData{
-        var nameClothes : String = ""
-        var pictureClothes : UIImage!
-        init(_ name : String, _ picture : UIImage) {
-            nameClothes = name
-            pictureClothes = picture
-        }
-    }
-    
     func loadCategoryTable(){
-        // CORE DATA
+        /*// CORE DATA
         let recievedData : [ClothesData] = [
             ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
             ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
@@ -48,20 +35,19 @@ class CategoryScreenViewController: UIViewController {
             ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
             ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
         ]
-        let recivedDataTags : [[UIImage]] = [[UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]]
+        let recivedDataTags : [[UIImage]] = [[UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]]*/
         
-        
-        let viewModelData = Observable.just(recievedData)
-        viewModelData.bind(to: tableClothes.rx.items){
+        let recievedDataTags = (viewModel?.convertSetStickersToImageArray())!
+        Observable.just(viewModel!.clothes).bind(to: tableClothes.rx.items){
             table, row, item in
             let cellClothes = table.dequeueReusableCell(withIdentifier: "categoryScreenCell", for: IndexPath.init(row: row, section: 0)) as! CategoryScreenCell
             
-            cellClothes.nameClothes.text = item.nameClothes
+            cellClothes.nameClothes.text = item.name
             cellClothes.tagsCollection.dataSource = nil
-            cellClothes.photoClothes.roundingImageCell(newPicture: item.pictureClothes)
+            cellClothes.photoClothes.roundingImageCell(newPicture: UIImage(data: item.photoClothes!))
             
             // Cвязывание теги одежды и коллекцию тегов ячейки
-            let tagsData = Observable.just(recivedDataTags[row])
+            let tagsData = Observable.just(recievedDataTags[row])
             tagsData.bind(to: cellClothes.tagsCollection.rx.items){
                 collection, place, image in
                 let cellTag = collection.dequeueReusableCell(withReuseIdentifier: "tagCategoryCell", for: IndexPath(row: place, section: 0)) as! TagCategoryCell
@@ -73,7 +59,7 @@ class CategoryScreenViewController: UIViewController {
             return cellClothes
         }.disposed(by: disposeBag)
         
-        tableClothes.rx.modelSelected(ClothesData.self).subscribe(
+        tableClothes.rx.modelSelected(Clothes.self).subscribe(
         onNext: {selectedItem in
             let clothesScreenViewController = UIStoryboard(name: "ClothesScreen", bundle: nil).instantiateViewController(withIdentifier: "ClothesScreenID") as? ClothesScreenViewController
             

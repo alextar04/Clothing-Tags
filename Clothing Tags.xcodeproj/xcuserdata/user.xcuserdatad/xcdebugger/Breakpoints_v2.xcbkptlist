@@ -430,8 +430,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/TagChooseScreenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "actionSelectingOfSticker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -446,8 +446,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/TagChooseScreenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "actionSelectingOfSticker()"
             landmarkType = "7">
          </BreakpointContent>
@@ -462,8 +462,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/TagChooseScreenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "actionNextScreen()"
             landmarkType = "7">
          </BreakpointContent>
@@ -494,8 +494,8 @@
             filePath = "Clothing Tags/ViewControllers/Add Controllers/NameCategoryScreenController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "loadNextButtonPart()"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,8 +542,8 @@
             filePath = "Clothing Tags/Model/CoreDataInitializationData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "init()"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,8 +590,8 @@
             filePath = "Clothing Tags/Model/CoreDataConfiguration.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "getPastedContents()"
             landmarkType = "7">
          </BreakpointContent>
@@ -686,8 +686,8 @@
             filePath = "Clothing Tags/Model/CoreDataConfiguration.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "fillContents(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -702,8 +702,8 @@
             filePath = "Clothing Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
             landmarkName = "getGroupedStickers()"
             landmarkType = "7">
          </BreakpointContent>
@@ -750,9 +750,9 @@
                   urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
-                  offsetFromSymbolStart = "1556">
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1636">
                </Location>
                <Location
                   uuid = "68E3A22F-59E9-46B1-B1D8-B37052B42034 - e3115594fca3df4f"
@@ -765,9 +765,9 @@
                   urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "72">
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "80">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -882,6 +882,246 @@
             endingLineNumber = "112"
             landmarkName = "loadListPhotoPart()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CE30FB1-1F06-432C-A06B-3A774167FD44"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getGroupedStickers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5CE30FB1-1F06-432C-A06B-3A774167FD44 - f78b5c9865938a8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_Tags.TagsCollectionViewModel.getGroupedStickers() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "1104">
+               </Location>
+               <Location
+                  uuid = "5CE30FB1-1F06-432C-A06B-3A774167FD44 - 9cbc3247585e5cdc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; () in Clothing_Tags.TagsCollectionViewModel.getGroupedStickers() -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "148">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9471CD21-A0A1-49F9-A192-D5A4EDE6E4B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/TagCollectionViewModel/TagsCollectionViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getGroupedStickers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07D2F3C9-E9C9-4FD2-9C37-779FA6808B01"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getStickersByIdCategory(idCategory:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53FAFC74-CF70-4DD4-BC84-97E2C438035F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "convertSetStickersToImageArray()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53FAFC74-CF70-4DD4-BC84-97E2C438035F - cc3439a508952b6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Clothing_Tags.Clothes) -&gt; () in Clothing_Tags.CategoryScreenViewModel.convertSetStickersToImageArray() -&gt; Swift.Array&lt;Swift.Array&lt;__C.UIImage&gt;&gt;"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "420">
+               </Location>
+               <Location
+                  uuid = "53FAFC74-CF70-4DD4-BC84-97E2C438035F - e2c18d3b4fcfbfbf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Clothing_Tags.Sticker) -&gt; () in closure #1 (Clothing_Tags.Clothes) -&gt; () in Clothing_Tags.CategoryScreenViewModel.convertSetStickersToImageArray() -&gt; Swift.Array&lt;Swift.Array&lt;__C.UIImage&gt;&gt;"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "086E3024-B339-441D-A429-A0DADA12C506"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "convertSetStickersToImageArray()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0CE57210-0B23-4B3A-B1BD-3B50E59F7597"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "convertSetStickersToImageArray()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48A4BF88-6D8E-4C1F-BEAC-9B5BB3254097"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "convertSetStickersToImageArray()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F1EC579-AB34-4DE8-BB00-7CC8558BA5CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/ViewModels/ClothesControllersViewModel/CategoryScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "convertSetStickersToImageArray()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "84D16B71-8BA1-4383-8E50-1A7FB6587CEE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Clothing Tags/Model/CoreDataConfiguration.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "fillContents(_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "84D16B71-8BA1-4383-8E50-1A7FB6587CEE - 9a6059244b61cc50"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Clothing_Tags.DataStorage.fillContents(Clothing_Tags.Tablename, (Clothing_Tags.CoreDataInitializationData.TableDatabase, Swift.Array&lt;SQLite.Row&gt;)) -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/Model/CoreDataConfiguration.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "86"
+                  endingLineNumber = "86"
+                  offsetFromSymbolStart = "4684">
+               </Location>
+               <Location
+                  uuid = "84D16B71-8BA1-4383-8E50-1A7FB6587CEE - 6c9355a16ba14f41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Int) -&gt; Swift.Optional&lt;(inserted: Swift.Bool, memberAfterInsert: Clothing_Tags.Sticker)&gt; in Clothing_Tags.DataStorage.fillContents(Clothing_Tags.Tablename, (Clothing_Tags.CoreDataInitializationData.TableDatabase, Swift.Array&lt;SQLite.Row&gt;)) -&gt; ()"
+                  moduleName = "Clothing Tags"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/GitHub/Clothing%20Tags/Clothing%20Tags/Model/CoreDataConfiguration.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

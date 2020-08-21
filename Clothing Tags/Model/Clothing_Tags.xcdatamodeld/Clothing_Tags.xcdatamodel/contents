@@ -11,8 +11,8 @@
         <attribute name="photoClothes" optional="YES" attributeType="Binary"/>
         <attribute name="photoTag" optional="YES" attributeType="Binary"/>
         <attribute name="remindWashing" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="categoryId" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
-        <relationship name="stickerId" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sticker"/>
+        <relationship name="categoryExternal" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
+        <relationship name="stickerExternal" toMany="YES" deletionRule="Nullify" destinationEntity="Sticker"/>
     </entity>
     <entity name="Sticker" representedClassName=".Sticker" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>

@@ -10,7 +10,6 @@
 import Foundation
 import CoreData
 
-//@objc(Sticker)
 public class Sticker: NSManagedObject {
     
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Sticker> {

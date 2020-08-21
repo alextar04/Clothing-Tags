@@ -23,10 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="INE-Wn-xXk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
                                 <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DOj-p8-n5R">
                                     <size key="itemSize" width="80" height="80"/>
+                                    <size key="estimatedItemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="50" height="40"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
@@ -86,11 +87,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.90980392160000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k2S-49-Kzp" firstAttribute="bottom" secondItem="INE-Wn-xXk" secondAttribute="bottom" id="044-Hu-74S"/>
-                            <constraint firstItem="k2S-49-Kzp" firstAttribute="trailing" secondItem="INE-Wn-xXk" secondAttribute="trailing" id="HxA-0a-ruv"/>
-                            <constraint firstItem="INE-Wn-xXk" firstAttribute="leading" secondItem="k2S-49-Kzp" secondAttribute="leading" id="IOb-RR-gX9"/>
-                            <constraint firstItem="INE-Wn-xXk" firstAttribute="top" secondItem="k2S-49-Kzp" secondAttribute="top" id="Nob-qD-39s"/>
+                            <constraint firstItem="ebe-bl-mVS" firstAttribute="top" secondItem="INE-Wn-xXk" secondAttribute="bottom" constant="8" id="6hf-TU-WAf"/>
+                            <constraint firstItem="INE-Wn-xXk" firstAttribute="top" secondItem="k2S-49-Kzp" secondAttribute="top" id="W9O-lJ-rI9"/>
                             <constraint firstItem="ebe-bl-mVS" firstAttribute="leading" secondItem="k2S-49-Kzp" secondAttribute="leading" constant="16" id="b24-Kv-nOK"/>
+                            <constraint firstItem="INE-Wn-xXk" firstAttribute="trailing" secondItem="k2S-49-Kzp" secondAttribute="trailing" id="cMx-mC-gOK"/>
+                            <constraint firstItem="INE-Wn-xXk" firstAttribute="leading" secondItem="k2S-49-Kzp" secondAttribute="leading" id="i6y-Qn-873"/>
                             <constraint firstItem="k2S-49-Kzp" firstAttribute="trailing" secondItem="ebe-bl-mVS" secondAttribute="trailing" constant="15" id="jWB-cw-Gjj"/>
                             <constraint firstItem="k2S-49-Kzp" firstAttribute="bottom" secondItem="ebe-bl-mVS" secondAttribute="bottom" constant="20" id="qfL-od-fWv"/>
                         </constraints>

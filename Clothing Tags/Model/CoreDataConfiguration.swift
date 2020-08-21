@@ -78,14 +78,21 @@ class DataStorage{
                     item.photoClothes = Data.fromDatatypeValue(record[(table?.photoClothes)!])
                     item.photoTag = Data.fromDatatypeValue(record[(table?.photoTag)!])
                     item.remindWashing = nil
-                    item.categoryId = getCategoryFromId(record[(table?.idCategory)!]!)
+                    item.categoryExternal = getCategoryFromId(record[(table?.idCategory)!]!)
                     
-                    // Парсинг строки с стикерами
+                    /*// Парсинг строки с стикерами
                     let arrayStickersId = getStickersIdFromString(record[table!.idsSticker]!)
-                    // Добавление стикеров
+                    // Добавление стикеров в коллекцию
+                    let setStickers = Clothes.mutableSetValue(forKey: "stickerExternal")
                     arrayStickersId.map{id in
-                        item.stickerId?.adding(getStickerFromId(id))
+                        //stickers.add(getStickerFromId(id))
+                        //stickerCollection.adding(getStickerFromId(id))
+                        let sticker = Sticker(context: getContext())
+                        sticker.setValue(getStickerFromId(id).id, forKey: "id")
+                        
+                        setStickers.add(sticker)
                     }
+                    item.stickerExternal = setStickers*/
                     
                     saveContext()
                 }
@@ -116,6 +123,7 @@ class DataStorage{
             print("Число категорий: \(objectsCategory.count)")
             print("Число стикеров: \(objectsSticker.count)")
             print("Число одежд: \(objectsClothes.count)")
+            print("Число стикеров на первой одежде: \(objectsClothes[0].stickerExternal?.count)")
         }catch{
             print("Ошибка инициализации стартовой БД!")
         }

@@ -11,15 +11,14 @@ import CoreData
 
 
 class TagsCollectionViewModel{
-    lazy var stickers = Set<[Sticker]>()
+    lazy var stickers = [[Sticker]]()
     
     init() {
         getGroupedStickers()
     }
     
     func getGroupedStickers(){
-        AppDelegate.appDelegateLink.dataStorage.getPastedContents()
-        let storage = AppDelegate.appDelegateLink.dataStorage
+        let storage = AppDelegate.appDelegateLink.storage!
         
         // Получение всех категорий стикеров
         var categories = [String]()
@@ -27,6 +26,7 @@ class TagsCollectionViewModel{
         getCategoryStickerRequest.resultType = .dictionaryResultType
         getCategoryStickerRequest.propertiesToGroupBy = ["category"]
         getCategoryStickerRequest.propertiesToFetch = ["category"]
+        getCategoryStickerRequest.sortDescriptors = [NSSortDescriptor(key: "category", ascending: true)]
         
         do{
             let listGroup = try storage.getContext().fetch(getCategoryStickerRequest) as? [[String: AnyObject]]
@@ -45,7 +45,7 @@ class TagsCollectionViewModel{
             
             do{
                 let stickersOneCategory: [Sticker] = try storage.getContext().fetch(stickerRequest)
-                stickers.insert(stickersOneCategory)
+                stickers.append(stickersOneCategory)
             }catch{
                 print("Неудачный запрос стикеров для категории \($0)!")
             }

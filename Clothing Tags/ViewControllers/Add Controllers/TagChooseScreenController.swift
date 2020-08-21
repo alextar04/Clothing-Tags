@@ -19,8 +19,7 @@ class TagChooseScreenController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     var nameScreen : String = ""
-    var listSelectedIndexStickers = [IndexPath]()
-    var listSelectedStickers = [TagData]()
+    var viewModel = TagChooseScreenViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -35,31 +34,35 @@ class TagChooseScreenController: UIViewController{
         
     }
     
-    // CORE DATA
+    // Вспомогательная структура для отображения стикеров с заголовками секций
     struct SectionOfImageStickerData{
         var header: String
-        var items: [TagData]
+        var items: [Sticker]
     }
-    
     
     // MARK: Загрузка таблицы значков на бирках
     func loadTableOfStickers(){
-        var listRecievedStickers = [TagData]()
-        for i in 0...23{
-            listRecievedStickers.append(TagData(String(i), UIImage(named: "sticker1_1.png")!))
+        let recievedStickers = viewModel.stickers
+        var stickersSectionalData = [SectionOfImageStickerData]()
+        recievedStickers.map{ groupSticker in
+            var groupForPaste = [Sticker]()
+            var headerForPaste = groupSticker[0].category
+            
+            // Итерация по словарю группы
+            groupSticker.map{
+                groupForPaste.append($0)
+            }
+            
+            let groupSection = SectionOfImageStickerData(header: headerForPaste!, items: groupForPaste)
+            stickersSectionalData.append(groupSection)
         }
-        let stickersData = [SectionOfImageStickerData(header: "First", items: Array(listRecievedStickers[0...5])),
-                            SectionOfImageStickerData(header: "Second", items: Array(listRecievedStickers[6...11])),
-                            SectionOfImageStickerData(header: "Third", items: Array(listRecievedStickers[12...17])),
-                            SectionOfImageStickerData(header: "Fourth", items: Array(listRecievedStickers[18...23]))
-        ]
         
         
         // Конфигурация содержимого для ячеек таблицы
         let dataSource = RxCollectionViewSectionedReloadDataSource<SectionOfImageStickerData>(configureCell: {
             dataSource, collection, index, item in
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "ScreenChooseTagCell", for: index) as! ScreenChooseTagCell
-            cell.imageSticker.image = item.pictureTag
+            cell.imageSticker.image = UIImage(data: item.image!)
             cell.selectedBorder.isHidden = true
             return cell
             }
@@ -69,12 +72,12 @@ class TagChooseScreenController: UIViewController{
         dataSource.configureSupplementaryView = {
             dataSource, collectionView, kind, indexPath in
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerCollectionID", for: indexPath) as? HeaderStickersCollection
-            header?.nameSection.text = stickersData[indexPath.section].header
+            header?.nameSection.text = stickersSectionalData[indexPath.section].header
             return header!
         }
         
         
-        Observable.just(stickersData).bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        Observable.just(stickersSectionalData).bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
     }
     
     
@@ -85,31 +88,30 @@ class TagChooseScreenController: UIViewController{
         onNext: {selectedIndex in
             let cell = self.collectionView.cellForItem(at: selectedIndex) as! ScreenChooseTagCell
             // Отмена выделения двойным тапом
-            if let existingIndex = self.listSelectedIndexStickers.firstIndex(of: selectedIndex){
+            if let existingIndex = self.viewModel.listSelectedIndexStickers.firstIndex(of: selectedIndex){
                 cell.selectedBorder.isHidden = true
-                self.listSelectedIndexStickers.remove(at: existingIndex)
+                self.viewModel.listSelectedIndexStickers.remove(at: existingIndex)
             } else {
                 // Выделение новой ячейки
-                self.listSelectedIndexStickers.append(selectedIndex)
+                self.viewModel.listSelectedIndexStickers.append(selectedIndex)
                 cell.selectedBorder.isHidden = false
             }
         }).disposed(by: self.disposeBag)
         
         // Добавление выбраных значков в список
-        self.collectionView.rx.modelSelected(TagData.self).subscribe(
+        self.collectionView.rx.modelSelected(Sticker.self).subscribe(
             onNext: { item in
-                let searchedIndex = self.listSelectedStickers.index(of: item)
+                let searchedIndex = self.viewModel.listSelectedStickers.index(of: item)
                 if searchedIndex == nil{
-                    self.listSelectedStickers.append(item)
+                    self.viewModel.listSelectedStickers.append(item)
                 }else{
-                    self.listSelectedStickers.remove(at: searchedIndex!)
+                    self.viewModel.listSelectedStickers.remove(at: searchedIndex!)
                 }
             }
         ).disposed(by: disposeBag)
     }
     
-    
-    
+    // ПОЗОР ПЕРЕПИСАТЬ СТРОИТЕЛЕМ!!!
     func actionNextScreen(){
         nextScreenButton.rx.tap.bind{
             // Загрузим страницу одежды
@@ -117,7 +119,7 @@ class TagChooseScreenController: UIViewController{
             
             // CORE DATA
             let clothesLink = ClotheS.getInstance()
-            clothesLink!.tagCollection = self.listSelectedStickers
+            clothesLink!.tagCollection = self.viewModel.listSelectedStickers
             
             // Установка значений в контроллер с одеждой
             clothesScreenViewController?.photoClothesData = clothesLink?.photoClothes
@@ -125,7 +127,7 @@ class TagChooseScreenController: UIViewController{
             let nameLabel = UILabel()
             nameLabel.text = clothesLink?.name
             clothesScreenViewController?.nameClothesData = nameLabel
-            clothesScreenViewController?.recievedData = (clothesLink?.tagCollection)!
+            clothesScreenViewController?.recievedData = [TagData]()//(clothesLink?.tagCollection)!
             clothesScreenViewController?.openFromCreationClothesScreen = true
             // Обновление БД
             
@@ -139,7 +141,7 @@ class TagChooseScreenController: UIViewController{
 }
 
 extension TagChooseScreenController.SectionOfImageStickerData: SectionModelType{
-    init(original: TagChooseScreenController.SectionOfImageStickerData, items: [TagData]) {
+    init(original: TagChooseScreenController.SectionOfImageStickerData, items: [Sticker]) {
         self = original
         self.items = items
     }

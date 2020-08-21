@@ -14,7 +14,7 @@ class ClotheS{
     var photoClothes : UIImageView? = nil
     var photoTag : UIImageView? = nil
     var category : String? = nil
-    var tagCollection : [TagData]? = nil
+    var tagCollection : [Sticker]? = nil
     
     private static var clothes : ClotheS?
     private init() {}

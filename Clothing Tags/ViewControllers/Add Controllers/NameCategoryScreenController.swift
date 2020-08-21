@@ -22,6 +22,7 @@ class NameCategoryScreenController : UIViewController{
     @IBOutlet weak var nextScreenButton: UIButton!
     
     var nameScreen : String = ""
+    let viewModel = NameCategoryViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -31,34 +32,26 @@ class NameCategoryScreenController : UIViewController{
                                          navigationItem: navigationItem,
                                          nameTop: nameScreen)
         loadTapRecognizer()
-        loadNamePartScreen()
         loadCategoryPartScreen()
         loadNextButtonPart()
     }
     
     
-    
+    // MARK: Загрузка части для скрытия клавиатуры
     func loadTapRecognizer(){
         let gestureRecognizerHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(self.actionForHideKeyboard))
         self.view.addGestureRecognizer(gestureRecognizerHideKeyboard)
-    }
-    
-    // MARK: Загрузка части для названия одежды
-    func loadNamePartScreen(){
-        
     }
     
     // MARK: Загрузка части для категории
     func loadCategoryPartScreen(){
         newCategoryField.isHidden = true
         
-        let viewModelData = ["Калготки", "Трусы", "Носки", "(Прочее)"]
-        let viewModelDataObservable = Observable.just(viewModelData)
-        viewModelDataObservable.bind(to: pickerCategoryList.rx.items){row, element, view in
+        Observable.just(viewModel.category).bind(to: pickerCategoryList.rx.items){row, element, view in
             let label = UILabel()
             label.font = UIFont(name: "a_BosaNova", size: 15)
             label.textAlignment = .center
-            label.text = element
+            label.text = element.name
             return label
         }.disposed(by: disposeBag)
         
@@ -67,12 +60,13 @@ class NameCategoryScreenController : UIViewController{
         }.disposed(by: disposeBag)
         
         pickerCategoryList.rx.itemSelected.subscribe(onNext: {index in
-            self.categoryButton.setTitle(viewModelData[index.row], for: .normal)
-            self.newCategoryField.isHidden = (viewModelData[index.row] == "(Прочее)") ? false : true
+            self.categoryButton.setTitle(self.viewModel.category[index.row].name, for: .normal)
+            self.newCategoryField.isHidden = (self.viewModel.category[index.row].name == "(Прочее)") ? false : true
         }).disposed(by: disposeBag)
         
     }
     
+    // ЭТОТ ПОЗОР ПЕРЕПИСАТЬ СО СТРОИТЕЛЕМ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // MARK: Загрузка части для кнопки перехода к дальнейшему окну
     func loadNextButtonPart(){
         nextScreenButton.rx.tap.bind{

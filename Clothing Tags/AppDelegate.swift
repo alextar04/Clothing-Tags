@@ -29,10 +29,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var rootViewController : RootViewController{
         return window?.rootViewController as! RootViewController
     }
-
-    // Доступ к БД
-    var dataStorage : DataStorage{
-        return storage!
-    }
 }
 
