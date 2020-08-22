@@ -102,6 +102,9 @@ class ClothesScreenViewModel{
                 
                 newEvent.calendar = self.eventObject!.defaultCalendarForNewEvents
                 self.event = newEvent
+                
+                self.clothes?.eventObject = self.eventObject
+                self.clothes?.event = newEvent
                 do {
                     try self.eventObject!.save(self.event!,span: .thisEvent, commit: true)
                 }catch{
@@ -114,7 +117,9 @@ class ClothesScreenViewModel{
     
     func deleteReminder(){
             do{
-                try eventObject!.remove(self.event!,span: .thisEvent, commit: true)
+                let eventObjectDatabase = clothes?.eventObject as! EKEventStore
+                let eventDatabase = clothes?.event as! EKEvent
+                try eventObjectDatabase.remove(eventDatabase, span: .thisEvent, commit: true)
             } catch{
                 fatalError("Ошибка во время удаления!")
             }
@@ -130,6 +135,8 @@ class ClothesScreenViewModel{
     func deleteReminderFromDatabase(){
         let storage = AppDelegate.appDelegateLink.storage
         clothes?.remindWashing = nil
+        clothes?.eventObject = nil
+        clothes?.event = nil
         storage?.saveContext()
     }
 }

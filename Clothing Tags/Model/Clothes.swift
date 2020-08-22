@@ -22,6 +22,8 @@ public class Clothes: NSManagedObject {
     @NSManaged public var photoClothes: Data?
     @NSManaged public var photoTag: Data?
     @NSManaged public var remindWashing: Date?
+    @NSManaged public var eventObject: NSObject?
+    @NSManaged public var event: NSObject?
     @NSManaged public var categoryExternal: Category?
     @NSManaged public var stickersId: String?
 }
