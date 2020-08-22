@@ -22,6 +22,7 @@ class NameCategoryScreenController : UIViewController{
     @IBOutlet weak var nextScreenButton: UIButton!
     
     var nameScreen : String = ""
+    var constructedClothes: Clothes? = nil
     let viewModel = NameCategoryViewModel()
     let disposeBag = DisposeBag()
     
@@ -59,24 +60,33 @@ class NameCategoryScreenController : UIViewController{
             self.pickerCategoryList.isHidden = !self.pickerCategoryList.isHidden
         }.disposed(by: disposeBag)
         
+        
+        // Установка доступности кнопки "Далее"
+        nameClothes.rx.text.bind{ text in
+            self.nextScreenButton.isEnabled = text?.count != 0
+            self.nextScreenButton.alpha = self.nextScreenButton.isEnabled ? 1.0 : 0.5
+        }.disposed(by: disposeBag)
+        
         pickerCategoryList.rx.itemSelected.subscribe(onNext: {index in
             self.categoryButton.setTitle(self.viewModel.category[index.row].name, for: .normal)
             self.newCategoryField.isHidden = (self.viewModel.category[index.row].name == "(Прочее)") ? false : true
+            
+            let categoryName = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
+            //self.nextScreenButton.isEnabled = categoryName?.count != 0 //|| self.categoryButton.titleLabel?.text != "(Пусто)"
+            //self.nextScreenButton.alpha = self.nextScreenButton.isEnabled ? 1.0 : 0.5
         }).disposed(by: disposeBag)
         
     }
     
-    // ЭТОТ ПОЗОР ПЕРЕПИСАТЬ СО СТРОИТЕЛЕМ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // MARK: Загрузка части для кнопки перехода к дальнейшему окну
     func loadNextButtonPart(){
         nextScreenButton.rx.tap.bind{
-            let clothesInstance = ClotheS.getInstance()
-            clothesInstance?.name = self.nameClothes.text
-            clothesInstance?.category = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
             
+            let categoryName = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
             
             let chooseTagScreenController = UIStoryboard(name: "TagChooseScreen", bundle: nil).instantiateViewController(withIdentifier: "ChooseTagScreenID") as? TagChooseScreenController
             chooseTagScreenController?.nameScreen = "Выбор значков на бирке"
+            chooseTagScreenController?.constructedClothes = self.viewModel.addNameAndCategoryToClothes(clothes: self.constructedClothes!, nameClothes: self.nameClothes.text!, categoryName: categoryName!)
             
             if let chooseTagScreen = chooseTagScreenController{
                 self.navigationController?.pushViewController(chooseTagScreen, animated: true)

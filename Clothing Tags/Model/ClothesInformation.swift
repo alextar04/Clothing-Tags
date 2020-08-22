@@ -6,6 +6,7 @@
 //  Copyright © 2020 Alexey Taran. All rights reserved.
 //
 
+/*
 import Foundation
 import UIKit
 
@@ -41,4 +42,4 @@ class TagData: Equatable{
         descriptionTag = name
         pictureTag = picture
     }
-}
+}*/

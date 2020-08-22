@@ -80,17 +80,6 @@ class DataStorage{
                     item.remindWashing = nil
                     item.categoryExternal = getCategoryFromId(record[(table?.idCategory)!]!)
                     item.stickersId = record[table!.idsSticker]!
-                    
-                    // Парсинг строки с стикерами
-                    //let arrayStickersId = getStickersIdFromString(record[table!.idsSticker]!)
-                    // Добавление стикеров в коллекцию
-                    //var setStickers = Set<Sticker>()
-                    //arrayStickersId.map{id in
-                    //    setStickers.insert(getStickerFromId(id))
-                    //}
-                    //item.stickerExternal = setStickers
-                    //print("Число стикеров при вставке: \(item.stickerExternal?.count)")
-                    
                     saveContext()
                 }
             case .Sticker:

@@ -19,6 +19,7 @@ class TagChooseScreenController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     var nameScreen : String = ""
+    var constructedClothes: Clothes? = nil
     var viewModel = TagChooseScreenViewModel()
     let disposeBag = DisposeBag()
     
@@ -63,7 +64,14 @@ class TagChooseScreenController: UIViewController{
             dataSource, collection, index, item in
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "ScreenChooseTagCell", for: index) as! ScreenChooseTagCell
             cell.imageSticker.image = UIImage(data: item.image!)
-            cell.selectedBorder.isHidden = true
+            
+            let searchedIndex = self.viewModel.listSelectedStickers.index(of: item)
+            if searchedIndex == nil{
+                cell.selectedBorder.isHidden = true
+            }else{
+                cell.selectedBorder.isHidden = false
+            }
+            
             return cell
             }
         )
@@ -89,6 +97,7 @@ class TagChooseScreenController: UIViewController{
             let cell = self.collectionView.cellForItem(at: selectedIndex) as! ScreenChooseTagCell
             // Отмена выделения двойным тапом
             if let existingIndex = self.viewModel.listSelectedIndexStickers.firstIndex(of: selectedIndex){
+                print(cell.selectedBorder.isHidden)
                 cell.selectedBorder.isHidden = true
                 self.viewModel.listSelectedIndexStickers.remove(at: existingIndex)
             } else {
@@ -111,26 +120,19 @@ class TagChooseScreenController: UIViewController{
         ).disposed(by: disposeBag)
     }
     
-    // ПОЗОР ПЕРЕПИСАТЬ СТРОИТЕЛЕМ!!!
     func actionNextScreen(){
         nextScreenButton.rx.tap.bind{
             // Загрузим страницу одежды
             let clothesScreenViewController = UIStoryboard(name: "ClothesScreen", bundle: nil).instantiateViewController(withIdentifier: "ClothesScreenID") as? ClothesScreenViewController
             
-            // CORE DATA
-            let clothesLink = ClotheS.getInstance()
-            clothesLink!.tagCollection = self.viewModel.listSelectedStickers
-            
-            // Установка значений в контроллер с одеждой
-            clothesScreenViewController?.photoClothesData = clothesLink?.photoClothes
-            clothesScreenViewController?.photoTagData = clothesLink?.photoTag
-            let nameLabel = UILabel()
-            nameLabel.text = clothesLink?.name
-            clothesScreenViewController?.nameClothesData = nameLabel
-            clothesScreenViewController?.recievedData = [TagData]()//(clothesLink?.tagCollection)!
-            clothesScreenViewController?.openFromCreationClothesScreen = true
             // Обновление БД
+            self.constructedClothes = self.viewModel.addIdsStickersToClothes(clothes: self.constructedClothes!)
+            self.viewModel.addOtherParametrsAndSave(clothes: self.constructedClothes!)
             
+            // Конструирование экрана одежды
+            clothesScreenViewController?.openFromCreationClothesScreen = true
+            clothesScreenViewController?.idClothes = Int(self.constructedClothes!.id)
+            clothesScreenViewController?.nameScreen = self.constructedClothes?.name
             
             if let clothesScreen = clothesScreenViewController{
                 self.navigationController?.viewControllers = []

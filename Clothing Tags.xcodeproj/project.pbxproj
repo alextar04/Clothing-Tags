@@ -13,6 +13,11 @@
 		CE0FA58624E967DE00814A82 /* extensionsDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FA58524E967DE00814A82 /* extensionsDate.swift */; };
 		CE13B83F24F00BB800CF41FC /* MainScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13B83E24F00BB800CF41FC /* MainScreenViewModel.swift */; };
 		CE13B84124F0228200CF41FC /* CategoryScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13B84024F0228200CF41FC /* CategoryScreenViewModel.swift */; };
+		CE238ADC24F11578001DA10E /* ClothesScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238ADB24F11578001DA10E /* ClothesScreenViewModel.swift */; };
+		CE238ADF24F117FF001DA10E /* SocialNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238ADE24F117FF001DA10E /* SocialNetwork.swift */; };
+		CE238AE024F120FF001DA10E /* facebookLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E3F24EC2F720056472E /* facebookLogo.png */; };
+		CE238AE124F120FF001DA10E /* vkLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E4024EC2F720056472E /* vkLogo.png */; };
+		CE238AE224F120FF001DA10E /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E4124EC2F720056472E /* yandexLogo.png */; };
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
 		CE39E84B24BA95C400060239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84924BA95C400060239 /* Main.storyboard */; };
 		CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */; };
@@ -105,6 +110,8 @@
 		CE0FA58524E967DE00814A82 /* extensionsDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsDate.swift; sourceTree = "<group>"; };
 		CE13B83E24F00BB800CF41FC /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		CE13B84024F0228200CF41FC /* CategoryScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewModel.swift; sourceTree = "<group>"; };
+		CE238ADB24F11578001DA10E /* ClothesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewModel.swift; sourceTree = "<group>"; };
+		CE238ADE24F117FF001DA10E /* SocialNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E84324BA95C400060239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE39E84A24BA95C400060239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,6 +216,7 @@
 			children = (
 				CE13B83E24F00BB800CF41FC /* MainScreenViewModel.swift */,
 				CE13B84024F0228200CF41FC /* CategoryScreenViewModel.swift */,
+				CE238ADB24F11578001DA10E /* ClothesScreenViewModel.swift */,
 			);
 			path = ClothesControllersViewModel;
 			sourceTree = "<group>";
@@ -433,6 +441,7 @@
 				CED23E1024EACD0A0056472E /* Clothes.swift */,
 				CED23E1224EACD0A0056472E /* Category.swift */,
 				CED23E1424EACD0A0056472E /* Sticker.swift */,
+				CE238ADE24F117FF001DA10E /* SocialNetwork.swift */,
 				CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */,
 			);
 			path = Model;
@@ -633,6 +642,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE238AE024F120FF001DA10E /* facebookLogo.png in Resources */,
+				CE238AE124F120FF001DA10E /* vkLogo.png in Resources */,
+				CE238AE224F120FF001DA10E /* yandexLogo.png in Resources */,
 				CE570C3624EC3FDF00003C9C /* add.png in Resources */,
 				CE570C3724EC3FDF00003C9C /* allert.png in Resources */,
 				CE570C3824EC3FDF00003C9C /* iconInApp.png in Resources */,
@@ -705,6 +717,7 @@
 				CE0FA58424E95A5E00814A82 /* extensionsView.swift in Sources */,
 				CEE3626E24D43CFF00848279 /* TagCategoryCell.swift in Sources */,
 				CED23E1A24EACD0A0056472E /* Sticker.swift in Sources */,
+				CE238ADC24F11578001DA10E /* ClothesScreenViewModel.swift in Sources */,
 				CE90C8F524DBDFC8004E8E94 /* BaseSettings.swift in Sources */,
 				CE571D7D24DD77DF0071AB22 /* PhotoScreenViewController.swift in Sources */,
 				CED23E1824EACD0A0056472E /* Category.swift in Sources */,
@@ -718,6 +731,7 @@
 				CEAE938824BF5AF200A47DAA /* RootViewController.swift in Sources */,
 				CEAE938624BF3A0600A47DAA /* SplashScreenViewController.swift in Sources */,
 				CED23E1624EACD0A0056472E /* Clothes.swift in Sources */,
+				CE238ADF24F117FF001DA10E /* SocialNetwork.swift in Sources */,
 				CEE93BA424E7E3930063305A /* AboutApplicationScreenController.swift in Sources */,
 				CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */,
 				CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */,

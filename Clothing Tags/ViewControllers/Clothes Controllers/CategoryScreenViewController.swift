@@ -27,15 +27,6 @@ class CategoryScreenViewController: UIViewController {
     }
     
     func loadCategoryTable(){
-        /*// CORE DATA
-        let recievedData : [ClothesData] = [
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
-            ClothesData("Теннисные носки", UIImage(named: "loadingMenu.jpg")!),
-        ]
-        let recivedDataTags : [[UIImage]] = [[UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!], [UIImage(named: "add.png")!,UIImage(named: "allert.png")!, UIImage(named: "tags.png")!]]*/
         
         let recievedDataTags = (viewModel?.convertSetStickersToImageArray())!
         Observable.just(viewModel!.clothes).bind(to: tableClothes.rx.items){
@@ -62,6 +53,8 @@ class CategoryScreenViewController: UIViewController {
         tableClothes.rx.modelSelected(Clothes.self).subscribe(
         onNext: {selectedItem in
             let clothesScreenViewController = UIStoryboard(name: "ClothesScreen", bundle: nil).instantiateViewController(withIdentifier: "ClothesScreenID") as? ClothesScreenViewController
+            clothesScreenViewController?.idClothes = Int(selectedItem.id)
+            clothesScreenViewController?.nameScreen = selectedItem.name
             
             if let clothesScreen = clothesScreenViewController{
                 self.navigationController?.pushViewController(clothesScreen, animated: true)

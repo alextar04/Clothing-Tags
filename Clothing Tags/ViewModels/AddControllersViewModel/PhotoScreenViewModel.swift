@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Photos
+import CoreData
 
 class PhotoScreenViewModel{
     lazy var listPhotoInformation = [PHAsset]()
@@ -57,4 +58,16 @@ class PhotoScreenViewModel{
         }
     }
     
+    func startCreationClothes(photoClothes: UIImage)->Clothes{
+        let storage = AppDelegate.appDelegateLink.storage
+        let newClothes = Clothes(context: (storage?.getContext())!)
+        newClothes.photoClothes = photoClothes.pngData()
+        return newClothes
+    }
+    
+    func addTagToClothes(clothes: Clothes, tag: UIImage)->Clothes{
+        let storage = AppDelegate.appDelegateLink.storage
+        clothes.photoTag = tag.pngData()
+        return clothes
+    }
 }

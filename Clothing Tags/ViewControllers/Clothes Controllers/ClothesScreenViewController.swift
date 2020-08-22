@@ -13,6 +13,8 @@ import EventKit
 
 class ClothesScreenViewController: UIViewController {
     var openFromCreationClothesScreen: Bool = false
+    var idClothes: Int? = nil
+    var nameScreen: String? = nil
     
     @IBOutlet weak var photoClothes: UIImageView!
     @IBOutlet weak var photoTag: UIImageView!
@@ -24,8 +26,6 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var nameClothes: UILabel!
     
     @IBOutlet weak var remindingView: UIView!
-    var eventObject: EKEventStore? = nil
-    var event: EKEvent? = nil
     @IBOutlet weak var remindingViewSwitcher: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var setupButton: UIButton!
@@ -35,21 +35,8 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var tagsTable: UITableView!
     @IBOutlet weak var tableHeightConstraint: NSLayoutConstraint!
     
+    var viewModel: ClothesScreenViewModel? = nil
     let disposeBag = DisposeBag()
-    
-    
-    // Предварительно
-    // CORE DATA
-    var recievedData : [TagData] = [
-        TagData("Полоскайте белье под температурой 30 градусов на бережной стирке", UIImage(named: "tags.png")!),
-        TagData("Теннисные носки", UIImage(named: "facebookLogo.png")!),
-        TagData("Теннисные носки", UIImage(named: "sticker1_1.png")!),
-        TagData("Теннисные носки", UIImage(named: "tags.png")!),
-        TagData("Теннисные носки", UIImage(named: "tags.png")!),
-    ]
-    var photoClothesData: UIImageView!
-    var photoTagData: UIImageView!
-    var nameClothesData: UILabel!
     
     
     override func viewDidLoad() {
@@ -57,43 +44,40 @@ class ClothesScreenViewController: UIViewController {
         
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: "Одежда")
+                                         nameTop: nameScreen!)
+        self.viewModel = ClothesScreenViewModel(idClothes: idClothes!)
         loadClothesScreen()
     }
 
     
     func loadClothesScreen(){
         
-        //  Предварительно
-        if photoClothesData == nil{
-            photoClothes.image = UIImage(named: "facebookLogo.png")!
-            photoTag.image = UIImage(named: "facebookLogo.png")!
-        }else{
-            photoClothes.image = photoClothesData.image
-            photoTag.image = photoTagData.image
-            nameClothes.text = nameClothesData.text
+        nameClothes.text = viewModel?.clothes?.name
+        photoClothes.image = UIImage(data: (viewModel?.clothes?.photoClothes)!)
+        photoTag.image = UIImage(data: (viewModel?.clothes?.photoTag)!)
+        if viewModel?.clothes?.remindWashing == nil{
+            dateReminding.text = "--:--:--"
         }
         
         // Округление кнопок для публикации в заметках соцсети
         [facebookButton, vkButton, yandexButton].map{
-            $0!.imageView?.roundingImageCell(newPicture: nil)
+            $0.imageView?.roundingImageCell(newPicture: nil)
         }
+        
         // Округление углов фотографий одежды и тега
         [photoClothes, photoTag].map{
             $0.roundingRect()
         }
         
         setSettingsReminderView()
-        
         // Получение высоты таблицы
-        tableHeightConstraint.constant = tagsTable.rowHeight * CGFloat(recievedData.count)
-        let viewModelData = Observable.just(recievedData)
-        viewModelData.bind(to: tagsTable.rx.items){
+        tableHeightConstraint.constant = tagsTable.rowHeight * CGFloat((viewModel?.stickers?.count)!)
+        Observable.just((viewModel?.stickers)!).bind(to: tagsTable.rx.items){
             table, row, item in
             let cell = table.dequeueReusableCell(withIdentifier: "tagDescriptionCell", for: IndexPath.init(row: row, section: 0)) as! TagDescriptionCell
         
-            cell.tagImage.image = item.pictureTag
-            cell.tagDescription.text = item.descriptionTag
+            cell.tagImage.image = UIImage(data: item.image!)
+            cell.tagDescription.text = item.specification
             return cell
         }.disposed(by: disposeBag)
     }
@@ -108,7 +92,7 @@ class ClothesScreenViewController: UIViewController {
             }
             // Удаление старого значения
             else{
-                self.deleteReminder()
+                self.viewModel!.deleteReminder()
                 // + Удалить из БД
                 self.dateReminding.text = "--:--:--"
             }
@@ -117,7 +101,7 @@ class ClothesScreenViewController: UIViewController {
         setupButton.rx.tap.bind{
             self.remindingView.isHidden = true
             self.remindingViewSwitcher.isOn = true
-            self.addReminder()
+            self.viewModel!.addReminder(name: self.nameClothes.text, time: self.datePicker.date)
             // Изменения в БД
             // Установка на экране значения
             self.dateReminding.text = self.datePicker.date.parsingForClothesScreen()
@@ -127,39 +111,6 @@ class ClothesScreenViewController: UIViewController {
             self.remindingView.isHidden = true
             self.remindingViewSwitcher.isOn = false
         }.disposed(by: disposeBag)
-    }
-    
-    func addReminder(){
-            eventObject = EKEventStore()
-            eventObject!.requestAccess(to: .event){ granted, error in
-                let newEvent = EKEvent(eventStore: self.eventObject!)
-                newEvent.title = self.nameClothes.text
-                newEvent.notes = "Необходимо постирать!"
-
-                let updatedDate = self.datePicker.date.zeroingSecondsInAlarmForReminders()
-                print(updatedDate)
-                newEvent.startDate = updatedDate
-                newEvent.endDate = updatedDate
-                newEvent.addAlarm(EKAlarm(absoluteDate: updatedDate))
-                
-                newEvent.calendar = self.eventObject!.defaultCalendarForNewEvents
-                self.event = newEvent
-                do {
-                    try self.eventObject!.save(self.event!,span: .thisEvent, commit: true)
-                }catch{
-                    fatalError("Ошибка создания напоминания!")
-                }
-                print("Напоминание сохранено!")
-            }
-    }
-    
-    func deleteReminder(){
-            do{
-                try eventObject!.remove(self.event!,span: .thisEvent, commit: true)
-            } catch{
-                fatalError("Ошибка во время удаления!")
-            }
-            print("Удаление успешно!")
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {

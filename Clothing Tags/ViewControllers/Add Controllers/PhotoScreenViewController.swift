@@ -24,10 +24,11 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var offsetFromBottomScrollView: NSLayoutConstraint!
     
     lazy var photoController = UIImagePickerController()
-    lazy var currentSelectedIndex : IndexPath! = nil
+    lazy var currentSelectedIndex : IndexPath? = nil
     lazy var currentSelectedPhoto : UIImageView? = nil
     
     var nameScreen : String = ""
+    var constructedClothes: Clothes? = nil
     var viewModel = PhotoScreenViewModel()
     let disposeBag = DisposeBag()
     
@@ -152,7 +153,12 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                                     
                                 }).disposed(by: self.disposeBag)
                         }else{
+                            // Повторить выделение для выбранной ячейки после перегрузки таблицы
                             self.viewModel.imageSubject.accept(self.viewModel.imageStorage)
+                            self.collectionExistingPhotos.layoutIfNeeded()
+                            
+                            let cell1 = self.collectionExistingPhotos.cellForItem(at: self.currentSelectedIndex!) as! ScreenPhotosCell
+                            cell1.selectedBorder.isHidden = false
                         }
                 }
                 case .failure(let error):
@@ -172,9 +178,11 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: Загрузка нового экрана
     func loadNextScreen(){
         if nameScreen == "Выбор одежды"{
-            ClotheS.getInstance()?.photoClothes = currentSelectedPhoto
+            
             let tagPhotoScreenViewController = UIStoryboard(name: "PhotoScreen", bundle: nil).instantiateViewController(withIdentifier: "PhotoScreenID") as? PhotoScreenViewController
             tagPhotoScreenViewController?.nameScreen = "Выбор бирки"
+            tagPhotoScreenViewController?.constructedClothes = viewModel.startCreationClothes(photoClothes: (currentSelectedPhoto?.image)!)
+            print("ФОТО ОДЕЖДЫ: \(tagPhotoScreenViewController?.constructedClothes?.photoClothes)")
             
             if let tagPhotoScreen = tagPhotoScreenViewController{
                 self.navigationController?.pushViewController(tagPhotoScreen, animated: true)
@@ -182,9 +190,10 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         if nameScreen == "Выбор бирки"{
-            ClotheS.getInstance()?.photoTag = currentSelectedPhoto
+            
             let inputNameAndCategoryViewController = UIStoryboard(name: "NameCategoryScreen", bundle: nil).instantiateViewController(withIdentifier: "NameCategoryScreenID") as? NameCategoryScreenController
             inputNameAndCategoryViewController?.nameScreen = "Выбор названия и категории"
+            inputNameAndCategoryViewController?.constructedClothes = viewModel.addTagToClothes(clothes: constructedClothes!, tag: (currentSelectedPhoto?.image)!)
             
             if let inputInformationScreen = inputNameAndCategoryViewController{
                 self.navigationController?.pushViewController(inputInformationScreen, animated: true)
