@@ -114,7 +114,9 @@ class ClothesScreenViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        print("Меня решили удалить!")
+        viewModel?.deleteClothesFromId(idClothes!)
+        self.navigationController?.popToRootViewController(animated: true)
+        AppDelegate.appDelegateLink.rootViewController.switchTo(section: .mainScreen)
     }
     
     @IBAction func swipeDetection(_ sender: UIPanGestureRecognizer) {

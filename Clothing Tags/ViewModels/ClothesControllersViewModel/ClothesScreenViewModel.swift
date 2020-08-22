@@ -36,6 +36,39 @@ class ClothesScreenViewModel{
         }
     }
     
+    // Удалить одежду, используя ее Id
+    // Удалить соответствующую категорию, если она оказалась пуста
+    func deleteClothesFromId(_ id: Int){
+        let storage = AppDelegate.appDelegateLink.storage
+        
+        // Удаление одежды
+        let clothes = getClothesFromId(id)
+        let category = clothes.categoryExternal
+        storage?.getContext().delete(clothes)
+        
+        // Удаление категории
+        if getClothesByIdCategory(idCategory: Int((category?.id)!))?.count == 0{
+            storage?.getContext().delete(category!)
+        }
+        
+        storage!.saveContext()
+    }
+    
+    
+    func getClothesByIdCategory(idCategory: Int)->[Clothes]?{
+        let storage = AppDelegate.appDelegateLink.storage!
+        let request: NSFetchRequest<Clothes> = Clothes.fetchRequest()
+        request.predicate = NSPredicate(format: "categoryExternal.id = %@", String(idCategory))
+        
+        do{
+            let clothes = try storage.getContext().fetch(request)
+            return clothes
+        }catch{
+            print("Неудачный запрос списка одежды для категории с id = \(idCategory)!")
+            return nil
+        }
+    }
+    
     
     func setSocialNetworksLogos(){
         socialNetworksLogos = SocialNetwork().listLogos

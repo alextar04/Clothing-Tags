@@ -106,7 +106,7 @@
                                     <constraint firstItem="d7L-9B-laP" firstAttribute="top" secondItem="TqY-lC-j5Q" secondAttribute="top" id="piz-gt-Lfn"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-Pc-hHR">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4wa-Pc-hHR">
                                 <rect key="frame" x="15" y="619" width="344" height="34"/>
                                 <color key="backgroundColor" red="0.73090312759999998" green="0.88789188409999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

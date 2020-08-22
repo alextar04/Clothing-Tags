@@ -89,7 +89,6 @@
 		CEE93BAB24E809D50063305A /* extensionsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAA24E809D50063305A /* extensionsColor.swift */; };
 		CEE93BAD24E81F810063305A /* ReminderScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAC24E81F810063305A /* ReminderScreenController.swift */; };
 		CEE93BB024E821810063305A /* ReminderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE93BAF24E821810063305A /* ReminderTableCell.swift */; };
-		CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */; };
 		CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,7 +183,6 @@
 		CEE93BAA24E809D50063305A /* extensionsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionsColor.swift; sourceTree = "<group>"; };
 		CEE93BAC24E81F810063305A /* ReminderScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderScreenController.swift; sourceTree = "<group>"; };
 		CEE93BAF24E821810063305A /* ReminderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableCell.swift; sourceTree = "<group>"; };
-		CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesInformation.swift; sourceTree = "<group>"; };
 		CEEA1DDA24E2DAC800FD6CBA /* NameCategoryScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameCategoryScreenController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -442,7 +440,6 @@
 				CED23E1224EACD0A0056472E /* Category.swift */,
 				CED23E1424EACD0A0056472E /* Sticker.swift */,
 				CE238ADE24F117FF001DA10E /* SocialNetwork.swift */,
-				CEEA1DD824E2B5A200FD6CBA /* ClothesInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -735,7 +732,6 @@
 				CEE93BA424E7E3930063305A /* AboutApplicationScreenController.swift in Sources */,
 				CE67AA2B24D8658000502A79 /* TagDescriptionCell.swift in Sources */,
 				CE67AA2924D864F900502A79 /* ClothesScreenViewController.swift in Sources */,
-				CEEA1DD924E2B5A200FD6CBA /* ClothesInformation.swift in Sources */,
 				CED23E4924EC34100056472E /* usefulFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

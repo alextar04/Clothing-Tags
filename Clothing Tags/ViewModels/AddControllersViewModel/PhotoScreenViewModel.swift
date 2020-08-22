@@ -58,16 +58,24 @@ class PhotoScreenViewModel{
         }
     }
     
-    func startCreationClothes(photoClothes: UIImage)->Clothes{
+    func startCreationClothes(photoClothes: UIImage?)->Clothes{
         let storage = AppDelegate.appDelegateLink.storage
         let newClothes = Clothes(context: (storage?.getContext())!)
-        newClothes.photoClothes = photoClothes.pngData()
+        if let photo = photoClothes?.pngData(){
+            newClothes.photoClothes = photo
+        }else{
+            newClothes.photoClothes = nil
+        }
         return newClothes
     }
     
-    func addTagToClothes(clothes: Clothes, tag: UIImage)->Clothes{
+    func addTagToClothes(clothes: Clothes, photoTag: UIImage?)->Clothes{
         let storage = AppDelegate.appDelegateLink.storage
-        clothes.photoTag = tag.pngData()
+        if let photo = photoTag?.pngData(){
+            clothes.photoTag = photo
+        }else{
+            clothes.photoTag = nil
+        }
         return clothes
     }
 }

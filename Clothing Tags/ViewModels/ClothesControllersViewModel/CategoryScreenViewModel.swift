@@ -14,10 +14,10 @@ class CategoryScreenViewModel{
     var clothes = [Clothes]()
     
     init(idCategory: Int){
-        getStickersByIdCategory(idCategory: idCategory)
+        getClothesByIdCategory(idCategory: idCategory)
     }
     
-    func getStickersByIdCategory(idCategory: Int){
+    func getClothesByIdCategory(idCategory: Int){
         let storage = AppDelegate.appDelegateLink.storage!
         let request: NSFetchRequest<Clothes> = Clothes.fetchRequest()
         request.predicate = NSPredicate(format: "categoryExternal.id = %@", String(idCategory))

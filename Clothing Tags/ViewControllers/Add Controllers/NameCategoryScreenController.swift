@@ -47,6 +47,8 @@ class NameCategoryScreenController : UIViewController{
     // MARK: Загрузка части для категории
     func loadCategoryPartScreen(){
         newCategoryField.isHidden = true
+        nextScreenButton.isEnabled = false
+        self.nextScreenButton.alpha = self.nextScreenButton.isEnabled ? 1.0 : 0.5
         
         Observable.just(viewModel.category).bind(to: pickerCategoryList.rx.items){row, element, view in
             let label = UILabel()
@@ -70,10 +72,6 @@ class NameCategoryScreenController : UIViewController{
         pickerCategoryList.rx.itemSelected.subscribe(onNext: {index in
             self.categoryButton.setTitle(self.viewModel.category[index.row].name, for: .normal)
             self.newCategoryField.isHidden = (self.viewModel.category[index.row].name == "(Прочее)") ? false : true
-            
-            let categoryName = self.categoryButton.titleLabel?.text == "(Прочее)" ? self.newCategoryField.text : self.categoryButton.titleLabel?.text
-            //self.nextScreenButton.isEnabled = categoryName?.count != 0 //|| self.categoryButton.titleLabel?.text != "(Пусто)"
-            //self.nextScreenButton.alpha = self.nextScreenButton.isEnabled ? 1.0 : 0.5
         }).disposed(by: disposeBag)
         
     }
