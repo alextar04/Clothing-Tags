@@ -91,10 +91,10 @@ class ClothesScreenViewModel{
             eventObject = EKEventStore()
             eventObject!.requestAccess(to: .event){ granted, error in
                 let newEvent = EKEvent(eventStore: self.eventObject!)
-                newEvent.title = name//self.nameClothesLabel.text
+                newEvent.title = name
                 newEvent.notes = "Необходимо постирать!"
 
-                let updatedDate = time.zeroingSecondsInAlarmForReminders()//self.datePicker.date.zeroingSecondsInAlarmForReminders()
+                let updatedDate = time.zeroingSecondsInAlarmForReminders()
                 print(updatedDate)
                 newEvent.startDate = updatedDate
                 newEvent.endDate = updatedDate
@@ -119,5 +119,17 @@ class ClothesScreenViewModel{
                 fatalError("Ошибка во время удаления!")
             }
             print("Удаление успешно!")
+    }
+    
+    func addReminderToDatabase(time: Date){
+        let storage = AppDelegate.appDelegateLink.storage
+        clothes?.remindWashing = time
+        storage?.saveContext()
+    }
+    
+    func deleteReminderFromDatabase(){
+        let storage = AppDelegate.appDelegateLink.storage
+        clothes?.remindWashing = nil
+        storage?.saveContext()
     }
 }

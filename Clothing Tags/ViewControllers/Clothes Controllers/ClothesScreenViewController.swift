@@ -56,7 +56,11 @@ class ClothesScreenViewController: UIViewController {
         photoClothes.image = UIImage(data: (viewModel?.clothes?.photoClothes)!)
         photoTag.image = UIImage(data: (viewModel?.clothes?.photoTag)!)
         if viewModel?.clothes?.remindWashing == nil{
+            remindingViewSwitcher.isOn = false
             dateReminding.text = "--:--:--"
+        }else{
+            dateReminding.text = viewModel?.clothes?.remindWashing?.parsingForClothesScreen()
+            remindingViewSwitcher.isOn = true
         }
         
         // Округление кнопок для публикации в заметках соцсети
@@ -93,7 +97,9 @@ class ClothesScreenViewController: UIViewController {
             // Удаление старого значения
             else{
                 self.viewModel!.deleteReminder()
-                // + Удалить из БД
+                // Удалить из БД
+                self.viewModel?.deleteReminderFromDatabase()
+                // Удалить на экране
                 self.dateReminding.text = "--:--:--"
             }
         }
@@ -103,6 +109,7 @@ class ClothesScreenViewController: UIViewController {
             self.remindingViewSwitcher.isOn = true
             self.viewModel!.addReminder(name: self.nameClothes.text, time: self.datePicker.date)
             // Изменения в БД
+            self.viewModel?.addReminderToDatabase(time: self.datePicker.date)
             // Установка на экране значения
             self.dateReminding.text = self.datePicker.date.parsingForClothesScreen()
         }.disposed(by: disposeBag)
@@ -115,7 +122,6 @@ class ClothesScreenViewController: UIViewController {
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
         viewModel?.deleteClothesFromId(idClothes!)
-        self.navigationController?.popToRootViewController(animated: true)
         AppDelegate.appDelegateLink.rootViewController.switchTo(section: .mainScreen)
     }
     

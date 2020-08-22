@@ -13,19 +13,8 @@ import RxDataSources
 
 class ReminderScreenController: UIViewController {
     var nameScreen: String = ""
+    let viewModel = ReminderScreenViewModel()
     @IBOutlet weak var listClothesForLaundry: UITableView!
-    
-    // CORE DATA
-    class ClothesDataReminder{
-        var nameClothes : String = ""
-        var pictureClothes : UIImage!
-        var dateLaundryClothes : String = ""
-        init(_ name : String, _ picture : UIImage, _ dateLaundry: String) {
-            nameClothes = name
-            pictureClothes = picture
-            dateLaundryClothes = dateLaundry
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,25 +25,16 @@ class ReminderScreenController: UIViewController {
     }
     
     func loadLaundryTable(){
-        var list = [ClothesDataReminder]()
-        list = [ClothesDataReminder("Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("2 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("3 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("4 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("5 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("6 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00"),
-            ClothesDataReminder("7 Очко", UIImage(named: "add.png")!, "21.02.2020 23:00")
-        ]
-        
-        let observableData = Observable.just(list)
-        observableData.bind(to: listClothesForLaundry.rx.items){
-            table, row, item in
-                let cell = table.dequeueReusableCell(withIdentifier: "ReminderTableCell", for: IndexPath.init(row: row, section: 0)) as! ReminderTableCell
-            
-            cell.imageClothes.image = item.pictureClothes
-            cell.nameClothes.text = item.nameClothes
-            cell.dateLaundry.text = item.dateLaundryClothes
-            return cell
+        if let data = viewModel.laundryClothes{
+            Observable.just(data).bind(to: listClothesForLaundry.rx.items){
+                table, row, item in
+                    let cell = table.dequeueReusableCell(withIdentifier: "ReminderTableCell", for: IndexPath.init(row: row, section: 0)) as! ReminderTableCell
+                
+                cell.imageClothes.roundingImageCell(newPicture: UIImage(data: item.photoClothes!))
+                cell.nameClothes.text = item.name
+                cell.dateLaundry.text = item.remindWashing?.parsingForClothesScreen()
+                return cell
+            }
         }
     }
     

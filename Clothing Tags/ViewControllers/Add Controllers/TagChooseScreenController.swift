@@ -136,7 +136,7 @@ class TagChooseScreenController: UIViewController{
             
             if let clothesScreen = clothesScreenViewController{
                 self.navigationController?.viewControllers = []
-                AppDelegate.appDelegateLink.rootViewController.switchToClothesScreenFromAdding(controller: clothesScreenViewController!)
+                AppDelegate.appDelegateLink.rootViewController.switchToClothesScreenFromAdding(controller: clothesScreen)
             }
         }.disposed(by: disposeBag)
     }

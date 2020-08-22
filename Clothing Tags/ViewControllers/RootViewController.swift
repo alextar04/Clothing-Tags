@@ -209,7 +209,7 @@ class RootViewController: UIViewController {
         else{
             UIView.animate(withDuration: 0.2,
                            delay: 0,
-            usingSpringWithDamping: 0.8,
+            usingSpringWithDamping: 5.8,
             initialSpringVelocity: 0,
             options: .curveEaseInOut,
             animations: { self.currentViewController.view.frame.origin.x = 0

@@ -18,6 +18,7 @@
 		CE238AE024F120FF001DA10E /* facebookLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E3F24EC2F720056472E /* facebookLogo.png */; };
 		CE238AE124F120FF001DA10E /* vkLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E4024EC2F720056472E /* vkLogo.png */; };
 		CE238AE224F120FF001DA10E /* yandexLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = CED23E4124EC2F720056472E /* yandexLogo.png */; };
+		CE238AE524F18323001DA10E /* ReminderControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE238AE424F18323001DA10E /* ReminderControllerViewModel.swift */; };
 		CE39E84424BA95C400060239 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84324BA95C400060239 /* AppDelegate.swift */; };
 		CE39E84B24BA95C400060239 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE39E84924BA95C400060239 /* Main.storyboard */; };
 		CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE39E84C24BA95C400060239 /* Clothing_Tags.xcdatamodeld */; };
@@ -111,6 +112,7 @@
 		CE13B84024F0228200CF41FC /* CategoryScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryScreenViewModel.swift; sourceTree = "<group>"; };
 		CE238ADB24F11578001DA10E /* ClothesScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClothesScreenViewModel.swift; sourceTree = "<group>"; };
 		CE238ADE24F117FF001DA10E /* SocialNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialNetwork.swift; sourceTree = "<group>"; };
+		CE238AE424F18323001DA10E /* ReminderControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderControllerViewModel.swift; sourceTree = "<group>"; };
 		CE39E84024BA95C400060239 /* Clothing Tags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clothing Tags.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE39E84324BA95C400060239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE39E84A24BA95C400060239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -217,6 +219,14 @@
 				CE238ADB24F11578001DA10E /* ClothesScreenViewModel.swift */,
 			);
 			path = ClothesControllersViewModel;
+			sourceTree = "<group>";
+		};
+		CE238AE324F182F5001DA10E /* ReminderControllerViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CE238AE424F18323001DA10E /* ReminderControllerViewModel.swift */,
+			);
+			path = ReminderControllerViewModel;
 			sourceTree = "<group>";
 		};
 		CE39E83724BA95C400060239 = {
@@ -425,6 +435,7 @@
 			children = (
 				CE13B83D24F00AB200CF41FC /* ClothesControllersViewModel */,
 				CE958E4D24EECF9200CF4AF1 /* AddControllersViewModel */,
+				CE238AE324F182F5001DA10E /* ReminderControllerViewModel */,
 				CE67B45824EE928E00DD958B /* TagCollectionViewModel */,
 			);
 			path = ViewModels;
@@ -703,6 +714,7 @@
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
 				CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */,
+				CE238AE524F18323001DA10E /* ReminderControllerViewModel.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE67B45A24EE92BC00DD958B /* TagsCollectionViewModel.swift in Sources */,
 				CEEA1DDB24E2DAC800FD6CBA /* NameCategoryScreenController.swift in Sources */,
