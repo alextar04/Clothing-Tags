@@ -6,14 +6,14 @@
         <attribute name="photo" optional="YES" attributeType="Binary"/>
     </entity>
     <entity name="Clothes" representedClassName=".Clothes" syncable="YES">
-        <attribute name="event" optional="YES" attributeType="Transformable"/>
-        <attribute name="eventObject" optional="YES" attributeType="Transformable"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photoClothes" optional="YES" attributeType="Binary"/>
         <attribute name="photoTag" optional="YES" attributeType="Binary"/>
         <attribute name="remindWashing" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="stickersId" optional="YES" attributeType="String"/>
+        <attribute name="wrapperEvent" optional="YES" attributeType="Transformable" valueTransformerName="EkEventToDataTransformer" customClassName=".CustomEKEvent"/>
+        <attribute name="wrapperEventObject" optional="YES" attributeType="Transformable" valueTransformerName="EkEventStoreToDataTransformer" customClassName=".CustomEKEventStore"/>
         <relationship name="categoryExternal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category"/>
     </entity>
     <entity name="Sticker" representedClassName=".Sticker" syncable="YES">

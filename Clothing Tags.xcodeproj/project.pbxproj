@@ -69,6 +69,8 @@
 		CEAE939024BF7FEC00A47DAA /* MainScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */; };
 		CEC4183424C226D400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
 		CEC4183524C22FE400ECA02E /* bosaNova.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CEC4183324C226D400ECA02E /* bosaNova.ttf */; };
+		CECD255B24F288420032C4AC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD255A24F288420032C4AC /* Menu.swift */; };
+		CECD255D24F288AF0032C4AC /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECD255C24F288AF0032C4AC /* MenuViewModel.swift */; };
 		CED23E0124EAC5C90056472E /* CoreDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E0024EAC5C90056472E /* CoreDataConfiguration.swift */; };
 		CED23E1624EACD0A0056472E /* Clothes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1024EACD0A0056472E /* Clothes.swift */; };
 		CED23E1824EACD0A0056472E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E1224EACD0A0056472E /* Category.swift */; };
@@ -154,6 +156,8 @@
 		CEAE938D24BF63B800A47DAA /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		CEAE938F24BF7FEC00A47DAA /* MainScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainScreen.storyboard; sourceTree = "<group>"; };
 		CEC4183324C226D400ECA02E /* bosaNova.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = bosaNova.ttf; sourceTree = "<group>"; };
+		CECD255A24F288420032C4AC /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		CECD255C24F288AF0032C4AC /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		CED23E0024EAC5C90056472E /* CoreDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfiguration.swift; sourceTree = "<group>"; };
 		CED23E1024EACD0A0056472E /* Clothes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clothes.swift; sourceTree = "<group>"; };
 		CED23E1224EACD0A0056472E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -437,6 +441,7 @@
 				CE958E4D24EECF9200CF4AF1 /* AddControllersViewModel */,
 				CE238AE324F182F5001DA10E /* ReminderControllerViewModel */,
 				CE67B45824EE928E00DD958B /* TagCollectionViewModel */,
+				CECD255C24F288AF0032C4AC /* MenuViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				CED23E1024EACD0A0056472E /* Clothes.swift */,
 				CED23E1224EACD0A0056472E /* Category.swift */,
 				CED23E1424EACD0A0056472E /* Sticker.swift */,
+				CECD255A24F288420032C4AC /* Menu.swift */,
 				CE238ADE24F117FF001DA10E /* SocialNetwork.swift */,
 			);
 			path = Model;
@@ -708,12 +714,14 @@
 				CEE93BAD24E81F810063305A /* ReminderScreenController.swift in Sources */,
 				CEAE938E24BF63B800A47DAA /* MainScreenViewController.swift in Sources */,
 				CEA2BC7424D9C82D002C5FD5 /* extensionsImage.swift in Sources */,
+				CECD255D24F288AF0032C4AC /* MenuViewModel.swift in Sources */,
 				CE8A67E024D3304E00D654DC /* MenuScreenCell.swift in Sources */,
 				CEE93BAB24E809D50063305A /* extensionsColor.swift in Sources */,
 				CE6FB5B024E57C260016B86B /* TagChooseScreenController.swift in Sources */,
 				CE0061C624C33D49000F66CD /* MenuViewController.swift in Sources */,
 				CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */,
 				CE96270A24E588C2006CD1F8 /* ScreenTagChooseCell.swift in Sources */,
+				CECD255B24F288420032C4AC /* Menu.swift in Sources */,
 				CE238AE524F18323001DA10E /* ReminderControllerViewModel.swift in Sources */,
 				CE39E84E24BA95C400060239 /* Clothing_Tags.xcdatamodeld in Sources */,
 				CE67B45A24EE92BC00DD958B /* TagsCollectionViewModel.swift in Sources */,

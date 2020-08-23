@@ -39,5 +39,13 @@ class ReminderScreenViewModel{
         }
     }
     
+    // Проверка, есть ли в календаре запись об одежде
+    func filterByClothesPresenceInCalendar(){
+        /*laundryClothes.map{
+            
+        }*/
+    }
+    
+    
 }
 

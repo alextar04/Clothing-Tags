@@ -12,6 +12,7 @@ import RxCocoa
 
 class MenuViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
+    let viewModel = MenuViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -19,28 +20,9 @@ class MenuViewController: UIViewController{
         loadMenu()
     }
     
-    // CORE DATA
-    class MenuData{
-        var nameAction : String = ""
-        var imageAction : UIImage!
-        init(_ name : String, _ image : UIImage) {
-            nameAction = name
-            imageAction = image
-        }
-    }
-    
     func loadMenu(){
         
-        // CORE DATA
-        let recievedData : [MenuData] = [MenuData("Добавить одежду", UIImage(named: "add.png")!),
-                                      MenuData("Мой гардероб", UIImage(named: "listClothes.png")!),
-                                      MenuData("Напоминание постирать", UIImage(named: "allert.png")!),
-                                      MenuData("Галерея бирок", UIImage(named: "tags.png")!),
-                                      MenuData("О приложении", UIImage(named: "iconInApp.png")!)
-                                    ]
-        let viewModelData = Observable.just(recievedData)
-        
-        viewModelData.bind(to: tableView.rx.items){
+        Observable.just(viewModel.menu).bind(to: tableView.rx.items){
             table, row, item in
             let cell = table.dequeueReusableCell(withIdentifier: "menuScreenCell", for: IndexPath.init(row: row, section: 0)) as! MenuScreenCell
             
@@ -49,7 +31,7 @@ class MenuViewController: UIViewController{
             return cell
         }.disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(MenuData.self).subscribe(
+        tableView.rx.modelSelected(Menu.self).subscribe(
             onNext: {
                 switch $0.nameAction{
                 case "Добавить одежду":

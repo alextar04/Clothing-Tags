@@ -23,13 +23,33 @@ class ClothesScreenViewModel{
         clothes = getClothesFromId(idClothes)
         setSocialNetworksLogos()
         stickers = getStickersByIdsString((clothes?.stickersId)!)
+        
+        // Если событие закончилось -> удалить его
+        /*if clothes?.event != nil{
+            let oldEvent = clothes?.event as! EKEvent
+            print(oldEvent.status.rawValue)
+            if oldEvent.status == .confirmed{
+                let storage = AppDelegate.appDelegateLink.storage
+                clothes?.remindWashing = nil
+                clothes?.eventObject = nil
+                clothes?.event = nil
+                storage?.saveContext()
+            }
+        }*/
     }
     
     func getClothesFromId(_ id: Int)->Clothes{
         let request: NSFetchRequest<Clothes> = Clothes.fetchRequest()
-        request.predicate = NSPredicate(format: "id = %@", String(id))
+        var clothesList = [Clothes]()
         do{
-            let clothesList = try AppDelegate.appDelegateLink.storage!.getContext().fetch(request)
+            let clothesAllList = try AppDelegate.appDelegateLink.storage!.getContext().fetch(request)
+            for item in clothesAllList{
+                if item.id == id{
+                    clothesList.append(item)
+                    break
+                }
+            }
+            
             return clothesList.first!
         } catch{
             fatalError("Ошибка получения одежды по Id!")
@@ -86,16 +106,14 @@ class ClothesScreenViewModel{
         return listStickers
     }
     
-    
     func addReminder(name: String?, time: Date){
             eventObject = EKEventStore()
-            eventObject!.requestAccess(to: .event){ granted, error in
+            eventObject!.requestAccess(to: .event){granted, error in
                 let newEvent = EKEvent(eventStore: self.eventObject!)
                 newEvent.title = name
                 newEvent.notes = "Необходимо постирать!"
 
                 let updatedDate = time.zeroingSecondsInAlarmForReminders()
-                print(updatedDate)
                 newEvent.startDate = updatedDate
                 newEvent.endDate = updatedDate
                 newEvent.addAlarm(EKAlarm(absoluteDate: updatedDate))
@@ -103,23 +121,34 @@ class ClothesScreenViewModel{
                 newEvent.calendar = self.eventObject!.defaultCalendarForNewEvents
                 self.event = newEvent
                 
-                self.clothes?.eventObject = self.eventObject
-                self.clothes?.event = newEvent
+                let customEvent = CustomEKEvent(event: self.event!)
+                let customEventStore = CustomEKEventStore(eventStore: self.eventObject!)
+                self.clothes?.setValue(customEventStore, forKey: "wrapperEventObject")
+                self.clothes?.setValue(customEvent, forKey: "wrapperEvent")
+                
                 do {
                     try self.eventObject!.save(self.event!,span: .thisEvent, commit: true)
                 }catch{
                     fatalError("Ошибка создания напоминания!")
                 }
                 print("Напоминание сохранено!")
+                
+                self.addReminderToDatabase(time: time)
             }
     }
     
     
     func deleteReminder(){
             do{
-                let eventObjectDatabase = clothes?.eventObject as! EKEventStore
-                let eventDatabase = clothes?.event as! EKEvent
-                try eventObjectDatabase.remove(eventDatabase, span: .thisEvent, commit: true)
+                /*************************/
+                
+                print(clothes?.id)
+                print(clothes?.remindWashing)
+                print(clothes?.wrapperEvent?.event)
+                print(clothes?.wrapperEventObject?.eventStore)
+                let eventObjectDatabase = (clothes?.wrapperEventObject)!.eventStore!
+                let eventDatabase = (clothes?.wrapperEvent)!.event
+                try eventObjectDatabase.remove(eventDatabase!, span: .thisEvent, commit: true)
             } catch{
                 fatalError("Ошибка во время удаления!")
             }
@@ -128,15 +157,15 @@ class ClothesScreenViewModel{
     
     func addReminderToDatabase(time: Date){
         let storage = AppDelegate.appDelegateLink.storage
-        clothes?.remindWashing = time
+        clothes?.setValue(time, forKey: "remindWashing")
         storage?.saveContext()
     }
     
     func deleteReminderFromDatabase(){
         let storage = AppDelegate.appDelegateLink.storage
-        clothes?.remindWashing = nil
-        clothes?.eventObject = nil
-        clothes?.event = nil
+        clothes?.setValue(nil, forKey: "remindWashing")
+        clothes?.setValue(nil, forKey: "wrapperEventObject")
+        clothes?.setValue(nil, forKey: "wrapperEvent")
         storage?.saveContext()
     }
 }

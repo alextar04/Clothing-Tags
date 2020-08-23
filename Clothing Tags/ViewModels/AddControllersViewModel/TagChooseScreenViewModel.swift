@@ -38,8 +38,6 @@ class TagChooseScreenViewModel{
             
             clothes.id = Int16(objectsClothes.count)
             clothes.remindWashing = nil
-            //clothes.eventObject = nil
-            //clothes.event = nil
             storage.saveContext()
         }catch{
             print("Неудачный запрос одежды!")

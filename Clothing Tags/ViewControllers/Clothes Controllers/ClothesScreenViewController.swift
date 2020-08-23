@@ -109,7 +109,7 @@ class ClothesScreenViewController: UIViewController {
             self.remindingViewSwitcher.isOn = true
             self.viewModel!.addReminder(name: self.nameClothes.text, time: self.datePicker.date)
             // Изменения в БД
-            self.viewModel?.addReminderToDatabase(time: self.datePicker.date)
+            // self.viewModel?.addReminderToDatabase(time: self.datePicker.date)
             // Установка на экране значения
             self.dateReminding.text = self.datePicker.date.parsingForClothesScreen()
         }.disposed(by: disposeBag)
