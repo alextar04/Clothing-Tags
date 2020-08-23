@@ -23,31 +23,30 @@ public class Clothes: NSManagedObject {
     @NSManaged public var photoClothes: Data?
     @NSManaged public var photoTag: Data?
     @NSManaged public var remindWashing: Date?
-    @NSManaged public var wrapperEventObject: CustomEKEventStore?
-    @NSManaged public var wrapperEvent: CustomEKEvent?
+    @NSManaged public var eventIdentifier: String?
     @NSManaged public var categoryExternal: Category?
     @NSManaged public var stickersId: String?
 }
 
-
+/*
 /**************************************************************************/
 
 // Класс для архивирования и разархивирования События календаря
 public class CustomEKEvent: NSObject, NSCoding{
-    var event: EKEvent!
+    var event: NSObject!//EKEvent!
     
-    init(event: EKEvent){
+    init(event: NSObject){//EKEvent){
         self.event = event
     }
     
     public func encode(with coder: NSCoder) {
-        if let eventUnwarped = self.event{
-            coder.encode(eventUnwarped, forKey: "event")
-        }
+        //if var eventUnwarped = self.event{
+            coder.encode(self.event, forKey: "event")
+        //}
     }
     
     public required convenience init?(coder: NSCoder) {
-        guard let event = coder.decodeObject(forKey: "event") as? EKEvent else{
+        guard let event = coder.decodeObject(forKey: "event") as? NSObject else{//EKEvent else{
             return nil
         }
         self.init(event: event)
@@ -80,9 +79,9 @@ class EkEventToDataTransformer: ValueTransformer{
 
 // Класс для архивирования и разархивирования Календаря
 public class CustomEKEventStore: NSObject, NSCoding{
-    var eventStore: EKEventStore!
+    var eventStore: NSObject!//EKEventStore!
     
-    init(eventStore: EKEventStore){
+    init(eventStore: NSObject){//EKEventStore){
         self.eventStore = eventStore
     }
     
@@ -93,7 +92,7 @@ public class CustomEKEventStore: NSObject, NSCoding{
     }
     
     public required convenience init?(coder: NSCoder) {
-        guard let eventStore = coder.decodeObject(forKey: "eventStore") as? EKEventStore else{
+        guard let eventStore = coder.decodeObject(forKey: "eventStore") as? NSObject else{ //EKEventStore else{
             return nil
         }
         self.init(eventStore: eventStore)
@@ -121,4 +120,4 @@ class EkEventStoreToDataTransformer: ValueTransformer{
         return (data as! CustomEKEventStore)
     }
 }
-
+*/

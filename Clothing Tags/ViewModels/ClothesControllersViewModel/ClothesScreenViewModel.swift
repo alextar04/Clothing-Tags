@@ -121,18 +121,15 @@ class ClothesScreenViewModel{
                 newEvent.calendar = self.eventObject!.defaultCalendarForNewEvents
                 self.event = newEvent
                 
-                let customEvent = CustomEKEvent(event: self.event!)
-                let customEventStore = CustomEKEventStore(eventStore: self.eventObject!)
-                self.clothes?.setValue(customEventStore, forKey: "wrapperEventObject")
-                self.clothes?.setValue(customEvent, forKey: "wrapperEvent")
-                
                 do {
                     try self.eventObject!.save(self.event!,span: .thisEvent, commit: true)
+                    print(self.event?.eventIdentifier)
                 }catch{
                     fatalError("Ошибка создания напоминания!")
                 }
                 print("Напоминание сохранено!")
                 
+                self.clothes?.setValue(newEvent.eventIdentifier, forKey: "eventIdentifier")
                 self.addReminderToDatabase(time: time)
             }
     }
@@ -140,15 +137,15 @@ class ClothesScreenViewModel{
     
     func deleteReminder(){
             do{
-                /*************************/
-                
                 print(clothes?.id)
                 print(clothes?.remindWashing)
-                print(clothes?.wrapperEvent?.event)
-                print(clothes?.wrapperEventObject?.eventStore)
-                let eventObjectDatabase = (clothes?.wrapperEventObject)!.eventStore!
-                let eventDatabase = (clothes?.wrapperEvent)!.event
-                try eventObjectDatabase.remove(eventDatabase!, span: .thisEvent, commit: true)
+                print(clothes?.eventIdentifier)
+                
+                // Вернем нужную запись по идентификатору
+                var store = EKEventStore()
+                let searchedEvent:EKEvent? = store.event(withIdentifier: (clothes?.eventIdentifier)!)
+                
+                try store.remove(searchedEvent!, span: .thisEvent, commit: true)
             } catch{
                 fatalError("Ошибка во время удаления!")
             }
@@ -164,8 +161,6 @@ class ClothesScreenViewModel{
     func deleteReminderFromDatabase(){
         let storage = AppDelegate.appDelegateLink.storage
         clothes?.setValue(nil, forKey: "remindWashing")
-        clothes?.setValue(nil, forKey: "wrapperEventObject")
-        clothes?.setValue(nil, forKey: "wrapperEvent")
         storage?.saveContext()
     }
 }

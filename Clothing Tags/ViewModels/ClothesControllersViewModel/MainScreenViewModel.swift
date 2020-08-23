@@ -24,18 +24,5 @@ class MainScreenViewModel{
             fatalError("Категория 'Прочее' не найдена!")
         }
         categories.remove(at: otherIndex)
-        
-        /**************/
-        let request: NSFetchRequest<Clothes> = Clothes.fetchRequest()
-        var clothesList = [Clothes]()
-        do{
-            let clothesAllList = try AppDelegate.appDelegateLink.storage!.getContext().fetch(request)
-            for item in clothesAllList{
-                print(item.wrapperEvent?.event)
-            }
-        }catch{
-            print("__")
-        }
-        
     }
 }

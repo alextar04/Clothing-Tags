@@ -78,8 +78,8 @@ class DataStorage{
                     item.photoClothes = Data.fromDatatypeValue(record[(table?.photoClothes)!])
                     item.photoTag = Data.fromDatatypeValue(record[(table?.photoTag)!])
                     item.remindWashing = nil
-                    item.wrapperEvent!.event = nil
-                    item.wrapperEventObject?.eventStore = nil
+                    //item.wrapperEvent!.event = nil
+                    //item.wrapperEventObject?.eventStore = nil
                     item.categoryExternal = getCategoryFromId(record[(table?.idCategory)!]!)
                     item.stickersId = record[table!.idsSticker]!
                     saveContext()
