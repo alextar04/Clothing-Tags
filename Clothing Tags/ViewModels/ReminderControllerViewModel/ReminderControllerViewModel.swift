@@ -8,12 +8,14 @@
 
 import Foundation
 import CoreData
+import EventKit
 
 class ReminderScreenViewModel{
     var laundryClothes: [Clothes]?
     
     init() {
         laundryClothes = getLaundryClothes()
+        laundryClothes = filterByClothesPresenceInCalendar()
     }
     
     // Выборка одежды, которая имеет напоминания о постирке
@@ -39,13 +41,24 @@ class ReminderScreenViewModel{
         }
     }
     
-    // Проверка, есть ли в календаре запись об одежде
-    func filterByClothesPresenceInCalendar(){
-        /*laundryClothes.map{
+    // Фильтр уже несуществующих записей в календаре
+    func filterByClothesPresenceInCalendar()->[Clothes]?{
+        var store = EKEventStore()
+        var laundryFilteredClothes = [Clothes]()
+        
+        if let notEmptyListClothes = self.laundryClothes{
+            notEmptyListClothes.map{ oneClothes in
+                if oneClothes.remindWashing != nil{
+                    let searchedEvent:EKEvent? = store.event(withIdentifier: (oneClothes.eventIdentifier)!)
+                    if searchedEvent != nil{
+                        laundryFilteredClothes.append(oneClothes)
+                    }
+                }
+            }
             
-        }*/
+            return laundryFilteredClothes
+        } else{
+            return nil
+        }
     }
-    
-    
 }
-
