@@ -16,4 +16,7 @@ extension UIView{
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 6
     }
+    func roundingView(){
+        self.layer.cornerRadius = 10
+    }
 }

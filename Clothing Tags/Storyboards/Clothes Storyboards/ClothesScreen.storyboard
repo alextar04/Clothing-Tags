@@ -164,6 +164,121 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9c7-rk-ZDn">
+                                                <rect key="frame" x="27" y="114" width="321" height="363"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CzW-Ef-5HY">
+                                                        <rect key="frame" x="20" y="16" width="80" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="afD-zu-6m8"/>
+                                                            <constraint firstAttribute="width" constant="80" id="m5O-Jn-pio"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cv-Lk-rBY">
+                                                        <rect key="frame" x="121" y="16" width="177" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="RU4-tY-0Lo"/>
+                                                            <constraint firstAttribute="width" constant="177" id="w7b-hC-KMw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjp-lK-b0J">
+                                                        <rect key="frame" x="20" y="123" width="80" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="H1U-EB-3kB"/>
+                                                            <constraint firstAttribute="height" constant="34" id="eFx-61-gMI"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3p-TU-Idt">
+                                                        <rect key="frame" x="20" y="171" width="80" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="DWa-cR-QTk"/>
+                                                            <constraint firstAttribute="width" constant="80" id="y9E-xT-w5A"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bhb-tR-pl2">
+                                                        <rect key="frame" x="112" y="123" width="186" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="186" id="Ott-Dx-0Ct"/>
+                                                            <constraint firstAttribute="height" constant="34" id="r1o-ZU-Wdp"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izs-iD-86x">
+                                                        <rect key="frame" x="112" y="171" width="186" height="34"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="aJh-gy-UOj"/>
+                                                            <constraint firstAttribute="width" constant="186" id="wlQ-FA-LKi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGC-Dk-9la">
+                                                        <rect key="frame" x="8" y="303" width="156" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Uid-8V-s5s"/>
+                                                            <constraint firstAttribute="width" constant="156" id="Y9P-9d-GSq"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <state key="normal" title="Опубликовать">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0p-00-lgn">
+                                                        <rect key="frame" x="164" y="303" width="149" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="XrQ-cR-Mh6"/>
+                                                            <constraint firstAttribute="width" constant="149" id="cuq-ol-Llg"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <state key="normal" title="Выйти">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                    </button>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус отправки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2N-0E-41b">
+                                                        <rect key="frame" x="20" y="229" width="278" height="27"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="278" id="TPZ-Tv-r9h"/>
+                                                            <constraint firstAttribute="height" constant="27" id="nYL-QN-ca4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="ABosaNova" family="a_BosaNova" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.90588235289999997" green="0.96470588239999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="bhb-tR-pl2" firstAttribute="top" secondItem="4cv-Lk-rBY" secondAttribute="bottom" constant="27" id="1ax-Lz-La1"/>
+                                                    <constraint firstAttribute="width" constant="321" id="CAY-eU-OJH"/>
+                                                    <constraint firstItem="Izs-iD-86x" firstAttribute="top" secondItem="bhb-tR-pl2" secondAttribute="bottom" constant="14" id="Gpj-wY-eBR"/>
+                                                    <constraint firstItem="W0p-00-lgn" firstAttribute="top" secondItem="L2N-0E-41b" secondAttribute="bottom" constant="47" id="Gw3-g6-Vue"/>
+                                                    <constraint firstItem="L2N-0E-41b" firstAttribute="top" secondItem="g3p-TU-Idt" secondAttribute="bottom" constant="24" id="HaD-Xv-WaQ"/>
+                                                    <constraint firstItem="g3p-TU-Idt" firstAttribute="leading" secondItem="9c7-rk-ZDn" secondAttribute="leading" constant="20" id="Hla-uH-kZs"/>
+                                                    <constraint firstItem="CzW-Ef-5HY" firstAttribute="top" secondItem="9c7-rk-ZDn" secondAttribute="top" constant="16" id="N1V-NT-5Ws"/>
+                                                    <constraint firstItem="W0p-00-lgn" firstAttribute="leading" secondItem="FGC-Dk-9la" secondAttribute="trailing" id="Smy-WE-zTK"/>
+                                                    <constraint firstItem="4cv-Lk-rBY" firstAttribute="leading" secondItem="CzW-Ef-5HY" secondAttribute="trailing" constant="21" id="TKs-Kq-Ugq"/>
+                                                    <constraint firstItem="g3p-TU-Idt" firstAttribute="top" secondItem="Zjp-lK-b0J" secondAttribute="bottom" constant="14" id="UhX-hp-5dc"/>
+                                                    <constraint firstItem="4cv-Lk-rBY" firstAttribute="top" secondItem="9c7-rk-ZDn" secondAttribute="top" constant="16" id="ZGW-ka-Qv7"/>
+                                                    <constraint firstItem="Izs-iD-86x" firstAttribute="leading" secondItem="g3p-TU-Idt" secondAttribute="trailing" constant="12" id="auc-xA-efs"/>
+                                                    <constraint firstItem="FGC-Dk-9la" firstAttribute="top" secondItem="L2N-0E-41b" secondAttribute="bottom" constant="47" id="dzi-TY-EL6"/>
+                                                    <constraint firstItem="Zjp-lK-b0J" firstAttribute="top" secondItem="CzW-Ef-5HY" secondAttribute="bottom" constant="27" id="g6e-rF-hki"/>
+                                                    <constraint firstItem="L2N-0E-41b" firstAttribute="leading" secondItem="9c7-rk-ZDn" secondAttribute="leading" constant="20" id="hKr-ZS-3qg"/>
+                                                    <constraint firstItem="CzW-Ef-5HY" firstAttribute="leading" secondItem="9c7-rk-ZDn" secondAttribute="leading" constant="20" id="mao-9t-l0A"/>
+                                                    <constraint firstItem="bhb-tR-pl2" firstAttribute="leading" secondItem="Zjp-lK-b0J" secondAttribute="trailing" constant="12" id="vKn-Ee-CBw"/>
+                                                    <constraint firstAttribute="height" constant="363" id="wYc-hA-1li"/>
+                                                    <constraint firstItem="Zjp-lK-b0J" firstAttribute="leading" secondItem="9c7-rk-ZDn" secondAttribute="leading" constant="20" id="xf2-yn-izk"/>
+                                                    <constraint firstItem="FGC-Dk-9la" firstAttribute="leading" secondItem="9c7-rk-ZDn" secondAttribute="leading" constant="8" id="zcY-Ij-Aw2"/>
+                                                </constraints>
+                                            </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3a-ot-lhG">
                                                 <rect key="frame" x="27.5" y="150" width="320" height="272"/>
                                                 <subviews>
@@ -238,7 +353,9 @@
                                             <constraint firstItem="lNl-BI-8D7" firstAttribute="top" secondItem="tk2-pS-zkC" secondAttribute="bottom" constant="36" id="Idb-tU-s8a"/>
                                             <constraint firstItem="tk2-pS-zkC" firstAttribute="top" secondItem="qaD-GX-xld" secondAttribute="bottom" constant="8" id="KJa-kb-4p8"/>
                                             <constraint firstItem="2i5-IS-lzG" firstAttribute="top" secondItem="ToC-5E-ZKq" secondAttribute="bottom" constant="8" id="LnK-7C-C5B"/>
+                                            <constraint firstItem="9c7-rk-ZDn" firstAttribute="top" secondItem="aIK-sF-QUy" secondAttribute="top" constant="114" id="PaK-Pk-nlh"/>
                                             <constraint firstItem="ToC-5E-ZKq" firstAttribute="top" secondItem="KvS-kY-rAi" secondAttribute="bottom" constant="15" id="VRU-cB-pxU"/>
+                                            <constraint firstItem="9c7-rk-ZDn" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" id="XGP-s9-aQ9"/>
                                             <constraint firstItem="2i5-IS-lzG" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" constant="-60" id="Zso-iz-iYv"/>
                                             <constraint firstItem="OFe-RX-3TV" firstAttribute="top" secondItem="2i5-IS-lzG" secondAttribute="bottom" constant="8" id="c3A-0Q-qkN"/>
                                             <constraint firstItem="lNl-BI-8D7" firstAttribute="centerX" secondItem="aIK-sF-QUy" secondAttribute="centerX" id="cPs-lW-btN"/>
@@ -279,15 +396,23 @@
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="w7O-Dq-mXN" id="luK-AX-CAd"/>
+                        <outlet property="cancelPublishButton" destination="W0p-00-lgn" id="C5X-SS-H8C"/>
                         <outlet property="datePicker" destination="pp3-IM-IDF" id="0CP-4d-IYa"/>
                         <outlet property="dateReminding" destination="Lw8-Ep-qjQ" id="eTT-vh-2u5"/>
                         <outlet property="facebookButton" destination="cee-rA-wPk" id="8ah-uW-8je"/>
+                        <outlet property="loginUser" destination="bhb-tR-pl2" id="8oG-13-AOA"/>
                         <outlet property="nameClothes" destination="ToC-5E-ZKq" id="gtL-YX-BX3"/>
+                        <outlet property="passwordUser" destination="Izs-iD-86x" id="49u-AK-qKx"/>
                         <outlet property="photoClothes" destination="EqO-Fk-Wff" id="8ai-rs-ZFN"/>
                         <outlet property="photoTag" destination="KvS-kY-rAi" id="crw-J8-F1w"/>
+                        <outlet property="publishButton" destination="FGC-Dk-9la" id="Moc-x6-Ycs"/>
                         <outlet property="remindingView" destination="f3a-ot-lhG" id="ony-DR-9OB"/>
                         <outlet property="remindingViewSwitcher" destination="tk2-pS-zkC" id="tM1-vI-otv"/>
                         <outlet property="setupButton" destination="apN-wh-fRo" id="EOs-51-FKN"/>
+                        <outlet property="socialNetworkLogo" destination="CzW-Ef-5HY" id="yie-6L-WKr"/>
+                        <outlet property="socialNetworkName" destination="4cv-Lk-rBY" id="WRv-aB-rcu"/>
+                        <outlet property="socialNetworkView" destination="9c7-rk-ZDn" id="ms0-bw-Xmb"/>
+                        <outlet property="statusPublish" destination="L2N-0E-41b" id="ugb-27-W3h"/>
                         <outlet property="tableHeightConstraint" destination="Vv9-Sb-YtH" id="Pae-pg-9mi"/>
                         <outlet property="tagsTable" destination="lNl-BI-8D7" id="Qyw-wg-DAa"/>
                         <outlet property="vkButton" destination="0hm-ZY-d3y" id="i25-CM-cSw"/>

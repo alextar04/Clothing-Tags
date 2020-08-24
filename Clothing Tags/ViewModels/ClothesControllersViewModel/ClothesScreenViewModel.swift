@@ -21,7 +21,7 @@ class ClothesScreenViewModel{
     
     init(idClothes: Int){
         clothes = getClothesFromId(idClothes)
-        setSocialNetworksLogos()
+        //setSocialNetworksLogos()
         stickers = getStickersByIdsString((clothes?.stickersId)!)
         
         // Если событие закончилось -> удалить его
@@ -88,12 +88,6 @@ class ClothesScreenViewModel{
         }
     }
     
-    
-    func setSocialNetworksLogos(){
-        socialNetworksLogos = SocialNetwork().listLogos
-    }
-    
-    
     func getStickersByIdsString(_ stickersIds: String)->[Sticker]{
         let listStickersIds = getStickersIdFromString(stickersIds)
         var listStickers = [Sticker]()
@@ -141,7 +135,6 @@ class ClothesScreenViewModel{
                 if searchedEvent == nil{
                     return
                 }
-                    
                     try store.remove(searchedEvent!, span: .thisEvent, commit: true)
             } catch{
                     fatalError("Ошибка во время удаления!")

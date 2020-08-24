@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import EventKit
 
 class ClothesScreenViewController: UIViewController {
     var openFromCreationClothesScreen: Bool = false
@@ -22,6 +21,14 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var vkButton: UIButton!
     @IBOutlet weak var yandexButton: UIButton!
+    @IBOutlet weak var socialNetworkView: UIView!
+    @IBOutlet weak var socialNetworkLogo: UIImageView!
+    @IBOutlet weak var socialNetworkName: UILabel!
+    @IBOutlet weak var loginUser: UITextField!
+    @IBOutlet weak var passwordUser: UITextField!
+    @IBOutlet weak var publishButton: UIButton!
+    @IBOutlet weak var cancelPublishButton: UIButton!
+    @IBOutlet weak var statusPublish: UILabel!
     
     @IBOutlet weak var nameClothes: UILabel!
     
@@ -73,7 +80,10 @@ class ClothesScreenViewController: UIViewController {
             $0.roundingRect()
         }
         
+        // Настройка дополнительно открывающихся окон
         setSettingsReminderView()
+        setSettingsSocialNetworkView()
+        
         // Получение высоты таблицы
         tableHeightConstraint.constant = tagsTable.rowHeight * CGFloat((viewModel?.stickers?.count)!)
         Observable.just((viewModel?.stickers)!).bind(to: tagsTable.rx.items){
@@ -89,6 +99,8 @@ class ClothesScreenViewController: UIViewController {
     // Настройка экрана установки напоминаний
     func setSettingsReminderView(){
         remindingView.shadowForScreen()
+        remindingView.roundingView()
+        
         remindingViewSwitcher.rx.controlEvent(.valueChanged).bind{
             // Открыть окно установки нового значения
             if self.remindingViewSwitcher.isOn{
@@ -108,8 +120,6 @@ class ClothesScreenViewController: UIViewController {
             self.remindingView.isHidden = true
             self.remindingViewSwitcher.isOn = true
             self.viewModel!.addReminder(name: self.nameClothes.text, time: self.datePicker.date)
-            // Изменения в БД
-            // self.viewModel?.addReminderToDatabase(time: self.datePicker.date)
             // Установка на экране значения
             self.dateReminding.text = self.datePicker.date.parsingForClothesScreen()
         }.disposed(by: disposeBag)
@@ -120,9 +130,51 @@ class ClothesScreenViewController: UIViewController {
         }.disposed(by: disposeBag)
     }
     
+    // Настройка подэкрана интеграции с соц. Сетями
+    func setSettingsSocialNetworkView(){
+        self.socialNetworkView.shadowForScreen()
+        self.socialNetworkView.roundingView()
+        self.socialNetworkLogo.roundingRect()
+        setSettingsForHideKeyboard()
+        self.passwordUser.isSecureTextEntry = true
+        var subscription: Disposable?
+        
+        // Открытие своей разновидности подэкрана для каждой из кнопок
+        let buttonArray: [UIButton] = [facebookButton, vkButton, yandexButton]
+        let dialogArray: [Dialog] = [FacebookDialog(), VKDialog(), YandexDialog()]
+        
+        let combinationButtonDialog = Array(zip(buttonArray, dialogArray))
+        combinationButtonDialog.map{ pair in
+            pair.0.rx.tap.bind{
+                pair.1.initDialog(socialNetworkButton: pair.0,
+                                  iconSocialNetworkView: self.socialNetworkLogo,
+                                  nameSocialNetworkView: self.socialNetworkName,
+                                  publishButton: self.publishButton,
+                                  subscription: &subscription)
+                self.socialNetworkView.isHidden = false
+            }.disposed(by: disposeBag)
+        }
+        
+        // Закрытие окна при нажатии на кнопку отмены
+        cancelPublishButton.rx.tap.bind{
+            subscription?.dispose()
+            self.socialNetworkView.isHidden = true
+        }.disposed(by: disposeBag)
+    }
+    
     @IBAction func deleteButtonPressed(_ sender: Any) {
         viewModel?.deleteClothesFromId(idClothes!)
         AppDelegate.appDelegateLink.rootViewController.switchTo(section: .mainScreen)
+    }
+    
+    // Настройка для скрытия клавиатуры после окончания ввода
+    func setSettingsForHideKeyboard(){
+        let gestureRecognizerHideKeyboard = UITapGestureRecognizer(target: self, action: #selector(self.actionForHideKeyboard))
+        self.view.addGestureRecognizer(gestureRecognizerHideKeyboard)
+    }
+    
+    @objc func actionForHideKeyboard() {
+        self.view.endEditing(true)
     }
     
     @IBAction func swipeDetection(_ sender: UIPanGestureRecognizer) {

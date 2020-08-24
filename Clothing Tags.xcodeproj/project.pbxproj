@@ -455,8 +455,8 @@
 				CED23E1024EACD0A0056472E /* Clothes.swift */,
 				CED23E1224EACD0A0056472E /* Category.swift */,
 				CED23E1424EACD0A0056472E /* Sticker.swift */,
-				CECD255A24F288420032C4AC /* Menu.swift */,
 				CE238ADE24F117FF001DA10E /* SocialNetwork.swift */,
+				CECD255A24F288420032C4AC /* Menu.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
