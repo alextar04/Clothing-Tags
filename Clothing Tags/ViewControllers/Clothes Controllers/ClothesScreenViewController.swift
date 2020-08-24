@@ -29,6 +29,7 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var publishButton: UIButton!
     @IBOutlet weak var cancelPublishButton: UIButton!
     @IBOutlet weak var statusPublish: UILabel!
+    @IBOutlet weak var wheelSavePublish: UIActivityIndicatorView!
     
     @IBOutlet weak var nameClothes: UILabel!
     
@@ -150,6 +151,10 @@ class ClothesScreenViewController: UIViewController {
                                   iconSocialNetworkView: self.socialNetworkLogo,
                                   nameSocialNetworkView: self.socialNetworkName,
                                   publishButton: self.publishButton,
+                                  wheelSavePublish: self.wheelSavePublish,
+                                  statusPublish: self.statusPublish,
+                                  loginEdit: self.loginUser,
+                                  passwordEdit: self.passwordUser,
                                   subscription: &subscription)
                 self.socialNetworkView.isHidden = false
             }.disposed(by: disposeBag)
@@ -159,6 +164,9 @@ class ClothesScreenViewController: UIViewController {
         cancelPublishButton.rx.tap.bind{
             subscription?.dispose()
             self.socialNetworkView.isHidden = true
+            self.statusPublish.isHidden = true
+            self.loginUser.text = ""
+            self.passwordUser.text = ""
         }.disposed(by: disposeBag)
     }
     

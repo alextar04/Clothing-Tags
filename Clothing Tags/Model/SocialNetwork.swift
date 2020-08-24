@@ -17,14 +17,20 @@ protocol Dialog {
 }
 
 extension Dialog{
-    // 1 - Кнопка соцсети
+    // 1 - Кнопка конкретной соцсети
     // 2 - Иконка Диалога
     // 3 - Название Диалога
     // 4 - Кнопка "Опубликовать"
+    // 5 - Индикатор статуса публикации
+    // 6 - Статус публикации
     func initDialog(socialNetworkButton: UIButton,
                     iconSocialNetworkView: UIImageView,
                     nameSocialNetworkView: UILabel,
                     publishButton: UIButton,
+                    wheelSavePublish: UIActivityIndicatorView,
+                    statusPublish: UILabel,
+                    loginEdit: UITextField,
+                    passwordEdit: UITextField,
                     subscription: inout Disposable?){
         let socialNetwork = createSocialNetwork()
         
@@ -33,9 +39,16 @@ extension Dialog{
         iconSocialNetworkView.image = socialNetwork.getLogo().image
         
         subscription = publishButton.rx.tap.bind{
-            socialNetwork.sendClothesInformationToServer()
+            if loginEdit.text == "" || passwordEdit.text == ""{
+                statusPublish.text = publishResponse.emptyAutorization.rawValue
+                statusPublish.isHidden = false
+            }else{
+                wheelSavePublish.isHidden = false
+                statusPublish.text = socialNetwork.sendClothesInformationToServer().rawValue
+                statusPublish.isHidden = false
+                wheelSavePublish.isHidden = true
+            }
         }
-        //.disposed(by: disposeBagSended)
     }
 }
 
@@ -138,8 +151,8 @@ class Yandex: SocialNetwork{
 enum publishResponse: String{
     case successAutorization = "Успешная авторизация!"
     case failrueAutorization = "Ошибка авторизации!"
-    case emptyAutorization = "Заполните поля логина и пароля!"
-    case successPublish = "Успешная публикация в заметках!"
-    case failruePublish = "Ошибка! Публикация не была добавлена"
+    case emptyAutorization = "Поля логина или пароля пусты!"
+    case successPublish = "Успешная публикация!"
+    case failruePublish = "Ошибка публикации!"
 }
 

@@ -254,11 +254,21 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Mrd-mT-e9R">
+                                                        <rect key="frame" x="135.5" y="264" width="50" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="04r-TI-2op"/>
+                                                            <constraint firstAttribute="height" constant="25" id="SWv-DN-pr5"/>
+                                                        </constraints>
+                                                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.90588235289999997" green="0.96470588239999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="bhb-tR-pl2" firstAttribute="top" secondItem="4cv-Lk-rBY" secondAttribute="bottom" constant="27" id="1ax-Lz-La1"/>
+                                                    <constraint firstItem="Mrd-mT-e9R" firstAttribute="top" secondItem="L2N-0E-41b" secondAttribute="bottom" constant="8" id="8DP-jf-HPY"/>
                                                     <constraint firstAttribute="width" constant="321" id="CAY-eU-OJH"/>
+                                                    <constraint firstItem="Mrd-mT-e9R" firstAttribute="centerX" secondItem="9c7-rk-ZDn" secondAttribute="centerX" id="GH3-mV-6yp"/>
                                                     <constraint firstItem="Izs-iD-86x" firstAttribute="top" secondItem="bhb-tR-pl2" secondAttribute="bottom" constant="14" id="Gpj-wY-eBR"/>
                                                     <constraint firstItem="W0p-00-lgn" firstAttribute="top" secondItem="L2N-0E-41b" secondAttribute="bottom" constant="47" id="Gw3-g6-Vue"/>
                                                     <constraint firstItem="L2N-0E-41b" firstAttribute="top" secondItem="g3p-TU-Idt" secondAttribute="bottom" constant="24" id="HaD-Xv-WaQ"/>
@@ -416,6 +426,7 @@
                         <outlet property="tableHeightConstraint" destination="Vv9-Sb-YtH" id="Pae-pg-9mi"/>
                         <outlet property="tagsTable" destination="lNl-BI-8D7" id="Qyw-wg-DAa"/>
                         <outlet property="vkButton" destination="0hm-ZY-d3y" id="i25-CM-cSw"/>
+                        <outlet property="wheelSavePublish" destination="Mrd-mT-e9R" id="LFw-ot-dox"/>
                         <outlet property="yandexButton" destination="JHc-uD-iVa" id="kxE-6R-pMC"/>
                     </connections>
                 </viewController>
