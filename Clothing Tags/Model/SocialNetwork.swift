@@ -48,9 +48,11 @@ extension Dialog{
                 statusPublish.isHidden = false
             }else{
                 wheelSavePublish.isHidden = false
-                statusPublish.text = socialNetwork.sendClothesInformationToServer(username: loginEdit.text!, password: passwordEdit.text!, nameClothes: nameClothes, body: descriptionStickers).rawValue
-                statusPublish.isHidden = false
-                wheelSavePublish.isHidden = true
+                socialNetwork.sendClothesInformationToServer(username: loginEdit.text!, password: passwordEdit.text!, nameClothes: nameClothes, body: descriptionStickers){ status in
+                        statusPublish.text = status.rawValue
+                        statusPublish.isHidden = false
+                        wheelSavePublish.isHidden = true
+                    }
             }
         }
     }
@@ -72,7 +74,7 @@ class YandexDialog: Dialog{
 protocol SocialNetwork {
     func getName()->String
     func getLogo()->UIImageView
-    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String)->publishResponse
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String, callback: @escaping (publishResponse)->Void)->Void
 }
 
 
@@ -93,43 +95,51 @@ class VK: SocialNetwork{
         return self.logo
     }
     
-    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String)->publishResponse{
-        var statusList = [publishResponse]()
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String, callback: @escaping (publishResponse)->Void)->Void{
         
         // 1. Получение токена для доступа к заметкам
         let vkAppId = "3140623"
         let vkAppSecretKey = "VeWdmVclDCtn6ihuP1nt"
         
-        var token: String = ""
+        var token: String? = ""
         let getTokenUrl = try! "https://oauth.vk.com/token?grant_type=password&client_id=\(vkAppId)&client_secret=\(vkAppSecretKey)&username=\(username)&password=\(password)".asURL()
         
         AF.request(getTokenUrl, method: .post).responseJSON{responseToken in
             switch responseToken.result{
             case .success(let Json):
-                token = (Json as! NSDictionary).object(forKey: "access_token") as! String
+                token = (Json as! NSDictionary).object(forKey: "access_token") as? String
+                if token == nil{
+                    DispatchQueue.main.async {
+                        callback(.failrueAutorization)
+                    }
+                    return
+                }
             case .failure(let error):
-                statusList.append(.failrueAutorization)
+                DispatchQueue.main.async {
+                    callback(.failrueAutorization)
+                }
                 return
             }
             
             // 2. Публикация заметки в социальной сети
-            let publishNoteUrl = "https://api.vk.com/method/notes.add?title=\(nameClothes)&text=\(body)&access_token=\(token)&v=5.122"
+            let publishNoteUrl = "https://api.vk.com/method/notes.add?title=\(nameClothes)&text=\(body)&access_token=\(token!)&v=5.122"
             let encodedPublishNoteUrl = publishNoteUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
             AF.request(encodedPublishNoteUrl!, method: .post).responseJSON{ responsePublish in
                 switch responsePublish.result{
                 case .success(let Json):
-                    statusList.append(.successPublish)
+                    DispatchQueue.main.async {
+                        callback(.successPublish)
+                    }
                     return
                 case .failure(let error):
                     print(error)
-                    statusList.append(.failruePublish)
+                    DispatchQueue.main.async {
+                        callback(.failruePublish)
+                    }
                     return
                 }
             }
         }
-        
-        while statusList.count == 0 {}
-        return statusList.first!
     }
 }
 
@@ -151,8 +161,7 @@ class Yandex: SocialNetwork{
         return self.logo
     }
     
-    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String) ->publishResponse{
-        var statusList = [publishResponse]()
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String, callback: @escaping (publishResponse)->Void)->Void{
         
         let sender = Mail.User(email: username)
         let reciever = Mail.User(email: username)
@@ -167,14 +176,16 @@ class Yandex: SocialNetwork{
         
         smtp.send(letter){ error in
             if let error = error{
-                statusList.append(.failrueAutorization)
+                DispatchQueue.main.async {
+                    callback(.failrueAutorization)
+                }
                 return
             }
-            statusList.append(.failrueAutorization)
+            DispatchQueue.main.async {
+                callback(.successPublish)
+            }
             return
         }
-        while statusList.count == 0 {}
-        return statusList.first!
     }
 }
 

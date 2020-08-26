@@ -50,6 +50,16 @@
                                                     <constraint firstAttribute="height" constant="30" id="W2i-Qd-rsb"/>
                                                 </constraints>
                                             </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHc-uD-iVa">
+                                                <rect key="frame" x="135.5" y="268" width="40" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Dug-1V-Htx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="mUH-eq-0Gt"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="yandexLogo.png">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hm-ZY-d3y">
                                                 <rect key="frame" x="74.5" y="268" width="40" height="40"/>
                                                 <constraints>
@@ -326,16 +336,6 @@
                                                     <constraint firstItem="dTS-Eq-pMu" firstAttribute="top" secondItem="f3a-ot-lhG" secondAttribute="top" constant="16" id="zd1-Yw-vtl"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHc-uD-iVa">
-                                                <rect key="frame" x="135" y="268" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="Dug-1V-Htx"/>
-                                                    <constraint firstAttribute="height" constant="40" id="mUH-eq-0Gt"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="yandexLogo.png">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.96470588239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -367,12 +367,6 @@
                                             <constraint firstItem="EqO-Fk-Wff" firstAttribute="top" secondItem="aIK-sF-QUy" secondAttribute="top" constant="25" id="vaQ-Ay-yP6"/>
                                             <constraint firstItem="Lw8-Ep-qjQ" firstAttribute="top" secondItem="2i5-IS-lzG" secondAttribute="bottom" constant="8" id="wo4-jo-jUW"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="subviews">
-                                                <exclude reference="9c7-rk-ZDn"/>
-                                                <exclude reference="f3a-ot-lhG"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
