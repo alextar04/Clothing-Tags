@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import Alamofire
+import SwiftSMTP
 
 
 protocol Dialog {
@@ -31,6 +33,8 @@ extension Dialog{
                     statusPublish: UILabel,
                     loginEdit: UITextField,
                     passwordEdit: UITextField,
+                    nameClothes: String,
+                    descriptionStickers: String,
                     subscription: inout Disposable?){
         let socialNetwork = createSocialNetwork()
         
@@ -44,7 +48,7 @@ extension Dialog{
                 statusPublish.isHidden = false
             }else{
                 wheelSavePublish.isHidden = false
-                statusPublish.text = socialNetwork.sendClothesInformationToServer().rawValue
+                statusPublish.text = socialNetwork.sendClothesInformationToServer(username: loginEdit.text!, password: passwordEdit.text!, nameClothes: nameClothes, body: descriptionStickers).rawValue
                 statusPublish.isHidden = false
                 wheelSavePublish.isHidden = true
             }
@@ -52,12 +56,6 @@ extension Dialog{
     }
 }
 
-
-class FacebookDialog: Dialog{
-    func createSocialNetwork() -> SocialNetwork {
-        return Facebook()
-    }
-}
 
 class VKDialog: Dialog{
     func createSocialNetwork() -> SocialNetwork {
@@ -74,30 +72,7 @@ class YandexDialog: Dialog{
 protocol SocialNetwork {
     func getName()->String
     func getLogo()->UIImageView
-    func sendClothesInformationToServer()->publishResponse
-}
-
-class Facebook: SocialNetwork{
-    var name: String
-    var logo: UIImageView
-    
-    init() {
-        self.name = "Facebook"
-        self.logo = UIImageView(image: UIImage(named: "facebookLogo.png"))
-    }
-    
-    func getName() -> String {
-        return self.name
-    }
-    
-    func getLogo() -> UIImageView {
-        return self.logo
-    }
-    
-    func sendClothesInformationToServer()->publishResponse{
-        print("Послали от FB")
-        return publishResponse.successPublish
-    }
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String)->publishResponse
 }
 
 
@@ -118,9 +93,43 @@ class VK: SocialNetwork{
         return self.logo
     }
     
-    func sendClothesInformationToServer()->publishResponse{
-        print("Послали от VK")
-        return publishResponse.successPublish
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String)->publishResponse{
+        var statusList = [publishResponse]()
+        
+        // 1. Получение токена для доступа к заметкам
+        let vkAppId = "3140623"
+        let vkAppSecretKey = "VeWdmVclDCtn6ihuP1nt"
+        
+        var token: String = ""
+        let getTokenUrl = try! "https://oauth.vk.com/token?grant_type=password&client_id=\(vkAppId)&client_secret=\(vkAppSecretKey)&username=\(username)&password=\(password)".asURL()
+        
+        AF.request(getTokenUrl, method: .post).responseJSON{responseToken in
+            switch responseToken.result{
+            case .success(let Json):
+                token = (Json as! NSDictionary).object(forKey: "access_token") as! String
+            case .failure(let error):
+                statusList.append(.failrueAutorization)
+                return
+            }
+            
+            // 2. Публикация заметки в социальной сети
+            let publishNoteUrl = "https://api.vk.com/method/notes.add?title=\(nameClothes)&text=\(body)&access_token=\(token)&v=5.122"
+            let encodedPublishNoteUrl = publishNoteUrl.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed)
+            AF.request(encodedPublishNoteUrl!, method: .post).responseJSON{ responsePublish in
+                switch responsePublish.result{
+                case .success(let Json):
+                    statusList.append(.successPublish)
+                    return
+                case .failure(let error):
+                    print(error)
+                    statusList.append(.failruePublish)
+                    return
+                }
+            }
+        }
+        
+        while statusList.count == 0 {}
+        return statusList.first!
     }
 }
 
@@ -130,7 +139,7 @@ class Yandex: SocialNetwork{
     var logo: UIImageView
     
     init() {
-        self.name = "Яндекс"
+        self.name = "Яндекс. Почта"
         self.logo = UIImageView(image: UIImage(named: "yandexLogo.png"))
     }
     
@@ -142,9 +151,30 @@ class Yandex: SocialNetwork{
         return self.logo
     }
     
-    func sendClothesInformationToServer()->publishResponse{
-        print("Послали от YA")
-        return publishResponse.successPublish
+    func sendClothesInformationToServer(username: String, password: String, nameClothes: String, body: String) ->publishResponse{
+        var statusList = [publishResponse]()
+        
+        let sender = Mail.User(email: username)
+        let reciever = Mail.User(email: username)
+        
+        let smtp = SMTP(
+            hostname: "smtp.yandex.ru",
+            email: username,
+            password: password
+        )
+        
+        let letter = Mail(from: sender, to: [reciever], subject: nameClothes, text: body)
+        
+        smtp.send(letter){ error in
+            if let error = error{
+                statusList.append(.failrueAutorization)
+                return
+            }
+            statusList.append(.failrueAutorization)
+            return
+        }
+        while statusList.count == 0 {}
+        return statusList.first!
     }
 }
 

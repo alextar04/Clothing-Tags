@@ -18,7 +18,6 @@ class ClothesScreenViewController: UIViewController {
     @IBOutlet weak var photoClothes: UIImageView!
     @IBOutlet weak var photoTag: UIImageView!
     
-    @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var vkButton: UIButton!
     @IBOutlet weak var yandexButton: UIButton!
     @IBOutlet weak var socialNetworkView: UIView!
@@ -72,7 +71,7 @@ class ClothesScreenViewController: UIViewController {
         }
         
         // Округление кнопок для публикации в заметках соцсети
-        [facebookButton, vkButton, yandexButton].map{
+        [vkButton, yandexButton].map{
             $0.imageView?.roundingImageCell(newPicture: nil)
         }
         
@@ -141,8 +140,8 @@ class ClothesScreenViewController: UIViewController {
         var subscription: Disposable?
         
         // Открытие своей разновидности подэкрана для каждой из кнопок
-        let buttonArray: [UIButton] = [facebookButton, vkButton, yandexButton]
-        let dialogArray: [Dialog] = [FacebookDialog(), VKDialog(), YandexDialog()]
+        let buttonArray: [UIButton] = [vkButton, yandexButton]
+        let dialogArray: [Dialog] = [VKDialog(), YandexDialog()]
         
         let combinationButtonDialog = Array(zip(buttonArray, dialogArray))
         combinationButtonDialog.map{ pair in
@@ -155,6 +154,8 @@ class ClothesScreenViewController: UIViewController {
                                   statusPublish: self.statusPublish,
                                   loginEdit: self.loginUser,
                                   passwordEdit: self.passwordUser,
+                                  nameClothes: self.nameScreen!,
+                                  descriptionStickers: self.viewModel!.getStickersDescription(),
                                   subscription: &subscription)
                 self.socialNetworkView.isHidden = false
             }.disposed(by: disposeBag)

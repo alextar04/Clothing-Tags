@@ -21,7 +21,6 @@ class ClothesScreenViewModel{
     
     init(idClothes: Int){
         clothes = getClothesFromId(idClothes)
-        //setSocialNetworksLogos()
         stickers = getStickersByIdsString((clothes?.stickersId)!)
         
         // Если событие закончилось -> удалить его
@@ -97,6 +96,15 @@ class ClothesScreenViewModel{
         }
         
         return listStickers
+    }
+    
+    // Получение строки с описаниями стикеров
+    func getStickersDescription()->String{
+        var descriptionList = [String]()
+        stickers?.map{sticker in
+            descriptionList.append(sticker.specification!)
+        }
+        return descriptionList.joined(separator: "\n\n")
     }
     
     func addReminder(name: String?, time: Date){

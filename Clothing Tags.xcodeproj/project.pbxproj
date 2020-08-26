@@ -82,6 +82,8 @@
 		CED23E4424EC321A0056472E /* CoreDataInitialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E4324EC321A0056472E /* CoreDataInitialization.swift */; };
 		CED23E4724EC32950056472E /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = CED23E4624EC32950056472E /* SQLite */; };
 		CED23E4924EC34100056472E /* usefulFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED23E4824EC34100056472E /* usefulFunctions.swift */; };
+		CED3704E24F6FA64006813B2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CED3704D24F6FA64006813B2 /* Alamofire */; };
+		CED3705124F6FB95006813B2 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = CED3705024F6FB95006813B2 /* SwiftSMTP */; };
 		CEE13E0E24DF17DA00FF3BB0 /* blueBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE13E0D24DF17DA00FF3BB0 /* blueBorder.png */; };
 		CEE3626A24D4341800848279 /* CategoryScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE3626924D4341800848279 /* CategoryScreen.storyboard */; };
 		CEE3626C24D4358000848279 /* CategoryScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE3626B24D4358000848279 /* CategoryScreenCell.swift */; };
@@ -200,7 +202,9 @@
 				CED23E4724EC32950056472E /* SQLite in Frameworks */,
 				CE89F11124C2074E00A2ABBE /* RxCocoa in Frameworks */,
 				CE96271224E698DE006CD1F8 /* RxDataSources in Frameworks */,
+				CED3704E24F6FA64006813B2 /* Alamofire in Frameworks */,
 				CE96271024E698DE006CD1F8 /* Differentiator in Frameworks */,
+				CED3705124F6FB95006813B2 /* SwiftSMTP in Frameworks */,
 				CE89F10F24C2074E00A2ABBE /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +589,8 @@
 				CE96270F24E698DE006CD1F8 /* Differentiator */,
 				CE96271124E698DE006CD1F8 /* RxDataSources */,
 				CED23E4624EC32950056472E /* SQLite */,
+				CED3704D24F6FA64006813B2 /* Alamofire */,
+				CED3705024F6FB95006813B2 /* SwiftSMTP */,
 			);
 			productName = "Clothing Tags";
 			productReference = CE39E84024BA95C400060239 /* Clothing Tags.app */;
@@ -640,6 +646,8 @@
 				CE89F10D24C2074E00A2ABBE /* XCRemoteSwiftPackageReference "RxSwift" */,
 				CE96270E24E698DE006CD1F8 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				CED23E4524EC32950056472E /* XCRemoteSwiftPackageReference "SQLite" */,
+				CED3704C24F6FA64006813B2 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CED3704F24F6FB95006813B2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
 			);
 			productRefGroup = CE39E84124BA95C400060239 /* Products */;
 			projectDirPath = "";
@@ -1047,6 +1055,22 @@
 				minimumVersion = 0.12.2;
 			};
 		};
+		CED3704C24F6FA64006813B2 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
+		CED3704F24F6FB95006813B2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-SMTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1074,6 +1098,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CED23E4524EC32950056472E /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		CED3704D24F6FA64006813B2 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED3704C24F6FA64006813B2 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CED3705024F6FB95006813B2 /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CED3704F24F6FB95006813B2 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
+			productName = SwiftSMTP;
 		};
 /* End XCSwiftPackageProductDependency section */
 
