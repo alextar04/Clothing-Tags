@@ -22,3 +22,23 @@
 Скриншоты:
 
 <img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/ЗагрузочныйЭкран.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Меню.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Гардероб1.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Гардероб2.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Гардероб3.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Гардероб4.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Создание1.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Создание2.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Создание3.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Создание4.PNG" width="40%">
+
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Тэги1.PNG" width="40%">
