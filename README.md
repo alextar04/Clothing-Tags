@@ -21,4 +21,4 @@
 
 Скриншоты:
 
-<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Clothing-Tags/images/githubImages/ЗагрузочныйЭкран.PNG" width="40%">
+<img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/ЗагрузочныйЭкран.PNG" width="40%">
