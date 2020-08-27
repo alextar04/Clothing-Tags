@@ -14,9 +14,10 @@ class AboutApplicationScreenController: UIViewController {
         super.viewDidLoad()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: self)
     }
-
+    
     @IBAction func swipeDetection(_ sender: UIPanGestureRecognizer) {
         let transition = sender.translation(in: view).x
         var endStatus : Bool? = nil

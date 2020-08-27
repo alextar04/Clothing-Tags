@@ -30,7 +30,8 @@ class TagsCollectionController: UIViewController, UITableViewDelegate{
         super.viewDidLoad()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: self)
         loadStickersTable()
     }
     

@@ -51,7 +51,8 @@ class ClothesScreenViewController: UIViewController {
         
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen!)
+                                         nameTop: nameScreen!,
+                                         viewController: nil)
         self.viewModel = ClothesScreenViewModel(idClothes: idClothes!)
         loadClothesScreen()
     }

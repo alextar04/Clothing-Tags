@@ -16,5 +16,9 @@ extension UIViewController{
         self.view.layer.shadowOffset = CGSize.zero
         self.view.layer.shadowRadius = 6
     }
+    
+    @objc func loadMenuFromMainScreen(){
+        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "barButton", distanceSwiped: 240, endStatus: nil)
+    }
 }
 

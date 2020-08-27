@@ -28,7 +28,8 @@ class TagChooseScreenController: UIViewController{
         
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: nil)
         loadTableOfStickers()
         actionSelectingOfSticker()
         actionNextScreen()

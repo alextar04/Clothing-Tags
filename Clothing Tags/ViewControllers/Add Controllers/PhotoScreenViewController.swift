@@ -34,10 +34,12 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let transferViewController = nameScreen == "Выбор бирки" ? nil : self
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: transferViewController)
         baseSettingsPhotoController()
         loadNewPicturePart()
         
@@ -49,7 +51,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     
     // MARK: Базовая настройка экрана, отвечающего за доступ к камере
     func baseSettingsPhotoController(){
-        let backgroundColor = UIColor(red: 232.0/255.0, green: 246.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+        let backgroundColor: UIColor = .photoControllerColor
         self.photoController.view.backgroundColor = backgroundColor
         
         self.photoController.allowsEditing = true
@@ -95,7 +97,7 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
                 let offsetTable = startCollection + heightCollection - self.view.frame.height
 
                 if scrollOffset >= offsetTable + 48{
-                    print("Надо ставить колесико!")
+                    print("Показать колесо загрузки!")
                     self.loadingCollectionWheelConstraint.constant = self.collectionExistingPhotos.frame.maxY - 35
                     self.loadingCollectionWheel.isHidden = false
                     self.loadListPhotoPart()
@@ -103,7 +105,8 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
             }
         }).disposed(by: self.disposeBag)
     }
-
+    
+    
     // MARK: Размещение коллекции фотографий
     func loadListPhotoPart(){
         viewModel.getImageFromLibrary{ result in
@@ -204,6 +207,9 @@ class PhotoScreenViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func swipeDetected(_ sender: UIPanGestureRecognizer) {
+        if nameScreen == "Выбор бирки"{
+            return
+        }
         let transition = sender.translation(in: view).x
         var endStatus : Bool? = nil
         if sender.state == .began || sender.state == .changed{

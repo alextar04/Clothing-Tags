@@ -25,7 +25,8 @@ class MainScreenViewController: UIViewController {
         super.viewDidLoad()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: self)
         loadMainMenu()
     }
     
@@ -53,11 +54,6 @@ class MainScreenViewController: UIViewController {
                 }
                 
             }).disposed(by: disposeBag)
-    }
-    
-    // MARK: Обработка действий с левым боковым меню
-    @objc func loadMenuFromMainScreen(){
-        AppDelegate.appDelegateLink.rootViewController.loadingMenuScreen(sourceLoading: "barButton", distanceSwiped: 240, endStatus: nil)
     }
     
     @IBAction func swipeDetected(_ sender: UIPanGestureRecognizer) {

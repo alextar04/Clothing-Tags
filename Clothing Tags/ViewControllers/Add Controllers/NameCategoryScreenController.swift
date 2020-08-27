@@ -31,7 +31,8 @@ class NameCategoryScreenController : UIViewController{
         
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: nil)
         loadTapRecognizer()
         loadCategoryPartScreen()
         loadNextButtonPart()

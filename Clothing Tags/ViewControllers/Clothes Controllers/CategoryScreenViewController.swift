@@ -21,7 +21,8 @@ class CategoryScreenViewController: UIViewController {
         super.viewDidLoad()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameCategory!)
+                                         nameTop: nameCategory!,
+                                         viewController: nil)
         self.viewModel = CategoryScreenViewModel(idCategory: idCategory!)
         loadCategoryTable()
     }

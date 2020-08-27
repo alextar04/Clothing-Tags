@@ -20,7 +20,8 @@ class ReminderScreenController: UIViewController {
         super.viewDidLoad()
         BaseSettings.navigationBarTuning(navigationController: self.navigationController,
                                          navigationItem: navigationItem,
-                                         nameTop: nameScreen)
+                                         nameTop: nameScreen,
+                                         viewController: self)
         loadLaundryTable()
     }
     

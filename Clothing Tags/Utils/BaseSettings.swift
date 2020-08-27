@@ -12,7 +12,8 @@ import UIKit
 class BaseSettings{
     static func navigationBarTuning (navigationController : UINavigationController?,
                                      navigationItem : UINavigationItem,
-                                     nameTop : String) {
+                                     nameTop : String,
+                                     viewController: UIViewController?) {
         // Надпись по центру панели
         let labelCenterName = UILabel()
         labelCenterName.text = nameTop
@@ -34,8 +35,10 @@ class BaseSettings{
         menuButton.setImage(UIImage(named: "menu.png"), for: .normal)
 
          // Открытие меню по нажатию кнопки
-        /*menuButton.addTarget(navigationController, action: #selector(loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)*/
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
+        if let viewControllerWithMenu = viewController{
+            menuButton.addTarget(navigationController, action: #selector( viewControllerWithMenu.loadMenuFromMainScreen), for: UIControl.Event.touchUpInside)
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: menuButton)
+        }
     }
     
     static func updateBarTintColor(navigationController : UINavigationController){

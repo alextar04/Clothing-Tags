@@ -9,8 +9,15 @@
 import Foundation
 import CoreData
 import SQLite
+import UIKit
 
 class DataStorage{
+    
+    init(callback: @escaping ()->Void) {
+        DispatchQueue.main.async {
+            callback()
+        }
+    }
     
     // MARK: Инициализация PersistentCoordinator&Context
     lazy var persistentContainer: NSPersistentContainer = {
