@@ -21,9 +21,9 @@
 
 Скриншоты:
 
-<center>
+<p align="center">
     <img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/ЗагрузочныйЭкран.PNG" alt="centered image" width="40%">
-</center>
+</p>
 
 <img src="https://github.com/alextar04/Clothing-Tags/blob/master/Images/githubImages/Меню.PNG" width="40%">
 
